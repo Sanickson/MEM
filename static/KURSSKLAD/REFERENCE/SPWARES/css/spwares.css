@@ -1,0 +1,7 @@
+#dbWaresRestOnDate form,table{
+  width: 100%;
+}
+
+#dbWaresRestOnDate>form table, #dbWaresRestOnDate>form td, #dbWaresRestOnDate>form tr{
+  border: none;
+}

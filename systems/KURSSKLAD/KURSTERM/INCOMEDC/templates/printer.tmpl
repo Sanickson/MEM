@@ -1,0 +1,24 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    <b><u>$ALIAS</u></b><br><br>
+    <hr>
+    $_('Кол-во'): <input type="text" id=":focus:int" name="cnt" value="" size="6"><br><br>
+    #for $item in $datalist
+        <a href="javascript: setPrintTask($item.ID)">$item.NAME  ($item.CODE)</a><br><br>
+    #end for
+
+
+	<script>
+	    function setPrintTask(sgid){
+	        var cnt = parseInt(document.getElementById(':focus:int').value,10);
+	        if (!cnt) {
+	            alert('$_('Введите количество этикеток')');
+	        }
+	        else {
+	        	location.href = 'printer?id=$printerid&cnt='+cnt+'&sgid='+sgid;
+	        }
+	    }
+	</script>
+#end def

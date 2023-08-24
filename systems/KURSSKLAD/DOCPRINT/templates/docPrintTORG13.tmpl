@@ -1,0 +1,329 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import Quantity
+#from systems.KURSSKLAD.cheetahutils import TimeStampToDate
+#from systems.KURSSKLAD.cheetahutils import coalesceValue
+#from systems.KURSSKLAD.cheetahutils import formatFloat
+#from systems.KURSSKLAD.numInWords import numInWords
+#import math
+
+<div class="up_stamp">
+	Унифицированная форма № ТОРГ-13<br/>
+	Утверждена постановлением Госкомстата<br/>
+	России от 25.12.98 г. № 132
+</div>
+<div class="time_and_bc" style="float: right; margin-right: 33mm;">
+    <table>
+        <tbody>
+            <tr>
+                <td class="barcode">*$prefix$formatFloat($doc.DocId, 0)*</td>
+            </tr>
+            <tr>
+                <td>ШК $prefix$formatFloat($doc.DocId, 0)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<table class="table_1" cellpadding="0" cellspacing="0" border="0">
+	<tbody>
+		<tr>
+			<td colspan="3"></td>
+			<td style="text-align:center; font-size:10pt; border:1px solid #000000; width:32mm;">Код</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align:right; vertical-align:bottom; font-size:10pt; padding-right: 4px;">Форма по ОКУД</td>
+			<td style="text-align:center; font-size:12pt; border:1px solid #000000; border-bottom:0;">0330213</td>
+		</tr>
+		<tr>
+			#set $fromobjInfo = $doc.fromOBJNAME
+            #if $doc.fromOWNERFULLNAME
+                #set $fromobjInfo = $doc.fromOWNERFULLNAME
+            #end if
+            #if $doc.fromINN
+                #set $fromobjInfo += ', ИНН '+str($formatFloat($doc.fromINN, 0))
+            #end if                
+            #if $doc.fromOwnerADDRESS
+                #set $fromobjInfo += ', '+$doc.fromOwnerADDRESS
+            #end if
+            #if $doc.fromPhones
+                #set $fromobjInfo += ', тел. '+$doc.fromPhones
+            #end if
+            #if $doc.fromBANKACCOUNTFULL
+                #set $fromobjInfo += ', '+$doc.fromBANKACCOUNTFULL
+            #end if
+			<td colspan="2" style="border-bottom:1px solid #000000; font-size:9pt; text-align:left; vertical-align:bottom;">$fromobjInfo</td>
+			<td style="text-align:right; vertical-align:bottom; font-size:10pt; width:18mm; padding-right: 4px;">по ОКПО</td>
+			<td style="text-align:center; font-size:12pt; border-style: solid solid none; border-width: 1px 1px 0; border-color:#000000;">$coalesceValue($doc.fromOKPO)</td>
+		</tr>
+		<tr>
+			<td class="sub_text" colspan="2" style="height:2.5mm;">(организация)</td>
+			<td style="height:2.5mm;"></td>
+			<td rowspan="2" style="text-align:center; font-size:10pt; border-style: solid solid none; border-width: 1px 1px 0; border-color:#000000; width:32mm; height:2.5mm;"></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="height:2.5mm; text-align:right; vertical-align:bottom; font-size:10pt; padding-right: 4px;">Вид деятельности по ОКДП</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align:right; vertical-align:bottom; font-size:10pt; padding-right: 4px;">Вид операции</td>
+			<td style="text-align:center; font-size:12pt; border:1px solid #000000; border-top:1px solid #000000;"></td>
+		</tr>
+	</tbody>
+</table>
+<div class="order_title">
+	<table class="title_table" cellpadding="0" cellspacing="0" border="0">
+		<tbody>
+			<tr>
+				<td rowspan="2" colspan="2" style="font-size:10pt; font-weight: bold; vertical-align:bottom; border:0; text-align:right; padding-right:4px;">НАКЛАДНАЯ</td>
+				<td style="width:26mm; height:9mm; border-right:0; border-bottom:0; font-size:10pt;">Номер<br/>документа</td>
+				<td style="width:26mm; height:9mm; border-bottom:0;  font-size:10pt;">Дата<br/>составления</td>
+			</tr>
+			<tr>
+				<td style="height:5mm; border-width:1px; border-right:0; font-size:11pt;">$doc.docnum</td>
+				<td style="height:5mm; border-width:1px; font-size:11pt;">$TimeStampToDate($doc.docdate)</td>
+			</tr>
+			<tr>
+				<td colspan="3" style="font-size:10pt; font-weight: bold; vertical-align:bottom; border:0; text-align:right; padding-top:4px;">НА ВНУТРЕННЕЕ ПЕРЕМЕЩЕНИЕ, ПЕРЕДАЧУ ТОВАРОВ, ТАРЫ</td>
+				<td style="border:0;"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<table class="order_table" cellpadding="0" cellspacing="0">
+	<thead>
+		<tr>
+			<td colspan="2">Отправитель</td>
+			<td colspan="2">Получатель</td>
+			<td colspan="2" style="width:89mm;">Корреспондирующий счет</td>
+			<td style="width:38mm;">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>структурное<br/>подразделение</td>
+			<td>вид деятельности</td>
+			<td>структурное<br/>подразделение</td>
+			<td>вид деятельности</td>
+			<td>счет, субсчет</td>
+			<td>код аналитического<br/>учета</td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>$doc.fromObjName</td>
+			<td>&nbsp;</td>
+			<td>$doc.toObjName</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+
+#set $amtWares = len($wares)
+#set $amtFPage = 9
+#set $amtOPage = 25
+#set $amtLPage = 9
+
+#set $maxNumber = $amtFPage - 1
+#set $newPage = 1
+#set $breakPage = ''
+
+#set $sum1 = 0
+
+#set $gsum1 = 0
+
+#for $i in range($amtWares)
+	#set $Number = $i+1
+	#if $newPage == 1
+		#if $maxNumber < ($amtWares-1)
+			#set $breakPage = 'page-break-after:always;'
+		#else
+			#set $breakPage = ' '
+		#end if 
+		
+			<table class="order_table_2" cellpadding="0" cellspacing="0" style="$breakPage"> 
+				<thead>
+				<tr>
+					<td colspan="2">Товар, тара</td>
+					<td rowspan="3">Сорт</td>
+					<td colspan="2">Единица измерения</td>
+					<td colspan="4" style="width:76mm;">Отпущено</td>
+					<td colspan="2">По учетным ценам</td>
+				</tr>
+				<tr>
+					<td style="width:76mm;" rowspan="2">наименование, характеристика</td>
+					<td style="width:12mm;" rowspan="2">код</td>
+					<td rowspan="2">наиме-<br/>нование</td>
+					<td rowspan="2">код по<br/>ОКЕИ</td>
+					<td colspan="2">количество</td>
+					<td colspan="2">масса</td>
+					<td rowspan="2">цена,<br/>руб. коп.</td>
+					<td rowspan="2">сумма<br/>руб. коп.</td>
+				</tr>
+				<tr>
+					<td style="width:16mm;">в одном<br/>месте</td>
+					<td style="width:16mm;">мест,<br/>штук</td>
+					<td style="width:22mm;">брутто</td>
+					<td style="width:22mm;">нетто</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>10</td>
+					<td>11</td>
+				</tr>
+			</thead>
+			<tbody>
+			
+			#set $newPage = 0
+        #end if	
+				<tr>
+					<td style="text-align:left;">$wares[$i].NAME</td>
+					<td>$wares[$i].CODE</td>
+					<td>&nbsp;</td>
+					<td>$wares[$i].MAINUCODE</td>
+					<td>$wares[$i].MUOKEI</td>
+					<td>$Quantity($wares[$i].AMOUNT)</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>$formatFloat($wares[$i].PRICE,2)</td>
+					<td>$formatFloat($wares[$i].DOCSUM,2)</td>
+				</tr>
+				#set $sum1 = $sum1 + float($wares[$i].DOCSUM)
+			
+				#if $i == $maxNumber 
+					#set $newPage = 1
+					
+					#if ($maxNumber + $amtOPage) < $amtWares-1
+						#set $maxNumber = $maxNumber + $amtOPage
+					#else    
+						#if ($maxNumber + $amtLPage) >= $amtWares-1
+							#set $maxNumber = $maxNumber + $amtLPage
+						#else    
+							#set $maxNumber =  $amtWares-2
+						#end if
+					#end if
+				#end if
+				
+				
+		#if $newPage == 1 or $i == ($amtWares-1)
+			#set $gsum1 = $gsum1 + $sum1
+				
+			</tbody>
+			
+            
+			<tfoot>
+				<tr>
+					<td colspan="6" style="font-size:11pt; text-align:right; padding-right:5px; border:0;">Итого</td>
+					<td style="border:1px solid #000000;">&nbsp;</td>
+					<td style="border:1px solid #000000;">&nbsp;</td>
+					<td style="border:1px solid #000000;">&nbsp;</td>
+					<td style="border:1px solid #000000;">&nbsp;</td>
+					<td style="border:1px solid #000000;">$formatFloat($sum1,2)</td>
+				</tr>
+				#if $i == ($amtWares-1)
+				<tr style="border:0;">
+					<td colspan="6" style="font-size:11pt; text-align:right; padding-right:5px; border:0;">Всего по накладной</td>
+					<td style="border:1px solid #000000;">&nbsp;</td>
+					<td style="border:1px solid #000000;">&nbsp;</td>
+					<td style="border:1px solid #000000;">&nbsp;</td>
+					<td style="border:1px solid #000000;">&nbsp;</td>
+					<td style="border:1px solid #000000;">$formatFloat($gsum1,2)</td>
+				</tr>
+				#end if
+			</tfoot>        
+		</table>   	
+		#if $i != ($amtWares-1)
+		<div class="form_otherside">Оборотная сторона формы № ТОРГ-13</div>
+		#end if
+		
+		#set $sum1 = 0
+ 
+	#end if
+#end for
+
+
+
+
+
+
+
+<div class="stamp">
+	<table class="total_table1" cellpadding="0" cellspacing="0" border="0">
+		<tbody>
+			<tr style="vertical-align: bottom;">
+				<td style="width:25mm;">Отпустил</td>
+				<td style="border-bottom:1px solid #000000; width:30mm;"></td>
+				<td style="width:3mm;"></td>
+				<td style="border-bottom:1px solid #000000; width:30mm;"></td>
+				<td style="width:3mm;"></td>
+				<td style="border-bottom:1px solid #000000; width:75mm;"></td>
+				<td style="text-align:right;">товар и тару по количеству и надлежащему качеству</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="sub_text" style="height:2.5mm; font-size:7.5pt;">(должность)</td>
+				<td></td>
+				<td class="sub_text" style="height:2.5mm; font-size:7.5pt;">(подпись)</td>
+				<td></td>
+				<td class="sub_text" style="height:2.5mm; font-size:7.5pt;">(расшифровка подписи)</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="total_table1" cellpadding="0" cellspacing="0" border="0">
+		<tbody>
+			<tr style="vertical-align: bottom;">
+				<td style="width:25mm;">на сумму</td>
+				<td style="border-bottom:1px solid #000000;width:198mm;text-align:center;">$numInWords($int($gsum1))</td>
+				<td style="padding-left:3mm;">руб.</td>
+				#set $kop = ($gsum1-$math.floor($gsum1))*100
+				#if $kop > $math.floor($kop) + 0.5
+					#set $kop = $int($math.ceil($kop))
+				#else
+					#set $kop = $int($math.floor($kop))
+				#end if
+                #if $kop < 10
+                    #set $kop = '0'+str($kop)
+                #end if
+				
+				<td style="border-bottom:1px solid #000000; width:20mm;text-align:center;">$kop</td>
+				<td style="text-align:right;">коп.</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="sub_text" style="height:2.5mm; font-size:7.5pt;">(прописью)</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="total_table1" cellpadding="0" cellspacing="0" border="0">
+		<tbody>
+			<tr style="vertical-align: bottom;">
+				<td style="width:25mm;">Получил</td>
+				<td style="border-bottom:1px solid #000000; width:30mm;"></td>
+				<td style="width:3mm;"></td>
+				<td style="border-bottom:1px solid #000000; width:30mm;"></td>
+				<td style="width:3mm;"></td>
+				<td style="border-bottom:1px solid #000000; width:75mm;"></td>
+				<td style="text-align:right;"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="sub_text" style="height:2.5mm; font-size:7.5pt;">(должность)</td>
+				<td></td>
+				<td class="sub_text" style="height:2.5mm; font-size:7.5pt;">(подпись)</td>
+				<td></td>
+				<td class="sub_text" style="height:2.5mm; font-size:7.5pt;">(расшифровка подписи)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+

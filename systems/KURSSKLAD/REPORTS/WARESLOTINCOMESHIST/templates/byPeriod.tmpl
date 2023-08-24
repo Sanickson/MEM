@@ -1,0 +1,18 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REPORTS.WARESLOTINCOMESHIST.templates.main
+
+#def filtersData
+    <script type="text/javascript" src="$sp_js/byPeriod.js"></script>
+
+	<form class="buttons" id="frm">
+        $_('Склад'): <select id="whid" name="whid"></select>&nbsp;&nbsp;&nbsp;
+		$_('Период'): <input id="bdate" name="bdate" type="text" size="8" />&nbsp;
+		<input id="edate" name="edate" type="text" size="8" />&nbsp;&nbsp;&nbsp;
+        <button style="button" type="submit"><img src="$eng_img/arrows/arrow_right.png"></button>
+	</form>
+#end def
+
+#def engineData
+    <div id="dvMain" style="width:100%;"></div>
+#end def
+

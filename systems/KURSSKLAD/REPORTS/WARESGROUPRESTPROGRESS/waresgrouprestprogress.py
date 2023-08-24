@@ -1,0 +1,65 @@
+# -*- coding: utf-8 -*-
+from systems.KURSSKLAD.ksprav import KSprav
+from systems.KURSSKLAD.REPORTS.WARESGROUPRESTPROGRESS.templates.main import main as tmplmain
+from systems.KURSSKLAD.REFERENCE.SPWARES.wareslotincomes import WaresLotIncomes
+
+
+class WaresGroupRestProgress(KSprav, WaresLotIncomes):
+    
+    ifaceCode = 'WGREST'
+    
+    ''' 
+        unitview = view использовать ед.отображения
+        siteverify = true данные о выверке
+    '''
+    needsv = None
+    
+    def index(self, id_system=None):
+        KSprav.index(self, id_system)
+        self.needsv = self.dbExec(sql='select * from RBS_GET_CONFIG(?,?)',params=[self.ifaceCode,'siteverify'],fetch='one')['VAL']
+        return self.drawTemplate(templ=tmplmain, data=[])
+    index.exposed = True
+    
+    def getObjects(self):
+        return self.pyDumps(data=self.listZoneObjects(self.GetKEmployeeID()),ext_data={'curzone':self.employeeObj(self.getIfaceVar('manid'))})
+    getObjects.exposed = True
+
+    def locWares(self, wcode=None, wname=None, wbarcode=None, objid=None):
+        dSet = self.dbExecC(sql='select sl.* from K_WARESGROUP_REST_LOCATE(?,?,?,?,?) sl order by sl.WCODE',
+                            params=[wcode,wname,wbarcode,objid,self.needsv],fetch='all')
+        return self.pyDumps(data=dSet,ext_data={'wgid':''})
+    locWares.exposed = True
+    
+    def waresByGroup(self, wgid=None, objid=None):
+        dSet = self.dbExec(sql='select * from K_WARESGROUPEREST_LIST(?,?)',params=[wgid,objid],fetch='all')
+        return self.pyDumps(data=dSet,ext_data={'wgid':wgid, 'objid': objid})
+    waresByGroup.exposed = True
+    
+    def waresByWares(self, waresid=None, objid=None):
+        dSet = self.dbExec(sql='select * from K_WARESGROUPREST_CALCDATA(?,?)',params=[waresid,objid],fetch='one')
+        return self.pyDumps(data=dSet,ext_data={'waresid':waresid})
+    waresByWares.exposed = True
+ 
+    def listWaresLot(self, wid,objid):
+        try:
+            wl = self.dbExec(sql="select * from K_WH_WARESGROUPREST_WLOT(?,Null,?) where WLPRODUCTDATE > '01.01.1900' order by WLPRODUCTDATE",params=[wid,objid],fetch='all')
+        except Exception as exc:
+            return self.pyDumpsExc(exc=exc)
+        return self.pyDumps(data=wl,ext_data={'WID':wid})
+    listWaresLot.exposed = True
+    
+    def listWaresLotItems(self, wlid):
+        try:
+            wli=self.dbExec(sql='select * from K_WH_SPWARES_WLOTITEMS(?)',params=[wlid],fetch='all')
+        except Exception as exc:
+            return self.pyDumpsExc(exc=exc)
+        return self.pyDumps(data=wli,ext_data={'WLID':wlid})
+    listWaresLotItems.exposed = True        
+
+    def listWaresCargo(self, wid, objid, dbeg, dend):
+        try:
+            cg = self.dbExec(sql='select * from K_WARESGROUP_REST_CARGO(?,?,?,?)',params=[wid,objid,dbeg,dend],fetch='all')
+        except Exception as exc:
+            return self.pyDumpsExc(exc=exc)
+        return self.pyDumps(data=cg,ext_data={'WID':wid})
+    listWaresCargo.exposed = True

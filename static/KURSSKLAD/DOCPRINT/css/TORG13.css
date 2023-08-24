@@ -1,0 +1,173 @@
+html{
+    width:264mm;
+    /*	width:1058px;*/
+    /* 	height:200mm; */
+    line-height:9.5pt;
+    font-family:'Times New Roman', Georgia, Times, serif;
+    font-size:8pt;
+
+}
+body{
+    width:264mm;
+    /*	width:1058px;*/
+    /* 	height:200mm; */
+    margin:0;
+    padding:0;
+}
+.up_stamp{
+    position:relative;
+    float:right;
+    clear:both;
+    padding-right:4px;
+    margin-bottom:3mm;
+}
+.table_1{
+    border-collapse: collapse;
+    width:100%;
+    border:0;
+    clear: both;
+}
+.table_1 td{
+    height:5mm;
+}
+table.table_1 tbody tr td table{
+    width:100%;
+    height:100%;
+    border-collapse: collapse;
+}
+.sub_text{
+    text-align:center;
+    font-size:6pt;
+    vertical-align:top;
+    line-height:6pt;
+    height:2mm;
+}
+.order_title{
+    width:100%;
+    text-align:center;
+    clear:both;
+    float:right;
+    margin-bottom:4.5mm;
+    margin-top:5mm;
+}
+.title_table{
+    width:150mm;
+    float:right;
+    margin-right:50mm;
+}
+.title_table tbody tr td{
+    vertical-align:middle;
+    border:1px solid #000000;
+    font-size:9pt;
+}
+.order_table, .order_table_2{
+    width:100%;
+    margin-top:4mm;
+    border:1px solid #000000;
+    border-right:0;
+    border-bottom:0;
+    border-left:0;
+    clear:both;
+    border-collapse:collapse;
+}
+.order_table thead{
+    height:15mm;
+    font-size:11pt;
+}
+.order_table thead tr td{
+    font-size:11pt;
+    text-align:center;
+    vertical-align:middle;
+    border:1px solid #000000;
+    line-height:10pt;
+}
+.order_table_2 thead{
+    height:24mm;
+    font-size:9pt;
+}
+.order_table_2 thead tr td{
+    font-size:9pt;
+    text-align:center;
+    vertical-align:middle;
+    border-right:1px solid #000000;
+    border-bottom:1px solid #000000;
+    line-height:10pt;
+}
+.order_table tfoot td, .order_table_2 tfoot td{
+    border:0;
+    font-size:9pt;
+    text-align:center;
+    vertical-align:middle;
+}
+.order_table tr{
+    border-left:1px solid #000000;
+    height:4mm;
+}
+.order_table_2 tr{
+    border-left:1px solid #000000;
+    height:4mm;
+}
+.order_table tfoot tr, .order_table_2 tfoot tr{
+    border:0;
+}
+.order_table tbody tr td{
+    vertical-align:bottom;
+    border:1px solid #000000;
+    font-size:10pt;
+    text-align:center;
+    height:8mm;
+}
+.order_table_2 tbody tr td{
+    vertical-align:bottom;
+    border:1px solid #000000;
+    border-top:0;
+    border-right:1px solid #000000;
+    border-bottom:1px solid #000000;
+    border-left:0px;
+    font-size:10pt;
+    text-align:center;
+}
+.form_otherside{
+    position:relative;
+    float:right;
+    clear:both;
+    padding-right:4px;
+    margin-bottom:4mm;
+    margin-top:4mm;
+    font-size:9pt;
+}
+.total_table1{
+    width:100%;
+    margin-top:4mm;
+    clear:both;
+    font-size:12pt;
+}
+.total_table1 tr td{
+    border:0;    
+}
+.table_stamp_1, .table_stamp_2{
+    font-size:12pt;
+    margin-top:1mm
+}
+.table_stamp_2{
+    width:100%;
+}
+.table_stamp_2 td{
+    height:6mm;
+}
+.form_otherside{
+    clear:both;
+    display:inline-block;
+    page-break-before: always;
+}
+.stamp{
+    clear:both;
+    display:inline-block;
+    page-break-inside:avoid;
+    width:100%;
+}
+.barcode {
+    font-family: "Free 3 of 9 Extended", "Free 3 of 9";
+    font-size: 30pt;
+    height: 30px;
+}

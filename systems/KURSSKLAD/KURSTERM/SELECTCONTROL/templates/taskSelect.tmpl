@@ -1,0 +1,12 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+
+#def mainData
+
+   <b> № $docnum от #filter DateFilter $docdate #end filter # </b>
+   <br> № $TID ($TSGCODE)
+   <br>$MANFIO<br><br>
+   <a href="startCntrlDbl?seltid=$TID">$_('Начать параллельный контроль')</a>
+#end def
+

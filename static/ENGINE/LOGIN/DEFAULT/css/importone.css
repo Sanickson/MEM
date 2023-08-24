@@ -1,0 +1,129 @@
+/**********************************
+Kashko Y
+***********************************/
+
+body{
+    clear: both !important;
+    clear: left !important;
+    clear: right !important;
+    background-color:white !important;
+    background-image:url(../images/back.png) !important;
+    background-position:left !important;
+    background-repeat:repeat-y !important;
+    font-family:  verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    }
+
+#loginForm{
+    margin-top:80px;
+    height: 415px;
+    width: 363px;
+    background-image:url(../images/loginform.png);
+    background-repeat:no-repeat;
+    background-position:center top;
+    border: 1px solid #E1E1E1;
+    }
+
+form.login fieldset {
+    padding: 10px;
+    border: 0 none;
+    margin: 0px;
+    position: absolute;
+    top: 230px;
+    width: 343px
+}
+
+fieldset>div {
+    display: block;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+fieldset div[name="username"] div:first-of-type, fieldset div[name="password"] div:first-of-type {
+    width: 30%;
+    display: inline-block;
+    text-align: right;
+}
+div span {
+    margin-right: 10px;
+}
+
+fieldset div[name="username"] div:nth-child(2) {
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+}
+
+fieldset div[name="password"] div:nth-child(2) {
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+}
+
+#password{
+    width: 67%;
+}
+
+#username{
+    width: 100%;
+}
+#username, #password {
+    -moz-border-radius: 2px;
+    border-radius:2px;
+    border-color: #C8C8C8 #939393 #C8C8C8 #C8C8C8;
+    border-style: solid;
+    border-width: 2px 1px 1px;
+}
+
+div.links{
+    color: #1499D1;
+}
+
+
+#loginForm.login fieldset p label{
+    left: -5px;
+   //left: -50px; /*IE*/
+    position: relative;
+}
+
+.buttons button.submit.new{
+    background-image: url("../images/enterbutt.png") !important;
+    border: 1px solid #999 !important;
+    height: 30px;
+    padding-top: 0 !important;
+    width: 92px !important;
+    font-family: sans-serif, Lucida Grande,Tahoma,Arial,Verdana !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    color: #606370 !important;
+    margin-left: 0px !important;
+    cursor:pointer;
+        /*======next for IE=======*/
+    left /*\**/:120px\9 !important;
+    top /*\**/:160px\9 !important;
+}
+
+.buttons button.submit.new:hover{
+    background-image: url("../images/enterbutthover.png") !important;
+    color:black !important;
+}
+
+#error-wrap {
+    display: block;
+    height: 40px;
+    padding-bottom: 0;
+    color: #F73D67;
+}
+
+
+#error-exclamation {font-weight: bold;}
+input {    border: 1px solid #D24E6A; }
+input:focus { border: 1px dotted #D24E6A; }
+input.error { border: 1px dotted #D24E6A; }
+form.login .gray * { color: gray; }
+
+form.login fieldset div a{
+    color: #1499d1;
+}
+
+

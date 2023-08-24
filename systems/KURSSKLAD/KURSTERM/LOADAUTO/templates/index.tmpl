@@ -1,0 +1,28 @@
+#encoding utf-8
+
+#from systems.KURSSKLAD.cheetahutils import coalesceValue
+#from systems.KURSSKLAD.cheetahutils import getNumFromName
+
+#def $system_help = True
+#end def
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+	<form action="main">
+        ШК: <input type="text" id="barcode:scan:text" name="barcode" title="$_('Ворота'),$_('Авто'),$_('Поддон')"><br>
+	</form>
+    <hr>    
+	#if $varExists('$datalist') and $datalist		
+		<table>
+		#for $item in $datalist
+			<tr>
+				<td><a href="gate?id=$item.GID">$getNumFromName($item.GNAME)</a></td>
+				<td>$coalesceValue($item.ANAME,'----------')</td>
+			</tr>
+		#end for
+		</table>
+	#end if
+	
+#end def
+
+

@@ -1,0 +1,13 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+    <form action='wuMain'>
+        $_('ШК'): <input type='text' name='barcode' id=':scan' title="$_('Товар')">
+    </form>
+#end def
+
+

@@ -1,0 +1,19 @@
+#encoding utf-8
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th id="labelSG"></th></tr>
+	<tr><td><select id="sgid"  name=sgid ></select></td></tr>
+#else
+    <label id="labelSG" for="sgid" style="width:5%;"></label>
+    <select id="sgid" class="wid" name=sgid style="width:8%;"></select>
+#end if
+
+
+
+<script src="$sps_js.KURSSKLAD/embed/selgroup.js"></script>
+<script>
+  \$(document).ready(function() {
+        \$('#sgid').selectSelGroup();
+        \$('#whmodeid').changeSelGroup(false);
+        \$('#whid').changeSelGroup(true);
+  });
+</script>

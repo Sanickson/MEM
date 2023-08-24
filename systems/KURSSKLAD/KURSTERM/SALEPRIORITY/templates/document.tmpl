@@ -1,0 +1,43 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    <span>$_('Документ:') <b>$NUMBER</b></span>
+    <br>
+    <u>#filter DateFilter2 $DOCDATE #end filter</u>
+    <hr>
+    #if $varExists('$datalist') and $datalist and $datalist[0].GCODE
+        <p><a href='waresDocIncomePriority?docid=$DOCID' title="$_('Приоритет для всех товаров в документе')">$_('Приоритет на документ')</a></p>
+        <table>
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th>$_('Код')</th>
+                <th>$_('Товар')</th>
+              </tr>
+            </thead>
+            <tbody>
+            #for $item in $datalist
+              <tr>
+                #if $item.PR == -1
+                    #set $classname = 'gray'
+                #elif $item.PR == 0
+                    #set $classname = 'green'
+                #elif $item.PR == 1
+                    #set $classname = 'yellow'
+                #else
+                    #set $classname = 'red'
+                #end if
+                <td class="$salePriorityClass($item.PR)"><b>&nbsp;&nbsp;</b></td>
+                <td>
+                    <a href="wares?wid=$item.WID">$item.GCODE</a>
+                </td>
+                <td style="text-align: left; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 250px;">
+                    $item.GNAME
+                </td>
+              </tr>
+            #end for
+            </tbody>
+        </table>
+    #end if
+#end def

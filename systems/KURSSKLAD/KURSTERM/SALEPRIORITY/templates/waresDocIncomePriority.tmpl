@@ -1,0 +1,38 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import Quantity
+
+#def mainData
+    <u><b>$_('Все товары')</b></u><br>
+    <span>$_('Документ:') <b>$NUMBER</b></span>
+    <br>
+    <u>#filter DateFilter2 $DOCDATE #end filter</u>
+    <hr>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>$_('Приоритет')</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="green"><b>0</b></td>
+        <td><a href="waresDocIncomePriority?docid=$DOCID&priority=0">$_('Обычный')</a></td>
+      </tr>
+      <tr>
+        <td class="yellow"><b>1</b></td>
+        <td><a href="waresDocIncomePriority?docid=$DOCID&priority=1">$_('Высокий')</a></td>
+      </tr>
+      <tr>
+        <td class="red"><b>2</b></td>
+        <td><a href="waresDocIncomePriority?docid=$DOCID&priority=2">$_('Срочный')</a></td>
+      </tr>
+      <tr>
+        <td class="gray"><b>-1</b></td>
+        <td><a href="waresDocIncomePriority?docid=$DOCID&priority=-1">$_('Запрет')</a></td>
+      </tr>
+    </tbody>
+  </table>
+#end def

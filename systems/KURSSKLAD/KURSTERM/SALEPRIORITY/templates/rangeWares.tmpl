@@ -1,0 +1,19 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    #if $varExists('$datalist') and $datalist
+        #if not $varExists('$url')
+            #set $url = 'wares?wid='
+        #end if
+        <br><br>
+            <u><b>$_('Выберите товар'):</b></u>
+        <hr>    
+        #for $item in $datalist
+            <b>(<u><a href='$url$item.WARESID'>$item.CODE</a></u>)</b> $item.NAME<br><br>
+        #end for
+    #end if	
+    
+#end def
+
+

@@ -1,0 +1,95 @@
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+	text-align: left;
+}
+
+/* Modal Content */
+.modal-content {
+	position: relative;
+	overflow-y: hidden;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 30%;
+
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+	color: white;
+	float: right;
+	font-size: 12px;
+}
+
+.close:hover,
+.close:focus {
+	color: #f00;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-header {
+	margin: 0 0 7px;
+	padding: 2px 4px;
+	background-color: #000;
+	color: white;
+	text-align: center;
+}
+
+.modal-body {
+	padding: 0px 16px;
+	align-content: center;
+}
+
+
+div.leftTC {
+	width: 50%;
+	text-align: left;
+	display: inline-block;
+}
+
+div.leftTC input, div.leftTC select  {
+	width: 100%;
+	padding: 0;
+}
+
+
+div.rightTC {
+	width: 50%;
+	text-align: right;
+	display: inline-block;
+}
+.errorSelect{
+    color: red !important;
+}
+input[name="rtnumber"] {
+    width: 1em;
+}

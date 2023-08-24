@@ -1,0 +1,33 @@
+#encoding utf-8
+#extends systems.engine_main
+
+#def $system_help = True
+#end def
+
+#def systemNavigation
+    <link rel="stylesheet" type="text/css" media="screen" href="$sps_css.KURSSKLAD/k.progressbar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="$sps_css.KURSSKLAD/jquery.contextMenu.css"/>
+
+    <script type="text/javascript" src="$eng_js/ui.dialog.min.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.rightClick.min.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.rowFocus.min.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="$eng_js/kTblScroll.min.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.contextMenu.min.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.form.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.messages.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+    <script type="text/javascript" src="$eng_js/table-jq.js"></script>
+    <script type="text/javascript" src="$eng_js/table-type.js"></script>
+    <script type="text/javascript" src="$sp_js/incorrectsite.js"></script>
+    <form id="frmSelectObj" class="buttons">
+        Обьект
+        <select id="selectObj"></select>&nbsp;
+        <button type="submit" id="btnSearch" title="Поиск"><img src="$eng_img/arrows/arrow_right.png"></button>
+    </form>
+#end def
+#def engineData
+    <div id="dvMain" style="width:100%;">
+
+    </div>
+#end def

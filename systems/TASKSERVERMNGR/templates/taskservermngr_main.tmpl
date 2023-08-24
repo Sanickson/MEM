@@ -1,0 +1,59 @@
+#encoding utf-8
+#extends systems.TASKSERVERMNGR.templates.taskservermngr
+#def $system_help = True
+#end def
+
+#def taskFilter
+	<form class="buttons" id="searchList" style="display: inline-block; margin: 2px;">
+		<b style="color:#fff">Период:</b>
+		    <input type="date" id="in_date" name="in_date" required>
+		    <input type="time" id="in_ftime" name="in_ftime" value="00:00" required>
+		    <input type="time" id="in_ltime" name="in_ltime" value="23:59" required>
+            <b style="color:#fff">Тип:</b>
+            <select id="in_typequeueid" name="in_typequeueid" style="height: 21px;">
+                <option value='none'>Без фильтра</option>
+            </select>
+            <b style="color:#fff">Статус:</b>
+            <select id="in_statuscode" name="in_statuscode" style="height: 21px;">
+                <option value='none'>Без фильтра</option>
+            </select>
+            <input type="text" id="in_file" name="in_file" placeholder="Наименование файла">
+            <input type="text" id="in_params" name="in_params" placeholder="Параметры">
+            &nbsp;&nbsp;
+            <button type="submit" id="btnSearch" title="Поиск"><img src="$eng_img/actions/find.png"></button>
+	</form>
+	<form class="buttons" id="searchTask" style="display: inline-block; margin: 2px; margin-left: 50px;">
+        <input type="number" id="taskid" name="taskid" placeholder="Номер задания" required>
+        <button type="submit" id="btnSearch" title="Поиск"><img src="$eng_img/actions/find.png"></button>
+	</form>
+	<style>
+	input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
+    </style>
+#end def
+
+#def taskData
+
+	<link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    ##Scripts
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+    <script type="text/javascript" src="$eng_js/table-jq.js"></script>
+    <script type="text/javascript" src="$eng_js/table-type.js"></script>
+	<script type="text/javascript" src="$sp_js/taskservermngr_table.js"></script>
+
+
+    <div id='dvDialogTask' class='flora' style='display: none;'></div>
+    <div id='dvQueueBond' class='flora' style='display: none;'>
+
+	</div>
+
+#end def
+
+
+

@@ -1,0 +1,35 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REFERENCE.TRUCK.templates.main
+
+#def adminData
+<script type="text/javascript" src="$sp_js/truckdriver.js"></script>
+
+<script type="text/javascript">
+  jQuery(function(){
+    $.listDrivers();
+  });
+</script>
+
+
+<div id="dvDrivers">
+  <table id="tblDrivers">
+    <thead>
+    <tr>
+      <th ksort="text">ФИО</th>
+      <th ksort="text">Контактные данные</th>
+      <th ksort="text">Транспортная компания</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot>
+    <tr>
+      <th class="buttons" colspan="4">
+        <button type="button" title="Добавить" class="add" code="add"><img src="$eng_img/actions/add.png" border="0"></button>
+        <button type="button" title="Изменить" class="cng" code="cng"><img src="$eng_img/actions/edit.png" border="0"></button>
+        <button type="button" title="Удалить" class="del" code="del"><img src="$eng_img/actions/delete.png" border="0"></button>
+      </th>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+#end def

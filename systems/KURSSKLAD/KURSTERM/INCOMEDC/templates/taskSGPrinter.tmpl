@@ -1,0 +1,33 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    <b><u>$ALIAS</u></b><br><br>
+    <hr>
+    <form id=frm action=taskSGPrinter>
+        <input type=hidden name=tid value=$taskid>
+        <input type=hidden name=prid value=$printerid>
+        <a href="javascript: clearForm()">$_('Очистить')</a><br><br>
+
+        #for $item in $datalist
+            #if $item.SGID
+                $item.SGCODE = <input type=text id="::int" name="SG_$item.SGID" value="$item.CNT" size="3" title="$item.SGNAME.replace('"',"'")"><br>
+            #else
+                <font class="red"><b>$_('Без ГО') = $item.CNT</b></font><br><br>
+            #end if
+        #end for
+        <br>
+        <input type="submit" value="$_('Печать')">
+    </form>
+
+	<script>
+	    function clearForm(){
+	        var frm = document.getElementById('frm');
+	        var inputs = frm.getElementsByTagName('input');
+            for (var i=0; i<inputs.length; i++) {
+                if (inputs[i].name && inputs[i].name.indexOf('SG_') == 0)
+                    inputs[i].value = '0';
+            }
+	    }
+	</script>
+#end def

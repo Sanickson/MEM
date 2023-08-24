@@ -1,0 +1,35 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import waresQuantity
+
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    <br>
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/waresHeader.tmpl'
+    <hr>
+    #if $SITEID
+        <b>$SITENAME</b>
+
+        #if $varExists('$datalist') and $datalist and len($datalist) > 0
+            <br><br>
+            <form action='taskWares'>
+                <input type=hidden name=twid value=$TWID>
+                $_('Отсканируйте паллет из списка'): <br> <input type=text name=barcode id="barcode:scan">
+            </form>
+            <br>
+            #for $item in $datalist
+                <b>$item.PNUM</b> = #filter DateFilter2$item.PRDATE#end filter#<br>
+                $waresQuantity($item.AMOUNT,$item.SUCNT,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)<br><br>
+            #end for
+        #else
+            <br><br>
+            <a href='taskWaresNoAmount?tid=$TID&twid=$TWID' onClick="return confirm('$_('Не хватает на ') $SITENAME\n---------------------------------\n$_('Вы уверены?')')">$_('Не хватает на ') $SITENAME</a><br>
+        #end if
+    #else
+        <a href='taskWaresPalletNo?tid=$TID&twid=$TWID' onClick="return confirm('Подтвердите невозможность отборки позиции')">$_('Нет товара на остатках')</a>
+    #end if
+    <br>
+    <a href='taskWaresNoPlace?tid=$TID&twid=$TWID' onClick="return confirm('$_('Нет места на паллете отборки')\n---------------------------------\n$_('Вы уверены?')')">$_('Нет места на паллете отборки')</a>
+#end def
+

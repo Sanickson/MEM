@@ -1,0 +1,50 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+   
+    <b><u>$FROMNAME</u></b><br>
+    <b><u>$TONAME</u></b><br>
+    #if $DOCID
+        <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b>
+    #end if
+
+##    <form action="userTaskWares">
+##        <input type="hidden" name="tid" value="$TID">
+##        $_('ШК'): <input type='text' name='barcode' id='barcode:scan' title="$_('Товар')">
+##    </form>
+
+    #if $varExists('$datalist')
+    <table>
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>$_('Код')</th>
+                <th>$_('План')</th>
+                <th>$_('Факт')</th>
+            </tr>
+        </thead>
+        <tbody>
+        #for $item in $datalist
+            <tr>
+                #if $item.TWSTAT == '0'
+                    <td>-</td>
+                #elif $item.TWSTAT == '1'
+                    <td>?</td>
+                #elif $item.TWSTAT == '2'
+                    <td>v</td>
+                #else
+                    <td>&nbsp;</td>
+                #end if
+                <td><a href="javascript: if (confirm('$_('Отменить позицию?')')) location.href='qVerifyUserTaskSelectTWCancel?tid=$TID&twid=$item.TWID'" title="$item.WNAME.replace('"',"'")">$item.WCODE</a></td>
+                <td>$viewQuantity($item.QPLAN,$item.VUF,$item.VUC,$item.MUF,$item.MUC)</td>
+                <td>$viewQuantity($item.QFACT,$item.VUF,$item.VUC,$item.MUF,$item.MUC)</td>
+            </tr>
+        #end for
+        </tbody>    
+    </table>
+    #end if
+#end def
+

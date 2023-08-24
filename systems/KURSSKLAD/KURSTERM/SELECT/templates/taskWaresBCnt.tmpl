@@ -1,0 +1,86 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    <b><u>($wcode)</u></b>$wname<br>
+    $_('План'): <b>#filter Quantity$cntplan#end filter#</b> (#filter Quantity$QO#end filter#$MUCODE)<br>
+    #if $varExists('$QS') and $QS and float($QS)>0.00001
+        $_('Факт'):
+        <a href="taskWaresClear?twid=$TWID" title="$_('Очистить')" onClick="return confirm('Вы действительно хотите начать заново?')">#filter Quantity$cntscan#end filter#</a>
+        (#filter Quantity$QO#end filter#$MUCODE)
+        <br>
+    #end if
+    #if $PNUM
+        <b>$PNUM</b>($SITENAME)
+    #else
+        <b>$SITENAME</b>
+    #end if
+
+
+    <hr>
+    #set $QSite = 0
+    #set $PBoxCnt = 0
+    #set $PAmount = 0
+    #if $varExists('$datalist')
+        <form id="frm" action=taskWares method="post">
+            <input type=hidden name=twid value=$TWID>
+            <input type=hidden name=weight value=#filter Quantity$WEIGHT#end filter#>
+            $_('Короб'): <b>#filter Quantity$WEIGHT#end filter#</b>
+            <br>
+        #for $item in $datalist
+            <br>
+            #if $item.COUNTRYNAME
+                #if $item.PRODUCERNAME
+                    $item.COUNTRYNAME: <u>$item.PRODUCERNAME</u>
+                #else
+                    $item.COUNTRYNAME
+                #end if
+                <br>
+            #elif $item.PRODUCERNAME
+                <u>$item.PRODUCERNAME</u><br>
+            #end if
+
+            #set $name = 'WL_%s_%s' % ($item.WLOTID, 0)
+            <b>#filter DateFilter2$item.PDATE#end filter#</b>:<input type="text" name="$name" id="::int" value="$item.CALCCNT" size="1" onchange="recalc()">
+            <b>$item.PBOXCNT</b>(#filter Quantity$item.PAMOUNT#end filter#)<br>
+            #set $QSite += int($item.CALCCNT)
+            #set $PBoxCnt += int($item.PBOXCNT)
+            #set $PAmount += float($item.PAMOUNT)
+        #end for
+        #if $len($datalist) > 0
+            <hr>
+            <b id=summary>$QSite</b> (#filter Quantity$($QSite*$WEIGHT)#end filter#) / <b>$PBoxCnt</b> (#filter Quantity$PAmount#end filter#)<br>
+##            <b id=summary>$QSite</b> / <b>$PBoxCnt</b> (#filter Quantity$PAmount#end filter#)<br>
+        #end if
+
+            <input type=submit value="$_('Отобрать')">
+        </form>
+    #end if
+
+    <script>
+        function recalc(){
+            if (!document.getElementById('summary'))
+                return;
+            var frm = document.getElementById('frm');
+            var inputs = frm.getElementsByTagName('input');
+            var amount = 0;
+            for (var i=0; i<inputs.length; i++) {
+                if (inputs[i].name.indexOf('WL_') == 0 && inputs[i].value)
+                    amount += parseFloat(inputs[i].value);
+            }
+            var options = select.getElementsByTagName('option');
+            document.getElementById('summary').innerHTML = amount;
+        }
+        recalc();
+
+
+        function setVal(val){
+            if (/WL_\d+/.test(GElementsList[GIndex].name)){
+                GElementsList[GIndex].value = val;
+                recalc();
+            }
+        }
+    </script>
+#end def    
+

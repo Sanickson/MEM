@@ -1,0 +1,38 @@
+#encoding utf-8
+#extends systems.TASKSERVERMNGR.templates.taskservermngr
+#def $system_help = True
+#end def
+
+#def taskFilter
+        <div id='dvSelLoad' style='display: inline-flex; margin: 3px; align-items: center;'>
+            <b style="color:#fff;">Период автообновления:</b>
+			<select id='autoLoadList' style='margin: 3px;'>
+				<option value='none'>Отключен</option>
+				<option value='5000'>5 сек</option>
+				<option value='10000'>10 сек</option>
+				<option value='15000'>15 сек</option>
+				<option value='30000'>30 сек</option>
+				<option value='60000'>60 сек</option>
+			</select>
+		</div>
+		<div id='dvStatusTaskserver' style='display: inline-flex; margin: 3px; align-items: center;'>
+		    <b style="color:#fff;">Статус робота:</b>
+			<div id='imgStatus' style='margin: 3px;'>
+			</div>
+		</div>
+#end def
+
+#def taskData
+     <link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    ##Scripts
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+    <script type="text/javascript" src="$eng_js/table-jq.js"></script>
+    <script type="text/javascript" src="$eng_js/table-type.js"></script>
+    <script type="text/javascript" src="$sp_js/taskservermngr_perfoming.js"></script>
+
+	<div id='dvDialogTask' class='flora' style='display: none;'>
+
+	</div>
+#end def
+

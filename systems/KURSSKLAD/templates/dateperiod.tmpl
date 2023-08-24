@@ -1,0 +1,42 @@
+#encoding utf-8
+
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th>
+        #if $varExists('$dateperiodCaption')
+            $dateperiodCaption:
+        #else
+            Период:
+        #end if
+    </th></tr>
+    <tr><td>
+        <input id="dbeg" name="dbeg" style="text-align:center;" type="date">
+        <input id="dend" name="dend" style="text-align:center;" type="date">
+    </td></tr>
+#else
+    #if $varExists('$dateperiodCaption')
+        <label for="dbeg" style="width:5%;"><b>$dateperiodCaption:</b></label>
+    #else
+        <label for="dbeg" style="width:5%;"><b>$_('Период'):</b></label>
+    #end if
+    <input id="dbeg" name="dbeg" style="text-align:center;" type="date" required>
+    <input id="dend" name="dend" style="text-align:center;" type="date" required>
+#end if
+
+
+<script>
+  \$(document).ready(function() {
+    // \$.datepicker.setDefaults(\$.extend(\$.datepicker.regional['ru']));
+     \$("#dbeg,#dend")
+        #if $varExists('$dateStart')
+          .filter(':first').val(whToday('$dateStart')).end()
+        #else
+          .filter(':first').val(whToday(0)).end()
+        #end if
+
+        #if $varExists('$dateEnd')
+          .filter(':last').val(whToday('$dateEnd'));
+        #else
+          .filter(':last').val(whToday(0));
+        #end if
+  });
+</script>

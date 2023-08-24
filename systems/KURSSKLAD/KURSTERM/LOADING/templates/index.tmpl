@@ -1,0 +1,19 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+    <a href='startLoading'>$_('Начать погрузку')</a>
+    <hr>
+     #if $varExists('$datalist') and $datalist
+		#for $item in $datalist
+		    <b><a href='task?tid=$item.TID&sid=$item.SID'>$item.SNAME</a></b>
+		    <br>
+		    <span>#filter DateTimeFilter $item.CREATETIME #end filter#</span>
+		    <br>
+		    <br>
+		#end for
+	#end if
+#end def

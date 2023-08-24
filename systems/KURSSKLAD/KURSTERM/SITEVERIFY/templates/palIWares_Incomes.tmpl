@@ -1,0 +1,138 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+    <form action="palScan">
+        <input type="hidden" name="id" value="$PAL_ID">
+        <input type="hidden" name="wid" value="$WID">
+        $_('ШК'): <input type="text" id=":scan:text" name="barcode" title="$_('МП'), $_('Поддон'), $_('Товар'), $_('Принтер')"><br>
+	</form><br>
+
+	#if $varExists('$PAL_NUM') and $PAL_NUM
+		<b><u>$PAL_NUM</u></b>($PAL_SNAME)
+	#else
+	    <b>$PAL_SNAME</b>
+	#end if
+
+    <br><b><u>($WCODE)</u></b>$WNAME<br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b><br>
+    #end if
+    #if $varExists('$USETARAWEIGHT') and ($USETARAWEIGHT == '1' or $TARAWEIGHT)
+        $_('Вес тары'):
+        #if $USETARAWEIGHT == '1' and $canTaraWeightChg
+            <a href="palWaresTara?pid=$pal_id&wid=$wid" title="$_('Изменить')">#filter Quantity$TARAWEIGHT#end filter#</a>
+        #else
+            <b>#filter Quantity$TARAWEIGHT#end filter#</b>
+        #end if
+        <br>
+    #end if
+
+    #if $varExists('$PALSELECT_TASKID') and $PALSELECT_TASKID
+	<hr>
+	    #if $varExists('$PALSELECT_CLIENTNAME') and $PALSELECT_CLIENTNAME
+	        <b><u>$PALSELECT_CLIENTNAME</u></b><br>
+	    #end if
+	    #if $varExists('$PALSELECT_DOCID') and $PALSELECT_DOCID
+	        #filter DateFilter2$PALSELECT_DOCDATE#end filter# $_('№') $PALSELECT_DOCNUM <br>
+	    #end if
+	    #if $varExists('$PALSELECT_TASKID') and $PALSELECT_TASKID
+	         $PALSELECT_TASKID
+	        #if $varExists('$PALSELECT_MANFIO') and $PALSELECT_MANFIO
+	            - <b>$PALSELECT_MANFIO</b>
+	        #end if
+	    #end if
+    <hr>
+    #else
+    <br>
+    #end if
+
+    #if $ICTCODE and $ICTCODE == 'EGAIS'
+        #if $varExists('$datalist') and len($datalist) > 0
+            #for $item in $datalist
+                #filter DateFilter2$item.productdate#end filter# =
+                    $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)<br>
+                #if $item.CNTBOXMARK + $item.CNTMARK != $item.AMOUNT
+                    <font class="yellow"><b>$_('ЕГАИС')</b></font>
+                #else
+                    $_('ЕГАИС')
+                #end if
+                = $item.CNTBOX ($item.CNTBOXMARK)
+                #if $item.CNTMARK
+                    <font class="yellow"><b>+$item.CNTMARK</b></font>
+                #end if
+                <br><br>
+            #end for
+            <hr>
+        #end if
+        <a href="verifyPalWaresEgaisStart?pid=$PAL_ID&wid=$WID">$_('Выверять')</a><br>
+    #else
+        #if $varExists('$datalist') and $datalist and len($datalist)>0
+            #set $wuamount = 0
+            #set $amount = 0
+        <form action=palletWaresSave method=post>
+            <input type=hidden name=waresid value=$wid>
+            <input type=hidden name=palletid value=$pal_id>
+            <input type=hidden name=dbeg value="$CURRENTDATETIME">
+            #if $varExists('$backurl') and $backurl
+                <input type=hidden name=backurl value="$backurl">
+            #end if
+            <table>
+                <thead>
+                    <tr>
+                        <th>$_('Дата')</th>
+                        <th>
+                            <select name=wuid id=":focus:">
+                                <option value=$MWUID selected>$MWUCODE</option>
+                              #if $VWUID:
+                                <option value=$VWUID>$VWUCODE</option>
+                              #end if
+                            </select>
+                        </th>
+                        <th>$_('Кол-во')</th>
+                    <tr>
+                </thead>
+                <tbody>
+                #for $item in $datalist
+                    #if $item.canedit == '0'
+                        #set $trClass = 'class="inactive"'
+                    #else
+                        #set $trClass = ''
+                    #end if
+                    <tr $trClass>
+                        <td>#filter DateFilter2$item.productdate#end filter#</td>
+                      #if $item.canedit == '1'
+                        #if $item.WLINCOMEID
+                            #set $name = 'WL_%s_%s' % ($item.WLOTID, $item.WLINCOMEID)
+                            <td>
+                                <input type="text" name="$name" id="::float"
+                                title="$item.SUPPLIER.replace('"',"'"), #filter DateFilter2$item.DOCDATE#end filter# №$item.DOCNUM"
+                                value="#filter Quantity$item.AMOUNT#end filter#" size="4">
+                            </td>
+                        #else
+                            #set $name = 'WL_%s_%s' % ($item.WLOTID, 0)
+                            <td><input type="text" name="$name" id="::float" value="#filter Quantity$item.AMOUNT#end filter#" size="4"></td>
+                        #end if
+                      #else
+                        <td><a href='#' title="$item.WLNUMBER">#filter Quantity$item.AMOUNT#end filter#</a></td>
+                      #end if
+                        <td>$viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)</td>
+                    </tr>
+                    #set $amount += float($item.AMOUNT)
+                #end for
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>$_('Итого'):</th>
+                        <th colspan=2>$viewQuantity($amount,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$amount#end filter#</u></b>)</th>
+                    </tr>
+                </tfoot>
+            </table>
+            <input type="submit" value="$_('Сохранить')">
+        </form>
+        #end if
+        <br>
+        <a href="palWaresAdd?id=$PAL_ID&wid=$WID&dbeg=$CURRENTDATETIME">$_('Новая партия')</a>
+    #end if
+#end def

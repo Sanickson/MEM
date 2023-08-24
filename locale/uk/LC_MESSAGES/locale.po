@@ -1,0 +1,3923 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-02-25 13:34+0300\n"
+"PO-Revision-Date: 2019-02-25 13:34+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: adm.py:31
+msgid ""
+"В логине допустимы маленькие латинские буквы, цифры, точка, подчёркивание и "
+"дефис. Логин должен начинаться с буквы. Длина 6–30 символов."
+msgstr ""
+
+#: adm.py:32
+msgid ""
+"Логин системного пользователя не может не начинаться на символ подчёркивания "
+"(_)"
+msgstr ""
+
+#: adm.py:33
+msgid "Недостаточна сложность пароля"
+msgstr ""
+
+#: adm.py:34
+msgid "Почтовый адрес (email) введен неверно"
+msgstr ""
+
+#: adm.py:35
+msgid "Неверно повторён новый пароль"
+msgstr ""
+
+#: adm.py:36
+msgid "Логин уже занят"
+msgstr ""
+
+#: adm.py:37
+msgid "Пользователь с таким email уже зарегистрирован"
+msgstr ""
+
+#: adm.py:38
+msgid "Пользователь не найден"
+msgstr ""
+
+#: adm.py:39
+msgid "Логин пользователя не найден в Active Directory"
+msgstr ""
+
+#: adm.py:42
+msgid "Код роли уже занят"
+msgstr ""
+
+#: adm.py:43
+msgid "Название роли уже занято"
+msgstr ""
+
+#: adm.py:44
+msgid ""
+"В коде роли допустимы БОЛЬШИЕ латинские буквы, цифры, точка, подчёркивание и "
+"дефис. Код роли должен начинаться с буквы. Длина 1–40 символов. Может быть "
+"пуст."
+msgstr ""
+
+#: adm.py:45
+msgid "Код системной роли не может не начинаться на символ подчёркивания (_)"
+msgstr ""
+
+#: adm.py:46
+msgid "Нет прав удалять системную роль"
+msgstr ""
+
+#: adm.py:49
+msgid "Запрошена генерация ШК неизвестного типа"
+msgstr ""
+
+#: adm.py:1462 syslogin.py:239
+msgid "Ошибка Active Directory:"
+msgstr ""
+
+#: adm.py:1964
+msgid "Ошибка назначения прав по умолчанию"
+msgstr ""
+
+#: api/templates/metrics_main.py:115
+msgid "Cистема"
+msgstr ""
+
+#: api/templates/metrics_main.py:128 api/templates/metrics_main.py:170
+#: api/templates/metrics_metric.py:129 api/templates/metrics_metric.py:168
+msgid "Путь"
+msgstr ""
+
+#: api/templates/metrics_main.py:141 api/templates/metrics_metric.py:142
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2106
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2180
+#: static/ENGINE/UPDATENEWS/js/updatenews.js:55
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgedit.py:110
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:112
+msgid "Описание"
+msgstr ""
+
+#: api/templates/metrics_main.py:158 api/templates/metrics_metric.py:156
+msgid "Имя метрики"
+msgstr ""
+
+#: api/templates/metrics_main.py:164 api/templates/metrics_metric.py:162
+msgid "Описание метрики"
+msgstr ""
+
+#: api/templates/metrics_main.py:201 api/templates/metrics_metric.py:199
+msgid "Кол-во метрик"
+msgstr ""
+
+#: api/templates/metrics_metric.py:106
+msgid "Метрики системы"
+msgstr ""
+
+#: api/templates/metrics_metric.py:116
+#: static/ENGINE/UPDATENEWS/js/updatenews.js:54
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgrights.py:97
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgrights.py:94
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_dlgrights.py:97
+msgid "Система"
+msgstr ""
+
+#: base.py:257 systems/KURSSKLAD/KURSTERM/BLOCKPALLET/blockpallet.py:28
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:112
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:120
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:162
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:198
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:200
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:216
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:153
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:185
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:112
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:243
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:157
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:227
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:313
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:349
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:794
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:74
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:86
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:108
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:120
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:139
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:151
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:185
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:307
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:428
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:451
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:493
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:533
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:550
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:562
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:637
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:725
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:739
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:741
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:743
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:770
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:832
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:834
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:933
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:940
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:807
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:173
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:189
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:206
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:343
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:358
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/transunitreturn.py:27
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/transunitreturn.py:42
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/transunitreturn.py:65
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/waresslot.py:37
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/waresslot.py:47
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/waresslot.py:68
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/waresslot.py:78
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/waresunit.py:41
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:53
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:92
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:125
+#: systems/KURSSKLAD/KURSTERM/pallet.py:168
+#: systems/KURSSKLAD/KURSTERM/pallet.py:250
+#: systems/KURSSKLAD/KURSTERM/pallet.py:264
+#: systems/KURSSKLAD/KURSTERM/pallet.py:266
+msgid "Не верный ШК"
+msgstr ""
+
+#: cp_utils.py:725
+msgid "БД"
+msgstr ""
+
+#: db.py:265
+#, python-format
+msgid "DB access params of system with id=%s is not filled!"
+msgstr ""
+
+#: db.py:336
+msgid "Сессия утеряна"
+msgstr ""
+
+#: db.py:440
+#, python-format
+msgid "Base with id=%s is not found!"
+msgstr ""
+
+#: db.py:448
+#, python-format
+msgid "DB access params of base with id=%s is not filled!"
+msgstr ""
+
+#: db.py:1136
+msgid ""
+"Неверная конфигурация. Параметр db_path должен быть строкой или словарём."
+msgstr ""
+
+#: db.py:1141
+#, python-format
+msgid ""
+"Неверная конфигурация. Словарь db_path не имеет непустого значения с ключом, "
+"равным коду клиента \"%s\""
+msgstr ""
+
+#: layers.py:888
+msgid "Отсутствует эталонная база данных "
+msgstr ""
+
+#: layers.py:895
+msgid "Ошибка копирования эталонной базы данных."
+msgstr ""
+
+#: layers.py:942
+msgid "Ошибка удаления файла базы данных."
+msgstr ""
+
+#: layers.py:979
+msgid "Ошибка переименования базы данных."
+msgstr ""
+
+#: layers.py:1001 secure.py:41 systems/ENGINE/PROFILE/profile.py:307
+#: systems/ENGINE/PROFILE/profile.py:434
+msgid "Сессия утеряна!"
+msgstr ""
+
+#: py_utils.py:250
+#, python-format
+msgid ""
+"Процедура importer: попытка импортировать модуль %s вне каталога движка при "
+"параметре short_name_in_sys_modules=False"
+msgstr ""
+
+#: py_utils.py:271
+#, python-format
+msgid "'%s' is not a dir"
+msgstr ""
+
+#: py_utils.py:276
+#, python-format
+msgid "Can not create dir '%s'"
+msgstr ""
+
+#: py_utils.py:634
+msgid ""
+"Не указан почтовый адрес адресата. Введите адрес в соответствующее поле, "
+"нажав на кнопку \"Редактировать пользователя\""
+msgstr ""
+
+#: secure.py:48
+#, python-format
+msgid "У Вас нет прав на доступ к ресурсу \"%s\" либо ресурс отсутствует"
+msgstr ""
+
+#: secure.py:56
+msgid "Подсистема временно недоступна."
+msgstr ""
+
+#: secure.py:140
+msgid "Лёгкий пароль"
+msgstr ""
+
+#: secure.py:143
+msgid "Слишком короткий"
+msgstr ""
+
+#: secure.py:153
+msgid "Отсутствуют символы нижнего регистра"
+msgstr ""
+
+#: secure.py:157
+msgid "Отсутствуют символы верхнего регистра"
+msgstr ""
+
+#: secure.py:161
+msgid "Отсутствуют цифры"
+msgstr ""
+
+#: secure.py:165
+msgid "Отсутствуют специальные символы"
+msgstr ""
+
+#: secure.py:181
+msgid "Средней сложности"
+msgstr ""
+
+#: secure.py:183
+msgid "Оптимальный"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:129
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:98
+msgid "Включить"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:129
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:98
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:178
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:189
+msgid "Отключить"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:170
+msgid "Поиск клиентов..."
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:343
+msgid "Редактирование клиента"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:401
+msgid "Ошибка при сохранении клиента:"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:487
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:604
+msgid "Введите название организации"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:488
+msgid "Выберите владельца"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:489
+msgid "Введите дату регистрации"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:522
+msgid "Переименования клиента и БД"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:557
+msgid "Ошибка при переименовании организации, её кода и БД:"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:637
+msgid "Установка тарифа клиента"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:809
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:1234
+msgid "Выберите тариф"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:810
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:1235
+msgid "Введите дату начала действия тарифа"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:1042
+msgid "Редактирование тарифа клиента"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_layers.js:1054
+msgid "Добавление тарифа клиента"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:23
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:24
+msgid "Разрешены английские буквы, цифры, _"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:29
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:30
+msgid "Разрешены англо-русские буквы, цифры, пробел _ -"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:35
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:36
+msgid ""
+"Разрешены англо-русские буквы, цифры, _. 1-й символ должен быть английской "
+"буквой или _. Не допускается имя \"id\""
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:41
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:42
+msgid "Разрешены англо-русские буквы, цифры, а также пробел _ - + . |"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:47
+msgid "Введите: 1 0 пробел _ - + . | или оставьте поле пустым"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1094
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1333
+msgid "Редактирование опции"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1107
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1346
+msgid "Добавление опции"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1228
+msgid "Выберите роль(-и)"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1229
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1447
+#: static/ENGINE/EQUIPMENT/js/equipment.js:596
+msgid "Выберите тип"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1230
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1448
+msgid "Введите или выберите ID объекта"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1231
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1449
+msgid "&nbsp;Введите или выберите Имя объекта"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1232
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1450
+msgid "Выберите опцию"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1426
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1532
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1616
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1906
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1536
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1639
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1723
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1993
+msgid "Выберите из списка"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1430
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:293
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:92
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:261
+msgid "Роли"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1442
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1535
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1625
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1914
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1550
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1642
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1732
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2001
+msgid "Загрузка..."
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1531
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1638
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:302
+msgid "Объекты"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1619
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2056
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:832
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1081
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1726
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2139
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:311
+msgid "Опции"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1716
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1819
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:167
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:261
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:155
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:178
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:283
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:188
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:241
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:367
+msgid "Удалить"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1746
+msgid "Редактирование атрибута"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1758
+msgid "Добавление атрибута"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1852
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1941
+msgid "Введите или выберите имя параметра"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1853
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1942
+msgid "Введите или выберите значение параметра"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1905
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2104
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1992
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2178
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:325
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:193
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:114
+msgid "Атрибуты"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1943
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2029
+msgid "Выбраны противоречивые значения аттрибута"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1943
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2029
+msgid "используем первое"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1954
+msgid "Заменить у атрибута"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1954
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2038
+msgid "существующее значение"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:1955
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2039
+msgid "на новое"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2004
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2086
+msgid "Введите или выберите ID объекта для поиска опций этого объекта"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2009
+msgid "Выберите опцию для поиска атрибутов аналогичных опций"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2039
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2121
+msgid "Выберите опцию из списка"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2057
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2140
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:111
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:96
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:123
+msgid "Тип"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2057
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2140
+msgid "ID объекта"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2057
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2140
+msgid "Название объекта"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2057
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2140
+msgid "ID опции"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2057
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2140
+msgid "Название опции"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2060
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2142
+msgid "Разработчик не определил опций"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2106
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2180
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_attrs.py:99
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_attr.py:92
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:148
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:203
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:168
+msgid "Имя"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2106
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2180
+msgid "Допустимые значения"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2106
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2180
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_attrs.py:105
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_attr.py:103
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:209
+msgid "Значение"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2106
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_attrs.py:111
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_attr.py:114
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:215
+msgid "Слияние"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2116
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2190
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:101
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:173
+msgid "Выбрать"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2117
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2191
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgedit.py:180
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgrename.py:133
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgsettarif.py:186
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_attr.py:135
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:258
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_okcancel.py:108
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:126
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgedit.py:161
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_change_passwd.py:154
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:194
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgaddtype.py:137
+msgid "Отмена"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2164
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2236
+msgid "Опция не имеет атрибутов"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2206
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2273
+msgid "Неверное значение атрибута"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_roles.js:2299
+msgid ""
+"Удалить уже введённые атрибуты опции перед добавлением новых? Отмена - "
+"объединение."
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:437
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:102
+msgid "Управление системами"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:637
+msgid "Работа с системами"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:640
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:648
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:658
+msgid "Не указан"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:742
+msgid "Ошибка при сохранении информации о системе в базу..."
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:833
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:852
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1540
+msgid "Пользователи"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:913
+msgid "Выберите пользователей из списка доступных"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:976
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1008
+msgid "Будут утеряны изменения по"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:978
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1010
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1138
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1139
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1160
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1161
+msgid "пользователю"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:981
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1013
+msgid "Продолжить?"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1136
+msgid "Сохранить изменения по"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1139
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1161
+msgid "пользователям"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1153
+msgid "Изменений не обнаружено. Обновить дерево опций?"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1158
+msgid "Отменить изменения по"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1263
+msgid "Пользователь"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1263
+msgid "не найден в дереве"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1446
+msgid "Выберите пользователя(-ей)"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1847
+msgid "Редактирование аттрибута"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:1853
+msgid "Добавление аттрибута"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2038
+msgid "Заменить у аттрибута"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2091
+msgid "Выберите опцию для поиска аналогичных опций"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2096
+msgid "Выберите тип объекта для поиска опций объекта этого типа"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_systems.js:2594
+msgid "Пользователь не найден в дереве!"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:145
+msgid "Поиск тарифов..."
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:354
+msgid "Редактирование тарифа"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:367
+msgid "Добавление тарифа"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:415
+msgid "Ошибка при сохранении тарифа:"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:505
+msgid "Введите название тарифа"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:506
+msgid "Введите целое число для поля Сортировка"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:507
+msgid "Введите целое число для поля \"Срок действия\""
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:508
+msgid "Введите целое число для поля \"Напоминать за\""
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_tarifs.js:541
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:211
+msgid "Права тарифа"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:953
+msgid "Вы действительно хотите удалить ШК типа \""
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:988
+msgid "Ошибка при формировании карты доступа с ШК авторизации:\n"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:997
+#: static/ENGINE/PROFILE/js/printbc.js:52
+msgid ""
+"Карта доступа с ШК не может быть сформирована, поскольку всплывающие окна в "
+"браузере заблокированы! Разрешите их для данного сайта и повторите процедуру "
+"печати!"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:1015
+msgid "Ошибка при формировании карты доступа с QR-кодом авторизации:\n"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:1024
+#: static/ENGINE/PROFILE/js/printbc.js:85
+msgid ""
+"Карта доступа с QR-кодом не может быть сформирована, поскольку всплывающие "
+"окна в браузере заблокированы! Разрешите их для данного сайта и повторите "
+"процедуру печати!"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:1113
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:158
+msgid "Печатать ШК"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:1114
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:167
+msgid "Печатать QR-код"
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:1124
+#: static/ENGINE/PROFILE/js/printbc.js:15
+msgid "Код доступа сгенерирован. Распечатайте его ШК- или QR-вариант."
+msgstr ""
+
+#: static/ENGINE/ADMINPANEL/js/admin_users.js:1127
+msgid "Ошибка при генерации кода доступа:\n"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:8
+#: static/ENGINE/EQUIPMENT/js/equipment.js:458
+msgid "Отсутсвуют типы оборудования выбранного вида"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:133
+msgid "Поиск оборудования..."
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:302
+msgid "Активировать"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:302
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:196
+msgid "Деактивировать"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:382
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:170
+msgid "Активное"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:388
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:183
+msgid "Не активное"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:403
+msgid "Редактирование оборудования"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:415
+msgid "Добавление оборудования"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:484
+msgid "Ошибка при сохранении оборудования:"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:594
+#: static/ENGINE/EQUIPMENT/js/equipment.js:900
+msgid "Введите название"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:595
+#: static/ENGINE/EQUIPMENT/js/equipment.js:901
+msgid "Выберите вид"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:597
+msgid "Введите рег. номер"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:663
+msgid "Типы оборудования"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:664
+msgid "Поиск типов оборудования..."
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:751
+msgid "Редактирование типа оборудования"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:760
+msgid "Добавление типа оборудования"
+msgstr ""
+
+#: static/ENGINE/EQUIPMENT/js/equipment.js:808
+msgid "Ошибка при сохранении типа оборудования:"
+msgstr ""
+
+#: static/ENGINE/PROFILE/js/printbc.js:47
+msgid ""
+"Сформирована карта доступа с ШК. Отправьте её на печать средствами браузера."
+msgstr ""
+
+#: static/ENGINE/PROFILE/js/printbc.js:80
+msgid ""
+"Сформирована карта доступа с QR-кодом. Отправьте её на печать средствами "
+"браузера."
+msgstr ""
+
+#: static/ENGINE/UPDATENEWS/js/updatenews.js:52
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskList.py:116
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWares.py:191
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:225
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWares.py:126
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:258
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrinter.py:134
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:151
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:174
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlcoEnd.py:174
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresQuant.py:146
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:204
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:251
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:194
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresU.py:160
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresUQuant.py:157
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresW.py:160
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresWeight.py:158
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskMWares.py:204
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:246
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWaresPrinter.py:134
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:381
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAdd.py:148
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:206
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:400
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWaresAdd.py:189
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/wares.py:138
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:325
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palletWares.py:134
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalWares.py:176
+msgid "Дата"
+msgstr ""
+
+#: static/ENGINE/UPDATENEWS/js/updatenews.js:53
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:116
+msgid "ФИО"
+msgstr ""
+
+#: static/ENGINE/UPDATENEWS/js/updatenews.js:56
+msgid "Номер задачи"
+msgstr ""
+
+#: static/ENGINE/UPDATENEWS/js/updatenews.js:88
+msgid "Обновлений не найдено!"
+msgstr ""
+
+#: static/ENGINE/WEBSERVER/js/webserver.js:215
+msgid "Сортировать по убыванию"
+msgstr ""
+
+#: static/ENGINE/WEBSERVER/js/webserver.js:220
+#: systems/ENGINE/WEBSERVER/templates/webserver_upd_logs.py:127
+msgid "Сортировать по возрастанию"
+msgstr ""
+
+#: syslogin.py:57
+msgid "Не установлен номер оборудования"
+msgstr ""
+
+#: syslogin.py:207
+msgid "Пользователь еще не импортирован в RBS!"
+msgstr ""
+
+#: syslogin.py:226
+msgid ""
+"Доступ запрещён: неверный логин/пароль, пользователь отключён или "
+"заблокирован!"
+msgstr ""
+
+#: syslogin.py:321
+msgid ""
+"Ваша организация временно отключена. Обратитесь в службу поддержки, если "
+"считаете это необоснованным."
+msgstr ""
+
+#: syslogin.py:333 syslogin.py:523
+msgid "Доступ запрещён по данным СКУД!"
+msgstr ""
+
+#: syslogin.py:398
+msgid "Пользователь не имеет прав ни на одну систему"
+msgstr ""
+
+#: syslogin.py:449 syslogin.py:628
+msgid "Выберите систему"
+msgstr ""
+
+#: syslogin.py:649
+msgid "Введите логин"
+msgstr ""
+
+#: syslogin.py:693
+msgid "Утерян номер оборудования"
+msgstr ""
+
+#: syslogin.py:723
+msgid ""
+"Сессия утеряна. <a href=\"/\">Авторизуйтесь<a> снова с временным паролем."
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/account.py:129 systems/ENGINE/PROFILE/profile.py:74
+#: systems/ENGINE/PROFILE/profile.py:364 systems/ENGINE/PROFILE/profile.py:396
+msgid "Это поле должно быть заполнено."
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/account.py:233 systems/ENGINE/ACCOUNT/account.py:266
+#: systems/ENGINE/ACCOUNT/account.py:285 systems/ENGINE/ACCOUNT/account.py:320
+#: systems/ENGINE/ACCOUNT/account.py:338 systems/ENGINE/ACCOUNT/account.py:369
+#: systems/ENGINE/PROFILE/profile.py:238
+msgid "Сервис временно недоступен. Повторите попытку позже."
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/account.py:408
+msgid "Проверочный код введен неверно."
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/account.py:477
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:153
+msgid "Регистрация аккаунта"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/account.py:518
+msgid "Аккаунт с этим адресом электронной почты не найден. Повторите попытку."
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/account.py:545
+msgid "Ваш пароль"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:170
+msgid "Имя для входа (логин)"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:182
+msgid "Почтовый ящик (email)"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:194
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:272
+#: systems/ENGINE/PROFILE/templates/profile_main.py:99
+msgid "Пароль"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:213
+msgid "Введите пароль еще раз"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:228
+msgid "Контактный телефон"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:242
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgsettarif.py:110
+msgid "Тариф"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:287
+msgid "Защита от роботов"
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:297
+msgid "Введите символы, представленные на картинке ниже."
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:307
+msgid "Буквы вводятся без учета регистра."
+msgstr ""
+
+#: systems/ENGINE/ACCOUNT/templates/register_main.py:318
+msgid "Я принимаю условия. Создайте мой аккаунт."
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/admin.py:455
+msgid "Код авторизации не сгенерирован. Сгенерируйте его сначала."
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/admin.py:495
+msgid "Печать этого типа QR-кода не реализована."
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/admin.py:563
+msgid "Администратор изменил Ваш ШК"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/admin.py:566
+msgid "ШК сгенерирован, но произошла ошибка отправки его по почте:\n"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_bases.py:119
+msgid "Управление базами данных"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgedit.py:92
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgrename.py:92
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgsettarif.py:92
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:142
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_objects_by_type.py:105
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_optdict.py:105
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_roles.py:105
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_objects_by_type.py:105
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_options.py:105
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgedit.py:92
+msgid "ID"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgedit.py:101
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgrename.py:110
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgsettarif.py:101
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:112
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlglayers.py:112
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:453
+msgid "Организация"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgedit.py:110
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:124
+msgid "Владелец"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgedit.py:138
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:118
+msgid "Дата регистрации"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgedit.py:147
+msgid "Код клиента"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgedit.py:156
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:130
+msgid "Доп. код"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgedit.py:171
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgrename.py:124
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgsettarif.py:177
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:286
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:117
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgedit.py:152
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:185
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgaddtype.py:128
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskBL.py:211
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresTaraWeight.py:149
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskMWares.py:345
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:387
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:560
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAdd.py:211
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:347
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWaresAdd.py:214
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:276
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:271
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/waresTaraWeightChg.py:162
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/barcodes.py:173
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:266
+msgid "Сохранить"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgrename.py:101
+msgid "Код клиента и префикс баз данных"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgrights.py:103
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgrights.py:106
+msgid "Назначено"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgrights.py:142
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:201
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:295
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:135
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarhistory.py:174
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlglayers.py:171
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgrights.py:158
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:188
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgtypes.py:175
+#: systems/ENGINE/WEBSERVER/templates/webserver_upd_logs.py:136
+msgid "Закрыть"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_dlgsettarif.py:162
+msgid "Дата установки тарифа"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:117
+msgid "Управление клиентами"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:132
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:132
+msgid "Показать отключенные"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:141
+msgid "Обновить клиентов"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:156
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:250
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:149
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:167
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:239
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:180
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:233
+msgid "Редактировать"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:189
+msgid "Переименовать организацию, код клиента и БД"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:200
+msgid "Сменить тариф"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:211
+msgid "История тарифов"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:222
+msgid "Права согласно тарифа"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_main.py:239
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:143
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:156
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:172
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:225
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:272
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:232
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskWares.py:197
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWares.py:128
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWares.py:145
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresPrDates.py:126
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWares.py:198
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:130
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:147
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:165
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrDates.py:131
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrDates.py:148
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrDates.py:166
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/wares.py:208
+msgid "Добавить"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:93
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarhistory.py:96
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlglayers.py:94
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:93
+msgid "Отключен"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:99
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlglayers.py:100
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:99
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:93
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:184
+msgid "№ п/п"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:106
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:115
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlglayers.py:106
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:103
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:186
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:188
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:187
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskBL.py:121
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/userTask.py:127
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/userTaskSelect.py:133
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresgetunits.py:132
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/reportRestExport.py:146
+msgid "Код"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:136
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarhistory.py:114
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:142
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_dlgrights.py:109
+msgid "Изменено"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:142
+msgid "Текущий тариф"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:148
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarhistory.py:108
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlglayers.py:118
+msgid "Дата тарифа"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_layers_tbl.py:154
+msgid "Тариф истекает"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:95
+msgid "Управление ролями"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:109
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_objects_by_type.py:99
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_optdict.py:99
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_roles.py:99
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_objects_by_type.py:99
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_options.py:99
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarhistory.py:102
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgedit.py:101
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:106
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:92
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgaddtype.py:92
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgtypes.py:101
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:99
+msgid "Название"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:121
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgtypes.py:107
+msgid "Изменён"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:127
+msgid "Комментарий"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:135
+msgid "Группа AD"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:151
+msgid "Редактировать роль"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:160
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:269
+msgid "Права роли"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:169
+msgid "Удалить роль"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:178
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:335
+msgid "Пользователи роли"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:260
+msgid "Изменение параметров роли"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles.py:280
+msgid "Опции роли"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_attrs.py:93
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_objects_by_type.py:93
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_optdict.py:93
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_roles.py:93
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_objects_by_type.py:93
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_options.py:93
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/index.py:127
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/rangeBarcodeTask.py:118
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrinter.py:125
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/pallet.py:116
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/templates/index.py:112
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/templates/task.py:116
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/templates/taskTransUnit.py:108
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/alcoBox.py:184
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/alcoMark.py:189
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:191
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWaresPrinter.py:125
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:247
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAdd.py:137
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAddWLIncome.py:176
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:129
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisAll.py:129
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisBox.py:129
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalS.py:183
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalWares.py:147
+msgid "№"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_attr.py:129
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:252
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_okcancel.py:99
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_change_passwd.py:148
+msgid "OK"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:135
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:102
+msgid "Объект"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:155
+msgid "Выбрать по типу"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:164
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:108
+msgid "Опция"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:186
+msgid "Синхронизировать атрибуты опции выбранных ролей"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:236
+msgid "Добавить из существующих у опции"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_edit_opt.py:242
+msgid "Из опций системы"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_objects_by_type.py:111
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_optdict.py:111
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_objects_by_type.py:111
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_options.py:111
+msgid "Выбор"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:120
+msgid "Удалить все опции"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:163
+msgid "Удалить опцию и её атрибуты"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:179
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:184
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:165
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:184
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:203
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:222
+msgid "Добавить опцию"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:190
+msgid "Обновить список опций"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_roles_options.py:195
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:283
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:208
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:231
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:210
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:261
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:251
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresU.py:222
+msgid "Обновить"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:116
+msgid "К системам"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:125
+msgid "К опциям"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:134
+#: systems/ENGINE/templates/subsystem_list_term.py:120
+msgid "Выход"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:174
+msgid "Отключена"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:182
+msgid "Ссылка"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:188
+msgid "Слать ошибки"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:195
+msgid "Да"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:201
+msgid "Нет"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:211
+msgid "Папка"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:217
+msgid "Email"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:225
+msgid "Класс"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:231
+msgid "Формат Д/В"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:244
+msgid "Модуль"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:250
+msgid "Формат В"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:264
+msgid "База"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems.py:270
+msgid "HIGHER"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:99
+msgid "Свернуть всё"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:106
+msgid "Развернуть всё"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:146
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:157
+msgid "Выбрать пользователей"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:173
+msgid "Удалить все опции пользователя"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:192
+msgid "Удалить тип, все его объекты и опции"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:211
+msgid "Удалить объект и все его опции"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:230
+msgid "Изменить опцию"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_systems_tree.py:238
+msgid "Удалить опцию"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgedit.py:119
+msgid "Сортировка (целое число)"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgedit.py:128
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:130
+msgid "Срок действия (в днях)"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgedit.py:137
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:136
+msgid "Напоминать за (дней)"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_dlgrights.py:100
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_dlgrights.py:103
+msgid "Право"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:117
+msgid "Управление тарифами"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:141
+msgid "Обновить тарифы"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:200
+msgid "Назначить тарифом по умолчанию"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_main.py:222
+msgid "Клиенты на тарифе"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:118
+msgid "По умолчанию"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_tarifs_tbl.py:124
+msgid "Сортировка"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:123
+msgid "e-mail"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:130
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:105
+msgid "Статус"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:140
+msgid "Авторизация"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:152
+msgid "Фильтр"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:250
+msgid "Права"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:294
+msgid "Заблокировать"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users.py:305
+msgid "Разблокировать"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:97
+msgid "Тип кода"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:109
+msgid "Дата генерации"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:116
+#: systems/KURSSKLAD/KURSTERM/BLOCKPALLET/templates/index.py:93
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/task.py:124
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskList.py:93
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskWaresLotAdd.py:260
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/index.py:93
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:118
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddGS1Box.py:226
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:125
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskRangeWares.py:120
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletWLot.py:341
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/index.py:93
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/task.py:117
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/index.py:93
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:118
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddGS1Box.py:226
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/slot.py:98
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskMWares.py:132
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskWPallet.py:97
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/index.py:94
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/infoManyPallets.py:93
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palI.py:97
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:102
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:102
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palS.py:97
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:104
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:117
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:103
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:94
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:94
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/templates/auto.py:101
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/templates/index.py:93
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/index.py:93
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/slot.py:94
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/index.py:93
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/wares.py:145
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/waresunit.py:93
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/index.py:93
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palI.py:114
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palS.py:114
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:428
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:265
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palletWares.py:234
+msgid "ШК"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:122
+msgid "QR"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:149
+msgid "Удалить ШК"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_bc.py:182
+msgid "Генерировать код доступа"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_change_passwd.py:94
+msgid "Изменение пароля"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_change_passwd.py:109
+msgid "Отображать пароль"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_change_passwd.py:115
+msgid "Уведомить по e-mail"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_change_passwd.py:121
+msgid "Послать SMS"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_change_passwd.py:133
+msgid "Генерировать пароль"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_change_passwd.py:139
+msgid "Список ШК"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_dlgrights.py:129
+msgid "Показать все"
+msgstr ""
+
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_printbc.py:93
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_printbc_mob.py:93
+#: systems/ENGINE/ADMINPANEL/templates/admin_users_printbc_noterm.py:93
+msgid "Карта доступа"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:101
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgaddtype.py:101
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgtypes.py:95
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:123
+msgid "Вид"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:108
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgaddtype.py:108
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgtypes.py:137
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:218
+msgid "Терминальное"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:114
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgaddtype.py:114
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgtypes.py:124
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:205
+msgid "Мобильное"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:161
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:117
+msgid "Рег. номер"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_dlgadd.py:170
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:111
+msgid "Серийный номер"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:204
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:249
+msgid "Обновить список"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_main.py:214
+msgid "Принудительно закрыть сессию"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:129
+msgid "Тип оборудования"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:135
+msgid "ФИО сотрудника"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:141
+msgid "Работает с"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:296
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:318
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:173
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:175
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:173
+msgid "Все"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:302
+msgid "Акт"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:308
+msgid "Неакт"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:324
+msgid "Терм"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:330
+msgid "Моб"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:338
+msgid "Типы"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:347
+msgid "Все сессии"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:353
+msgid "Активные"
+msgstr ""
+
+#: systems/ENGINE/EQUIPMENT/templates/equipment_table.py:359
+msgid "Не активные"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/profile.py:103
+msgid "Некорректная длина данных. Ожидается строго "
+msgstr ""
+
+#: systems/ENGINE/PROFILE/profile.py:104
+msgid " или "
+msgstr ""
+
+#: systems/ENGINE/PROFILE/profile.py:104 systems/ENGINE/PROFILE/profile.py:110
+#: systems/ENGINE/PROFILE/profile.py:116 systems/ENGINE/PROFILE/profile.py:122
+msgid " символа(ов)"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/profile.py:109
+msgid "Некорректная длина данных. Ожидается не менее "
+msgstr ""
+
+#: systems/ENGINE/PROFILE/profile.py:115
+msgid "Некорректная длина данных. Ожидается не более "
+msgstr ""
+
+#: systems/ENGINE/PROFILE/profile.py:121
+msgid "Некорректная длина данных. Ожидается от "
+msgstr ""
+
+#: systems/ENGINE/PROFILE/profile.py:122
+msgid " до "
+msgstr ""
+
+#: systems/ENGINE/PROFILE/profile.py:216
+msgid "Утеряна сессия, авторизуйтесь в системе."
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:149
+msgid "Ваш пароль успешно изменён!"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:162
+msgid "Изменение пароля пользователя"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:171
+msgid "Текущий пароль:"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:182
+msgid "Доменная авторизация:"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:199
+#: systems/ENGINE/templates/login_change_passwd.py:182
+msgid "Изменить пароль"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:213
+msgid "Генерация и печать ШК или QR-кода авторизации"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:222
+msgid "Текущий пароль"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:241
+msgid "Генерировать код"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:247
+msgid "Распечатать ШК"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/passwd.py:253
+msgid "Распечатать QR-код"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/profile_main.py:93
+#: systems/ENGINE/PROFILE/templates/themes.py:116
+msgid "Темы оформления"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/profile_main.py:107
+msgid "Учетные данные"
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/profile_main.py:142
+msgid "Редактирование профиля пользователя. Выберите пункт меню."
+msgstr ""
+
+#: systems/ENGINE/PROFILE/templates/themes.py:162
+msgid "нажмите, чтобы изменить"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:189
+msgid "Время"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:194
+msgid "Ф.И.О."
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:200
+msgid "Куда лить SQL"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:205
+msgid "Куда лить модули"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:211
+msgid "Файл в архиве 7z"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:217
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:361
+msgid "Что нового?"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:222
+msgid "Отправить"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:258
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:282
+msgid "на сервере"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:317
+msgid "Уже добавлены"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:331
+msgid "Просмотреть обновления за"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:355
+msgid "Информация"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:374
+msgid "Сводная (Информация)"
+msgstr ""
+
+#: systems/ENGINE/UPDATER/templates/updater_tmpl.py:380
+msgid "Сводная (Что нового)"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:135
+msgid "Версия FirePy Engine"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:155
+msgid "Версия DB Engine"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:172
+msgid "Соответствие версий"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:191
+msgid "Статус веб-сервера"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:200
+msgid "Активных транзакций к серверам БД"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:211
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:430
+msgid "Потоки"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:218
+msgid "показывать предупреждение"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:228
+msgid "Текущее время веб-сервера"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:236
+msgid "Автообновление экрана"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:244
+msgid "Не обновлять"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:250
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:256
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:262
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:268
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:274
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:280
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:303
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:350
+msgid "сек"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:296
+msgid "Ждать перед выключением"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:313
+msgid "Стоп"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:322
+msgid "Отмена стопа"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:332
+msgid "Останавливать как только все транзакции завершатся"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:343
+msgid "Таймер (веб-сервер остановится через)"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:360
+msgid "Сброс таймера"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:375
+msgid "Запустить Updater после остановки"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:386
+msgid "Логи Updater"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:417
+msgid "Обновить слои"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:435
+msgid "макс."
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:447
+msgid "Код слоя"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:460
+msgid "Актив транз"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:466
+msgid "Старт транз"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:472
+msgid "Стоп транз"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:478
+msgid "Длит транз"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_tmpl.py:484
+msgid "Последний SQL-запрос"
+msgstr ""
+
+#: systems/ENGINE/WEBSERVER/templates/webserver_upd_logs.py:117
+msgid "Только за сегодня"
+msgstr ""
+
+#: systems/ENGINE/templates/exit_androidterm.py:148
+msgid "Меню систем"
+msgstr ""
+
+#: systems/ENGINE/templates/exit_byebye.py:93
+msgid "До свидания!"
+msgstr ""
+
+#: systems/ENGINE/templates/login_change_passwd.py:93
+msgid "Изменение временного пароля"
+msgstr ""
+
+#: systems/ENGINE/templates/login_change_passwd.py:148
+msgid "Изменение временного пароля пользователя"
+msgstr ""
+
+#: systems/ENGINE/templates/login_change_passwd.py:170
+msgid "Ошибка: "
+msgstr ""
+
+#: systems/ENGINE/templates/login_index.py:95
+msgid "Добро пожаловать"
+msgstr ""
+
+#: systems/ENGINE/templates/subsystem_list.py:101
+msgid "Регистрация прошла успешно, добро пожаловать!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BLOCKPALLET/templates/index.py:98
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:128
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWares.py:197
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWares.py:294
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWares.py:223
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWares.py:237
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:231
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWares.py:132
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWares.py:219
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:128
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:264
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:361
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/index.py:104
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskWPallet.py:102
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:186
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/index.py:104
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/infoManyPallets.py:103
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:112
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:112
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAdd.py:95
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAddPrDate.py:93
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAddWLIncome.py:93
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:127
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletCreate.py:92
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:113
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:129
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWaresAdd.py:105
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:104
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:170
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:178
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:104
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:165
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:173
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/wares.py:144
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/index.py:98
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:244
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:249
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palletWares.py:239
+msgid "Поддон"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BLOCKPALLET/templates/pallet.py:114
+msgid "Работа запрещена"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BLOCKPALLET/templates/pallet.py:141
+msgid "Работа разрешена"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BLOCKPALLET/templates/pallet.py:155
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/task.py:134
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/task.py:147
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:123
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWares.py:289
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:130
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWares.py:218
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/pallet.py:115
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/task.py:122
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWares.py:214
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/pallet.py:115
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:123
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:356
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:99
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/row.py:115
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/slot.py:108
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/slot.py:144
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/WIndex.py:106
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskMWares.py:137
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskWPallet.py:107
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:220
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:191
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/index.py:109
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/infoManyPallets.py:108
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palI.py:112
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:117
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:117
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palS.py:112
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:109
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:132
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:163
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:118
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:109
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:109
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/index.py:98
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/slot.py:104
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/slot.py:121
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/waresslot.py:59
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/waresslot.py:107
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/index.py:98
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/waresunit.py:49
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palI.py:100
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palS.py:105
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:438
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:148
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:256
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palletWares.py:244
+#: systems/KURSSKLAD/KURSTERM/templates/mainPal.py:167
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalS.py:212
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/wtrTaskStatistics.py:163
+msgid "Товар"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BLOCKPALLET/templates/pallet.py:161
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/printer.py:102
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWares.py:203
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWares.py:243
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:237
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/pallet.py:121
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/printer.py:107
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWares.py:138
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/pallet.py:121
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/printer.py:102
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:270
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/slot.py:150
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:157
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:180
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlcoEnd.py:180
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresQuant.py:152
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:210
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:257
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:200
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresU.py:166
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresUQuant.py:163
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresW.py:166
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresWeight.py:164
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskMWares.py:231
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:169
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:406
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/wares.py:150
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/slot.py:127
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:331
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:154
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palletWares.py:140
+#: systems/KURSSKLAD/KURSTERM/templates/mainPal.py:173
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalWares.py:182
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/reportRestExport.py:164
+msgid "Кол-во"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BLOCKPALLET/templates/pallet.py:167
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAdd.py:148
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/pallet.py:127
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWaresAdd.py:142
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/pallet.py:127
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:158
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd_160912.py:158
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:129
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/row.py:109
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/slot.py:103
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresSite.py:127
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletCreate.py:156
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/index.py:103
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/slot.py:99
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/waresslot.py:90
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:160
+#: systems/KURSSKLAD/KURSTERM/templates/mainPal.py:179
+msgid "МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:43
+msgid "ШК не обрабатывается!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:51
+msgid "Нет виртуального поддона у МП!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/buyreturn.py:211
+msgid "Нет товара на поддоне!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/task.py:129
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskList.py:98
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/index.py:98
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/index.py:98
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/index.py:98
+msgid "Документ"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/task.py:153
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskWaresLotAdd.py:145
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:192
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:194
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWares.py:151
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:151
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPallet.py:168
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletCommon.py:168
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletEgais.py:168
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletWLot.py:168
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:194
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:495
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd_160912.py:351
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/userTask.py:133
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/userTaskSelect.py:139
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalS.py:218
+msgid "План"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/task.py:159
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskWaresLotAdd.py:151
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:198
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:200
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWares.py:174
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:174
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPallet.py:191
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletCommon.py:191
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletEgais.py:191
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletWLot.py:191
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:200
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:501
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd_160912.py:357
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/userTask.py:139
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/userTaskSelect.py:145
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalS.py:224
+msgid "Факт"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/task.py:241
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:283
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:272
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:291
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:307
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskBL.py:206
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:259
+msgid "Вы  уверены?"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/task.py:249
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:291
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:280
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:299
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:315
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/gate.py:174
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/gateTaskEnd.py:132
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/task.py:217
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWUEndConf.py:196
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:270
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/taskE.py:237
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/taskE.py:254
+msgid "Завершить"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskList.py:103
+msgid "Зона возвратов"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskList.py:122
+msgid "Номер"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskWaresEdit.py:136
+msgid "Произведен"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskWaresEdit.py:145
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresLot.py:182
+msgid "Принято"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskWaresEdit.py:177
+msgid "Обнулить"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/BUYRETURN/templates/taskWaresLotAdd.py:265
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/WIndex.py:118
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:287
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:181
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/index.py:99
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/infoManyPallets.py:98
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palI.py:102
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:107
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:107
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palS.py:102
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/pallet.py:122
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:108
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:99
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:99
+msgid "МП"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/CHGZONE/chgzone.py:23
+msgid "Нет рабочей сессии"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:85
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:144
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/firstincome.py:80
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:294
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:337
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:430
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:453
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:475
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:535
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:615
+msgid "ШК не обрабатывается"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:109
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/firstincome.py:52
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/firstincome.py:83
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:253
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot_old.py:35
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot_old.py:68
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot_old.py:122
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:285
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:296
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:328
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:350
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:372
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:390
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:429
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:445
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:449
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:523
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:615
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:616
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:642
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:703
+msgid "Invalid barcode"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:176
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:341
+msgid "ШК в формате GS1, но не обрабатываемого вида!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:215
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:403
+msgid "Нет информации о товаре указанной даты"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:234
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:469
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:627
+msgid "Вы уже сканировали эту алкомарку"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:244
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:491
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:650
+msgid "ШК не обрабатывается в этом интерфейсе"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:280
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:686
+msgid "Отсканирован ШК другого товара"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:282
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:559
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:688
+msgid "Отсканирован не верный тип ШК товара"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:341
+msgid "Для приемки товара нужно отсканировать ШК в формате GS1-128"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:344
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:802
+msgid "Не установлена зона хранения товара!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:376
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:849
+msgid "Не верный товар!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/comereturn.py:378
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:851
+msgid "Не верный ШК!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/index.py:103
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/index.py:103
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/printer.py:92
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/index.py:103
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:122
+msgid "Принтер"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/printer.py:108
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/printer.py:113
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/printer.py:108
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskPrinter.py:108
+msgid "Печать"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/rangeWares.py:119
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskRangeWares.py:131
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/rangeWares.py:119
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/rangeWares.py:92
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/rangeWares.py:116
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/rangeWares.py:91
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/rangeWares.py:94
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/rangeWaresUnit.py:91
+#: systems/KURSSKLAD/KURSTERM/templates/commonRangeWares.py:116
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalWaresRange.py:92
+msgid "Выберите товар"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:140
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:142
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:140
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:124
+msgid "Товары"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:151
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:153
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:151
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:135
+msgid "Скрыть"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:162
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/task.py:164
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:162
+msgid "Различия"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/task.py:275
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/task.py:283
+msgid "Коносамент"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskSite.py:118
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskSite.py:118
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskSite.py:118
+msgid "ШК местоположения приемки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWares.py:307
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAdd.py:235
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:374
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:361
+msgid "Даты производства"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAdd.py:175
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresLot.py:165
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWaresAdd.py:174
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWaresLot.py:172
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:234
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd_160912.py:198
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresLot.py:201
+msgid "Производство"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAdd.py:221
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresLot.py:305
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWaresAdd.py:223
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/templates/taskWaresLot.py:239
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:347
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd_160912.py:293
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresLot.py:330
+msgid "ШК Поддона"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddEgaisMark.py:147
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:208
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletEgais.py:225
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisMark.py:172
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/trashPalletEgais.py:128
+msgid "Марки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddEgaisMark.py:171
+msgid "Отсканируйте ШК Алкогольной марки или паллета(для приемки)"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddEgaisMark.py:185
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddGS1Box.py:252
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBox.py:268
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBoxMark.py:206
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisBox.py:267
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisMark.py:253
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddGS1Box.py:252
+msgid "Прервать приемку"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddEgaisPrDate.py:151
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoPrDate.py:150
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisPrDate.py:151
+msgid "Введите дату производства"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddEgaisPrDate.py:158
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoPrDate.py:157
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisPrDate.py:158
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAddPrDate.py:143
+msgid "Далее"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddGS1Box.py:207
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddGS1Box.py:207
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/index.py:112
+msgid "Всего"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresAddGS1Box.py:238
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBox.py:244
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddGS1Box.py:238
+msgid ""
+"Отсканируйте ШК короба поставщика в формате GS1_128 или паллетную этикетку"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresLot.py:203
+msgid "Остаток"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresLot.py:226
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresLot.py:236
+msgid "Кол-во ШК"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresLot.py:237
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresLot.py:247
+msgid "Короба ЕГАИС"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresPrDates.py:209
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrDates.py:249
+msgid " из"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/COMERETURN/templates/taskWaresPrDates.py:231
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrDates.py:271
+msgid "Итого:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:66
+msgid "Товары с этим ШК не найдены в задании на отборку!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:124
+msgid "Товары с этим ШК не найдены в задании на приемку!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:133
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:163
+msgid "Работа с паллетом запрещена"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:144
+msgid "Нет товара на поддоне"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:199
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/docfreeselect.py:241
+msgid "Не верный паллет"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWares.py:183
+msgid "Изменение"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:197
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletEgais.py:214
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisMark.py:157
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/trashPalletEgais.py:122
+msgid "Короба"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:289
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:312
+msgid "Вы действительно хотите отменить выбранный пункт отборки?"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:377
+msgid "Вы действительно хотите отменить ВСЮ отборку?"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresEdit.py:388
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/pallet.py:150
+msgid "Отменить"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletCommon.py:316
+msgid "ШК Паллета"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletEgais.py:256
+msgid "ШК Короба или марки ЕГАИС"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletWLot.py:303
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:186
+msgid "Отобрать"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletWLot.py:346
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/rangeWares.py:171
+msgid "GS1_128"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletWLot.py:351
+msgid "Алкомарка"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/DOCFREESELECT/templates/taskWaresPalletWLot.py:356
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisBox.py:154
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palI.py:107
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palS.py:107
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palI.py:94
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palS.py:95
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:433
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisAll.py:257
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisBox.py:257
+msgid "Паллет"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/firstincome.py:41
+msgid "Нет задания на приемку"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/firstincome.py:111
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/firstincome.py:145
+msgid "Отсканирован весовой стикер другого товара!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/FIRSTINCOME/firstincome.py:178
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:902
+msgid "Поддон принадлежит другому объекту!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:80
+msgid "Необходимо ввести ГГР основной ЕИ"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:83
+msgid "Необходимо ввести ГГР единицы отображения"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:308
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:341
+msgid "Нельзя печатать на этот принтер!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:435
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:557
+msgid "Вы уже сканировали этот ШК"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:480
+msgid "Количество марок и кратность короба не совпадают"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:521
+msgid "Шк относится к другому товару"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:523
+msgid "Отсканируйте ШК паллета постащика в формате GS1_128"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:604
+msgid "Отсканируйте ШК Принтера"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:629
+msgid "В этом коробе нет такой алкомарки. Короб помечен как некорректный!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:640
+msgid ""
+"Количество марок и кратность короба не совпадают, отсканируйте еще раз "
+"этикетку для подтверждения приемки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/income.py:774
+msgid "Не верный товар"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/rangeBarcodeTask.py:98
+msgid "Выберите приход для использования отсканированного ШК"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskBL.py:128
+msgid "Док"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskPrinter.py:114
+msgid "Кол-во каждой этикетки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:207
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:232
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:216
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresLot.py:157
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresTaraWeight.py:129
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:107
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:156
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWaresPallet.py:138
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWaresPallet.py:334
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWaresPallet.py:389
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWaresPallet.py:446
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:179
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:130
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:176
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/wares.py:105
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/waresTaraWeight.py:100
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/waresTaraWeight.py:130
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/waresTaraWeightChg.py:100
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/waresTaraWeightChg.py:142
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:170
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalWaresTara.py:134
+msgid "Вес тары"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWares.py:243
+msgid "Не задан"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:341
+msgid "Ввести ГГР для ед.измерения"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd.py:489
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAdd_160912.py:345
+#: systems/KURSSKLAD/templates/clients.py:91
+#: systems/KURSSKLAD/templates/listclient.py:91
+#: systems/KURSSKLAD/templates/objlocate.py:95
+msgid "Клиент"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBox.py:174
+msgid "Отсканировано ШК: "
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBox.py:184
+msgid "Общее кол-во: "
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBox.py:227
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBox.py:252
+msgid "Отсканируйте ШК короба поставщика в формате GS1_128"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBox.py:235
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisBox.py:234
+msgid "Отсканируйте ШК паллетой этикетки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBoxMark.py:136
+msgid "Отсканировано марок"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBoxMark.py:175
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisMark.py:222
+msgid "Отсканируйте ШК Алкогольной марки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBoxMark.py:183
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisMark.py:230
+msgid "Отсканируйте ШК паллетной этикетки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoBoxPrint.py:140
+msgid "Отсканируйте ШК принтера, чтобы напечатать новый ШК GS1_128"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoPal.py:151
+msgid "Отсканируйте ШК паллета поставщика в формате GS1_128"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddAlcoPal.py:165
+msgid "На паллете поставщика нет ШК  таком формате"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEditGGP.py:94
+msgid "Неверно заполнено одно из полей!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEditGGP.py:182
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:163
+msgid "Длина (м)"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEditGGP.py:191
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:180
+msgid "Ширина (м)"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEditGGP.py:200
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:197
+msgid "Высота (м)"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEditGGP.py:209
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:214
+msgid "Объем (л)"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEditGGP.py:218
+msgid "Нетто"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEditGGP.py:227
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:314
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:150
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:173
+msgid "Брутто"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisBox.py:178
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/taskE.py:193
+msgid "Отсканировано"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisBox.py:226
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisBox.py:251
+msgid "Отсканируйте ШК короба поставщика"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresAddEgaisBox.py:243
+msgid "Отсканируйте ШК короба поставщика или паллетную этикетку"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresLot.py:174
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:190
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:184
+msgid "Изменить"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrinter.py:170
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWaresPrinter.py:170
+msgid "Кол-во этикеток"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/INCOMEDC/templates/taskWaresPrinter.py:177
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWaresPrinter.py:177
+msgid "Печатать"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/loadauto.py:55
+msgid "Неверный тип МП"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/loadauto.py:61
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/loadauto.py:71
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/loadauto.py:139
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:84
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:120
+msgid "Неверный ШК"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/loadauto.py:89
+msgid "Ворота заняты!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/loadauto.py:95
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/loadauto.py:97
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/loadauto.py:99
+msgid "Нет задания на постановку автомобиля на эти ворота!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/auto.py:107
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/gate.py:187
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/index.py:99
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/templates/auto.py:106
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/templates/index.py:98
+msgid "Авто"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/auto.py:112
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/gate.py:192
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/index.py:94
+msgid "Ворота"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/gateAuto.py:101
+msgid "Для постановки автомобиля на ворота выберите задание из списка"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/pallet.py:140
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEnd.py:132
+msgid "Выполнено"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADAUTO/templates/pallet.py:158
+msgid "Не выполнено"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:63
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:69
+msgid "Не корректная этикетка!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:73
+msgid "Нужно отсканировать ШК этикетки!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:82
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:118
+msgid "Отсканирован не тот автомобиль!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:98
+msgid "Нужно отсканировать автомобиль!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:104
+msgid "Не корректная единица транспортировки!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/loadpallet.py:108
+msgid "Нужно отсканировать единицу транспортировки!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/templates/task.py:151
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEndStick.py:121
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskLabel.py:121
+msgid "Отсканируйте ШК этикетки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/templates/task.py:169
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/templates/taskTransUnit.py:158
+msgid "Отсканируйте ШК автомобиля"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/LOADPALLET/templates/taskTransUnit.py:140
+msgid "Отсканируйте ШК единицы транспортировки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:125
+msgid "Местоположение не является местом отборки!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:160
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot_old.py:56
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/index.py:93
+msgid "Row"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:191
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot_old.py:78
+msgid "Task"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:290
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/refillslot.py:303
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:537
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:565
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:580
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:620
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:99
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:132
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:165
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:177
+msgid "Конфликт транзакций, попробуйте еще раз!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/index.py:106
+msgid "Ряд"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/index.py:118
+msgid "Важно"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/row.py:121
+msgid "Ост МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/slot.py:122
+msgid "К ряду"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/slot.py:156
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskMWares.py:321
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:363
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:536
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:323
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:452
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/wares.py:220
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/slot.py:133
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/reportRestExport.py:170
+msgid "Итого"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/task.py:99
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/task.py:118
+msgid "Wares"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/task.py:124
+#: systems/KURSSKLAD/mwdetail.py:66
+msgid "Count"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/task.py:130
+msgid "Pallet"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:174
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWaresPallet.py:184
+msgid "Нужно"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:194
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/wares.py:144
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/wares.py:159
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/waresSlot.py:179
+msgid "Вместимость"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:251
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:260
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:308
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:316
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/taskE.py:163
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/taskE.py:172
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:256
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:265
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisAll.py:205
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisAll.py:214
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisBox.py:205
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisBox.py:214
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/taskE.py:180
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/taskE.py:189
+#: systems/KURSSKLAD/RESTCONTROLDC/restcontrol.py:34
+msgid "ЕГАИС"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:281
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/taskE.py:210
+msgid "Перемещено"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:317
+msgid "МО для полного пополнения"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWares.py:326
+msgid "Алкокороб для частичного"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWaresPallet.py:164
+msgid "На МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/taskWaresPallet.py:207
+msgid "Пополнить"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/wares.py:166
+msgid "Доступно на МХ"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/wares.py:188
+msgid "Заказано на завтра"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/REFILLSLOT/templates/wares.py:213
+msgid "Начать пополнение"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:303
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select_160420.py:247
+msgid "Позиция задания уже отработана!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:351
+msgid "Отсканирован весовой ШК не этого товара"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:421
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:447
+msgid "Не верное МП"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:564
+msgid "Не возможно однозначно утсановить данные по ШК"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:636
+msgid "Не верная этикетка"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:717
+msgid "Не верный поддон"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/select.py:772
+msgid "ШК не обрабатыавется"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/WIndex.py:112
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:120
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:120
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlcoEnd.py:120
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:120
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:120
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:195
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:120
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWUEndConf.py:121
+msgid "Заказ"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/task.py:120
+msgid "Продолжить"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:238
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresQuant.py:222
+msgid "Отсканируйте МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:258
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:268
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:303
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:325
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:316
+msgid "Не хватает на МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:267
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:336
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresU.py:265
+msgid "Фактическое количество"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:279
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:289
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:280
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:290
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:315
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:325
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresSite.py:141
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresSite.py:151
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:349
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:359
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:332
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:342
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresPallet.py:165
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresPallet.py:175
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresU.py:274
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresU.py:284
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresW.py:266
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresW.py:276
+msgid "Нет места на поддоне"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWares.py:284
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:285
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:320
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresSite.py:146
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:354
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:337
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresPallet.py:170
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresU.py:279
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresW.py:271
+msgid "Вы уверены?"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:142
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlcoEnd.py:142
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:142
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:142
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:217
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:142
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWUEndConf.py:142
+msgid "Отобрано"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:244
+msgid "Отсканируйте ШК короба или алкомарку"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlco.py:256
+msgid "Завершить позицию"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresAlcoEnd.py:231
+msgid "Для завершения отборки позиции отсканируйте ШК МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:228
+msgid "Для отборки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:268
+msgid "Отсканируйте партию поставки или ШК короба"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresLotIncome.py:285
+msgid "Для завершения отборки отсканируйте"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresSite.py:122
+msgid "ШК места отборки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:150
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:150
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresW.py:222
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskWPalletWaresPos.py:142
+msgid "Очистить"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresW.py:294
+msgid "Отсканируйте весовой ШК или МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWTaraQuant.py:180
+msgid "Единиц тары"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:172
+msgid "Отобранных ШК"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:286
+msgid "Отсканируйте ШК GS1-128 или МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWU.py:294
+msgid "Отсканируйте ШК единицы измерения или МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWUEndConf.py:171
+msgid "Отобранное количество отличается от заказанного!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWUEndConf.py:181
+msgid "Вернуться"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskCWaresWUEndConf.py:210
+msgid "Отобрать в 0"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEnd.py:114
+msgid "Товаров"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEnd.py:123
+msgid "Позиций"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEnd.py:141
+msgid "Частично"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEnd.py:150
+msgid "Вычерки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEnd.py:160
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskStatistic.py:113
+msgid "Список заданий"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEndPrint.py:115
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskPrinter.py:115
+msgid "Отсканируйте ШК принтера"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEndSite.py:115
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskSite.py:115
+msgid "Отсканируйте ШК местоположения"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEndStick.py:115
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskLabel.py:115
+msgid "Наклейте этикетку на поддон"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskEndStick.py:139
+msgid "Перепечатать этикетку"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresPallet.py:142
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresU.py:252
+msgid "ШК поддона"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskFWaresPallet.py:154
+msgid "Нет товара на остатках"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskM.py:129
+msgid "Отсканируйте ШК паллета для подтверждения или ШК товара для выверки:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SELECTDC/templates/taskTransUnit.py:115
+msgid "Отсканируйте единицу транспортировки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:110
+msgid "Отсканируйте ШК паллета!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:125
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:158
+msgid "Отсканированные ШК различаются!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:169
+msgid "Вы уже сканировали эту марку!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:360
+msgid "Ничего не найдено или ШК не обрабатывается!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:435
+msgid "Паллет не привязан к месту!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:550
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:151
+msgid "Задания такого метода не обрабатываются"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/siteverify.py:568
+msgid "Вы уже сканировали этот ШК!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/alcoBox.py:95
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/alcoMark.py:119
+msgid "Короб"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:96
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:118
+msgid "Выверять марки:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:101
+msgid "Вы  уверены, что хотите начать сканирование марок заново?"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:154
+msgid "Для подтверждения окончания выверки отсканируйте паллет еще раз"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:166
+msgid "Отсканируйте алкомарку или паллет для завершения выверки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/gs1.py:174
+msgid "Отсканируйте паллет, на котором находится товар с ШК GS1_128"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/index.py:117
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/infoManyPallets.py:116
+msgid "Несколько поддонов на МП"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/infoManyPallets.py:136
+msgid "Ничего не найдено"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:273
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:408
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:233
+msgid "Quant."
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares.py:405
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:578
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:370
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWares.py:387
+msgid "Новая партия"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palIWares_Incomes.py:347
+msgid "Выверять"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAddPrDate.py:133
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAddWLIncome.py:139
+msgid "Дата производства"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palWaresAddWLIncome.py:149
+msgid "Выберите приход"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletCreate.py:135
+msgid "Отсканируйте МП поддона"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWaresAdd.py:203
+msgid "Партия"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWaresAdd.py:235
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWaresAdd.py:250
+msgid "Номер партии не установлен"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/palletWaresAdd.py:240
+msgid "Ожидайте окончания заполнения списка для выбора!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/rangeWares.py:157
+msgid "Алко-марка"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:290
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:287
+msgid "Скрыть товары"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site.py:301
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/site_130415.py:298
+msgid "Показать товары"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/task.py:92
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/taskE.py:93
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/task.py:92
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/taskE.py:93
+msgid "Задание"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/taskE.py:223
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/taskE.py:240
+msgid "ШК короба или алкомарки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/SITEVERIFY/templates/userTaskSelect.py:170
+msgid "Отменить позицию?"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/templates/auto.py:111
+msgid "Единица транспортировки"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/TRANSUNITRETURN/templates/autoTransUnit.py:120
+msgid "Отсканируйте ШК единицы транспортировки для возврата на склад"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/waresSlot.py:170
+msgid "Новое МО"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/templates/waresSlot.py:205
+msgid "Save"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESSLOT/waresslot.py:105
+msgid "МП не активно"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/barcodes.py:166
+msgid "Новый ШК"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/wares.py:133
+msgid "Кр-ть"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/wares.py:139
+msgid "ЕИ"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresgetunits.py:138
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/reportRestExport.py:152
+msgid "Наименование"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:129
+msgid "Добавить ШК"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:146
+msgid "Кратность"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:231
+msgid "Брутто (кг)"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/templates/waresunit.py:248
+msgid "Нетто (кг)"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WARESUNIT/waresunit.py:86
+msgid "Выбор ЕИ"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palI.py:105
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palS.py:100
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalSite.py:109
+msgid "МП паллета"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:297
+msgid "Переместить все"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWares.py:310
+msgid "Переместить коробами"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisAll.py:251
+msgid "ШК паллета, на который переместить весь товар"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palWaresEgaisBox.py:251
+msgid "Отсканируйте ШК паллета, на который будете перемещать товар"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:110
+msgid "Работа с паллетом запрещена!"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:230
+msgid "Всего товаров"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/pallet.py:251
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palletSite.py:109
+msgid "МП поддона"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/templates/palletSite.py:154
+#: systems/KURSSKLAD/KURSTERM/templates/mainPalSite.py:161
+msgid "Работать с"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/WORKPALLET/workslot.py:61
+msgid "ШК не обрабатыается"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:138
+msgid "GTIN:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:149
+msgid "Расчет:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:160
+msgid "Дата производства:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:171
+msgid "Употребить до:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:182
+msgid "Дата упаковки:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:193
+msgid "Срок годности:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:204
+msgid "Истекает:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:215
+msgid "Вес:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:226
+msgid "Партия:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:237
+msgid "Серия:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:248
+msgid "Кол-во:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/include_gs1.py:259
+msgid "Внутри:"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/main.py:275
+msgid "Task List"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/main.py:291
+msgid "Refresh"
+msgstr ""
+
+#: systems/KURSSKLAD/KURSTERM/templates/main.py:309
+#: systems/KURSSKLAD/KURSTERM/templates/main.py:323
+msgid "Back"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:212
+msgid "difference on the price and count "
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:222
+msgid "Supplier"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:224
+msgid "Period"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:248
+msgid "Errors of the formatting"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:250
+msgid "Cnt vicherkov"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:275
+msgid "num"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:276
+msgid "Code wares"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:277
+msgid "Name wares"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:278
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:279
+msgid "Quantity"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:278
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:280
+msgid "Doc"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:279
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:281
+msgid "Fact"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:280
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:281
+msgid "Prices"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/CONTRACTORS/contractors.py:284
+msgid "Sum"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/WARESWEIGHT/templates/main.py:188
+msgid "Поставщик"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/WARESWEIGHT/templates/main.py:196
+msgid "ШК товара"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/main.py:183
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/wtrTaskStatistics.py:143
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/wtrtasktype.py:124
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/wtrtasktypezone.py:124
+#: systems/KURSSKLAD/REPORTS/WARESLOTINCOMESHIST/templates/byPeriod.py:104
+#: systems/KURSSKLAD/templates/dateTimePeriod.py:91
+#: systems/KURSSKLAD/templates/dateperiod.py:117
+msgid "Период"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/main.py:193
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/wtrtasktypezone.py:134
+#: systems/KURSSKLAD/REPORTS/WARESLOTINCOMESHIST/templates/byPeriod.py:98
+#: systems/KURSSKLAD/REPORTS/WARESLOTINCOMESHIST/templates/inBlocking.py:98
+#: systems/KURSSKLAD/templates/warehouse.py:95
+msgid "Склад"
+msgstr ""
+
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/main.py:201
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/wtrTaskStatistics.py:155
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/wtrtasktype.py:134
+#: systems/KURSSKLAD/REFERENCE/WORKTASKRATE/templates/wtrtasktypezone.py:142
+#: systems/KURSSKLAD/templates/tasktype.py:95
+msgid "Тип задания"
+msgstr ""
+
+#: systems/KURSSKLAD/REPORTS/WARESLOTINCOMESHIST/wareslotincomeshist.py:10
+msgid "Заблокированные"
+msgstr ""
+
+#: systems/KURSSKLAD/REPORTS/WARESLOTINCOMESHIST/wareslotincomeshist.py:10
+msgid "За период"
+msgstr ""
+
+#: systems/KURSSKLAD/RESTCONTROLDC/restcontrol.py:29
+msgid "Корзина"
+msgstr ""
+
+#: systems/KURSSKLAD/RESTCONTROLDC/restcontrol.py:30
+msgid "Недоcтача"
+msgstr ""
+
+#: systems/KURSSKLAD/RESTCONTROLDC/restcontrol.py:31
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/reportRestExport.py:111
+msgid "Остатки"
+msgstr ""
+
+#: systems/KURSSKLAD/RESTCONTROLDC/restcontrol.py:32
+msgid "Остатки (МП)"
+msgstr ""
+
+#: systems/KURSSKLAD/RESTCONTROLDC/restcontrol.py:33
+msgid "Сверка учетов"
+msgstr ""
+
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/reportRestExport.py:134
+msgid "Группа"
+msgstr ""
+
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/reportRestExport.py:140
+msgid "Подгруппа"
+msgstr ""
+
+#: systems/KURSSKLAD/RESTCONTROLDC/templates/reportRestExport.py:158
+msgid "Ед. изм."
+msgstr ""
+
+#: systems/KURSSKLAD/SCALE/templates/button_template.py:105
+msgid "Code"
+msgstr ""
+
+#: systems/KURSSKLAD/mwdetail.py:61
+msgid "Date"
+msgstr ""
+
+#: systems/KURSSKLAD/mwdetail.py:62
+msgid "Type operation"
+msgstr ""
+
+#: systems/KURSSKLAD/mwdetail.py:63
+msgid "Document number"
+msgstr ""
+
+#: systems/KURSSKLAD/mwdetail.py:64
+msgid "From whom"
+msgstr ""
+
+#: systems/KURSSKLAD/mwdetail.py:65
+msgid "To whom"
+msgstr ""
+
+#: systems/KURSSKLAD/templates/country.py:95
+msgid "СП"
+msgstr ""
+
+#: systems/KURSSKLAD/templates/selgroup.py:95
+msgid "ГО"
+msgstr ""
+
+#: systems/KURSSKLAD/templates/selscheme.py:95
+msgid "СО"
+msgstr ""
+
+#: systems/KURSSKLAD/templates/sitezone.py:95
+msgid "ЗМП"
+msgstr ""
+
+#: systems/KURSSKLAD/templates/waresgroup.py:92
+#: systems/KURSSKLAD/templates/waresgroup.py:106
+msgid "Товарная группа"
+msgstr ""
+
+#: systems/KURSSKLAD/templates/waresgroup.py:100
+msgid "ТГ"
+msgstr ""
+
+#: systems/KURSSKLAD/templates/whmode.py:97
+msgid "РХ"
+msgstr ""

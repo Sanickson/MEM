@@ -1,0 +1,53 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+
+    <b><u>$FROMNAME</u></b><br>
+    #if $TONAME
+        $TONAME<br>
+    #end if    
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b> $WNAME <br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b>
+    #end if
+    <br>
+    #if $varExists('$PNUM') and $PNUM
+		<b><u>$PNUM</u></b>($SNAME)
+	#else 
+		<b>$SNAME</b>
+	#end if
+    <br>
+    #if $varExists('$qdoc')
+        $_('План'): $viewQuantity($qdoc,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$qdoc#end filter#</u>)</b>
+        <br>
+    #end if
+    #if $varExists('$qfact')
+        $_('Факт'): $viewQuantity($qfact,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$qfact#end filter#</u>)</b>
+        <br>
+    #end if
+    
+    <hr>
+    #if $varExists('$datalist')
+        #for $item in $datalist
+            #if $item.SUPPLIER
+                #filter DateFilter2$item.DOCDATE#end filter# $item.DOCNUM
+                <br>
+                <u>$item.SUPPLIER</u>
+                <br>
+            #end if
+            #if $item.WLINCOMEID
+                <a href="dfsTaskWaresPalletWlin?tid=$TID&wid=$WID&pid=$PID&wlotid=$item.WLOTID&wlincomeid=$item.WLINCOMEID">#filter DateFilter2$item.productdate#end filter#</a>
+            #else
+                <a href="dfsTaskWaresPalletWlin?tid=$TID&wid=$WID&pid=$PID&wlotid=$item.WLOTID">#filter DateFilter2$item.productdate#end filter#</a>
+            #end if
+             = $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)
+            <br>
+            #if $item.WLNUMBER
+                $item.WLNUMBER <br>
+            #end if
+        #end for
+    #end if    
+#end def

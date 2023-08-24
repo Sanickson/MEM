@@ -1,0 +1,29 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+
+    <b><u>($WCODE)</u></b>$WNAME<br>
+    #if $VWUCODE
+        $VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE <br>
+    #end if
+    #if $WSITEID
+        <b>$WSITENAME</b>
+        #if $varExists('$WSITEQ') and $WSITEQ
+            : $viewQuantity($WSITEQ,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(#filter Quantity$WSITEQ#end filter#)</b>
+        #end if
+        <br>
+    #end if
+    <hr>
+    #if $WSGCODE
+        <a href="waresSelGroup?wid=$WID">$WSGCODE</a><br>
+        $WSGNAME
+    #else
+        <a href="waresSelGroup?wid=$WID">$_('Выбрать ГО')</a><br>
+    #end if
+    <hr>
+    <form action='main'>
+        $_('ШК'): <input type='text' name='barcode' id=':scan' title="$_('Товар'), $_('Паллет'), $_('МП')">
+    </form>
+#end def

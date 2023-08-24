@@ -1,0 +1,50 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#from systems.KURSSKLAD.cheetahutils import Quantity
+#from systems.KURSSKLAD.cheetahutils import TimeStampToDate
+
+#def mainData
+
+    № <b>$docnum</b> от <b>#filter DateFilter$docdate#end filter# (<u>$TID</u>)</b>
+    #if $varExists('$TONAME') and $TONAME
+        <br>$TONAME
+    #end if
+    <br>
+    <b>$PNUMBER</b>
+    <hr>
+    <form action="taskPPallet">
+        <input type="hidden" name="tid" value="$TID">
+        $_('Отсканируйте ШК паллета для подтверждения отборки:') <input type="text" id=":scan:text" name="barcode" value="">
+	</form>
+    <hr>
+    (<a href="taskPWares?tid=$tid&wid=$WID" title="$WNAME.replace('"',"'")">$WCODE</a>) $WNAME
+    <br><br>
+    $_('Заказ'): $viewQuantity($QPLAN,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE) (<u><b>$Quantity($QPLAN)</b></u>)<br>
+    $_('На паллете'): $viewQuantity($QPALLET,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE) (<u><b>$Quantity($QPALLET)</b></u>)<br>
+    <br>
+    #if $varExists('$datalist')
+        #for $item in $datalist
+            #if $item.COUNTRYNAME
+                #if $item.PRODUCERNAME
+                    $item.COUNTRYNAME: <u>$item.PRODUCERNAME</u>
+                #else
+                    $item.COUNTRYNAME
+                #end if
+                <br>
+            #elif $item.PRODUCERNAME
+                <u>$item.PRODUCERNAME</u><br>
+            #end if
+
+            <u>#filter DateFilter2$item.PDATE#end filter#</u>:
+##            <b>#filter Quantity$item.QCALC#end filter#</b>
+            $viewQuantity($item.PAMOUNT,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$item.PAMOUNT#end filter#</u></b>)
+            <br>
+        #end for
+    #end if
+
+    <hr>
+    <a href="taskPReNew?tid=$TID&trash=0">$_('Новое МП')</a><br>
+    <a href="taskPReNew?tid=$TID&trash=1">$_('Паллет не найден')</a>
+#end def
+

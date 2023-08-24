@@ -1,0 +1,25 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+    <b><u>$FROMNAME</u></b><br>
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b>
+    #if $WSGCODE
+        = $WSGCODE <br>
+    #end if
+    $WNAME
+    <br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b>
+    #end if
+    <br><br>
+    <form action="taskWaresAddEgaisPrDate" method=post>
+        <input type="hidden" name="tid" value="$tid">
+        <input type="hidden" name="wid" value="$wid">
+        $_('Введите дату производства'): <br>
+    	<input type=text size=6 id=":focus:date" name=prdate autocomplete=false value="__.__.__"/> <br>
+    	<input type="submit" value="$_('Далее')"/>
+	</form>
+#end def

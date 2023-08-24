@@ -1,0 +1,24 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData    
+    <b><u>($WCODE)</u></b>$WNAME
+    <br><br>
+    <b>$_('Вес тары')</b>
+    <hr>
+
+    #if $varExists('$DOCID') and $DOCID
+        <form action="waresTaraWeightChg">
+            <input type="hidden" name="docid" value="$docid">
+            <input type="hidden" name="wid" value="$wid">
+            $WHNAME<br>
+            $CLNAME<br>
+            $DOCNUM | #filter DateFilter2$DOCDATE#end filter#<br><br>
+            $_('Вес тары'):
+            <br>
+            <input type="text" value="#filter Quantity$TARAWEIGHT#end filter#" size="5" name="weight" id="::float">
+            <br>
+            <input type="submit" value="$_('Сохранить')"/>
+        </form>
+    #end if
+#end def

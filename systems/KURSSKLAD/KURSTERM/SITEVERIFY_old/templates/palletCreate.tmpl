@@ -1,0 +1,33 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    $_('Поддон'): <b><u>$pNum</u></b><br><br>
+        
+    #if $varExists('$datalist') and $datalist
+          #if $varExists('$siteid') and $siteid
+            #set sitehref = '&siteid='+str($siteid)
+          #else
+            #set $sitehref = ''
+          #end if
+          #if $varExists('$sBarcode') and $sBarcode
+            #set sbchref = '&sBarcode='+$sBarcode
+          #else
+            #set $sbchref = ''
+          #end if
+        
+        #for $item in $datalist
+            <a href="palletCreate?pNum=$pNum&pBarcode=$pBarcode&psiteid=$item.SID$sitehref$sbchref">$item.SNAME</a><br><br>
+        #end for        
+    #end if
+    
+    <form action="palletCreate">
+        $_('Отсканируйте МП поддона')
+      #if $varExists('$siteid') and $siteid
+        <input type="hidden" name="siteid" value="$siteid">
+      #end if
+        <input type="hidden" name="pBarcode" value="$pBarcode">
+        <input type="hidden" name="pNum" value="$pNum">
+        <input type="text" name='sBarcode' id=':scan' title="$_('МО')">
+    </form>
+#end def

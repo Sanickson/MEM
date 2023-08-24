@@ -1,0 +1,20 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    #if $FROMNAME
+        <b><u>$FROMNAME</u></b><br>
+    #end if
+    $DOCNUM <b>#filter DateFilter$DOCDATE#end filter#</b>
+    <br><br>
+
+    <b>$_('Товары без ГО')</b>
+    <hr>
+    #for $item in $datalist
+        <a href="taskWaresSelGroup?tid=$TID&wid=$item.WID">($item.WCODE)</a><br>
+        $item.WNAME<br><br>
+    #end for
+#end def
+

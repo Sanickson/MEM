@@ -1,0 +1,111 @@
+html{
+    width:278mm;
+    line-height:10pt;
+    font-family:'Times New Roman', Georgia, Times, serif;
+    font-size:10pt;
+    color:#000000;
+
+}
+body{
+    width:278mm;
+    margin:0;
+    padding:0;
+    color:#000000;
+}
+.up_stamp{
+    position:relative;
+    float:right;
+    clear:both;
+    padding-right:4px;
+    margin-bottom:1.5mm;
+    font-size:10pt;
+}
+.table_1{
+    border-collapse: collapse;
+    width:202mm;
+    border:0;
+    clear: both;
+}
+.table_1 td{
+    height:7mm;
+    vertical-align:bottom;
+}
+.table_2{
+    border-collapse: collapse;
+    width:202mm;
+    border:0;
+    clear: both;
+    font-size:10pt;
+}
+.table_2 td{
+    height:6mm;
+}
+
+
+.sub_text{
+    text-align:center;
+    font-size:8pt;
+    line-height:6pt;
+    height:5mm;
+}
+
+.order_table{
+    width:100%;
+    clear:both;
+    border-collapse: collapse;
+    margin-top:8mm;
+}
+.order_table tr td,
+.order_table thead tr td,
+.order_table tbody tr td,
+.order_table tfoot tr td,
+.order_table tr{
+    border:1px solid #000000;
+    height:4.5mm;
+}
+.order_table thead{
+    font-size:9pt;
+}
+.order_table thead tr td{
+    font-size:9pt;
+    text-align:center;
+    vertical-align:middle;
+    line-height:10pt;
+}
+.order_table tfoot td{
+    font-size:9pt;
+    height:5mm;
+}
+
+.order_table tbody tr td{
+    vertical-align:bottom;
+    border-left:0px;
+    font-size:10pt;
+    text-align:center;
+}
+.total_table1 tr td{
+    border:0;
+}
+.table_stamp_1{
+    font-size:10pt;
+    margin-top:4mm;
+    width:100%;
+    clear:both;
+    display:inline-block;
+    page-break-inside: avoid;
+}
+.legend{
+    font-size:8pt;
+    margin-top:1mm;
+}
+.stamp{
+    width:100%;
+    clear:both;
+    display:inline-block;
+    page-break-inside: avoid;
+}
+.barcode {
+    font-family: "Free 3 of 9 Extended", "Free 3 of 9";
+    font-size: 30pt;
+    height: 30px;
+}

@@ -1,0 +1,20 @@
+#encoding utf-8
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th id="labelSS"></th></tr>
+	<tr><td><select id="ssid" name=ssid></select></td></tr>
+#else
+    <label id="labelSS" for="ssid" style="width:5%;"><b></label>
+    <select id="ssid" class="wid" name=ssid style="width:5%;"></select>
+#end if
+
+
+
+
+<script src="$sps_js.KURSSKLAD/embed/selscheme.js"></script>
+<script>
+  \$(document).ready(function() {
+
+        \$('#ssid').selectSelScheme();
+        \$('#whid').changeSelScheme();
+  });
+</script>

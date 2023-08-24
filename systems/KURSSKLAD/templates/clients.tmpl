@@ -1,0 +1,13 @@
+#encoding utf-8
+
+<label for="clid" style="width:15%;"><b>$_('Клиент'):</b></label>
+<select id="clid" class="wid" name="clid" style="width:18%;"></select>
+
+<script src="$sps_js.KURSSKLAD/embed/clients.js"></script>
+<script>
+  \$(document).ready(function() {
+
+        \$('#clid').selectClient();
+        \$('#whid').changeListClient();
+  });
+</script>

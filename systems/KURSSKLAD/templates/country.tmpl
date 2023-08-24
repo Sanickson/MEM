@@ -1,0 +1,17 @@
+#encoding utf-8
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th>Страна производства</th></tr>
+	<tr><td><select id="cid"  name="cid" ></select></td></tr>
+#else
+    <label for="cid" style="width:3%;"><b>$_('СП'):</b></label>
+    <select id="cid" class="wid" name="cid" style="width:12%;"></select>
+#end if
+
+
+
+<script src="$sps_js.KURSSKLAD/embed/country.js"></script>
+<script>
+  \$(document).ready(function() {
+        \$('#cid').selectCountry();
+  });
+</script>

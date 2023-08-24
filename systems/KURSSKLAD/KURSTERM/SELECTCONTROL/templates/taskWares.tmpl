@@ -1,0 +1,48 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    <b><u>$PAL_CLIENTNAME</u></b><br>
+    <b>$NUMPALLET</b>
+    <hr>
+    <b>($WCODE)</b>$WNAME
+    #if $ARTICUL
+        <b>($ARTICUL)</b>
+    #end if
+    <hr>
+    #set $amount = 0
+    #set $qchk = 0
+    #set $num = 0
+    #for $item in $datalist
+        #if $num != 0
+            <br>
+        #end if
+        <b>#filter DateFilter2$item.productdate#end filter#</b>:
+        #if $item.WLINCOMEID
+            $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)<br>
+            $_('Проверено'): <a href="taskWaresLot?tid=$tid&wid=$WID&docid=$item.DOCID&productdate=#filter DateFilter$item.PRODUCTDATE#end filter#"
+            title="$wlIncomeTitle($item)">
+            $viewQuantity($item.QCHK,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.QCHK#end filter#</u></b>)</a>
+        #else
+            $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)
+            <a href="taskWaresLot?tid=$tid&wid=$WID&docid=$item.DOCID&productdate=#filter DateFilter$item.PRODUCTDATE#end filter#">
+            $viewQuantity($item.QCHK,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.QCHK#end filter#</u></b>)</a>
+        #end if
+        #set $amount += float($item.AMOUNT)
+        #set $qchk += float($item.QCHK)
+        #set $num += 1
+        <br>
+    #end for
+    <hr>
+
+    #if $len($datalist) > 1
+        $_('Отобрано') = <b>$viewQuantity($amount,$VWUFACTOR,$VUCODE,$MWUFACTOR,$MUCODE)</b>(<u>#filter Quantity$amount#end filter#</u>)<br>
+        $_('Проверено') = <b>$viewQuantity($qchk,$VWUFACTOR,$VUCODE,$MWUFACTOR,$MUCODE)</b>(<u>#filter Quantity$qchk#end filter#</u>)<br>
+    #end if
+    <br>
+    <a href="taskWaresEnd?tid=$tid&wid=$WID">$_('Завершить позицию')</a><br>
+    <a href="taskWaresAdd?tid=$tid&wid=$WID">$_('Новая партия')</a>
+#end def
+

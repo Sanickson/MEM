@@ -1,0 +1,30 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REPORTS.WORKTASKRATE.templates.wtrmain
+
+#def wtrData
+    ##Scripts
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/FileSaver.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/Export2Excel.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/xlsx.core.min.js"></script>
+
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/taskView.js"></script>
+    <script type="text/javascript" src="$sp_js/worktaskrate.js"></script>
+
+	<div id="dvFilter" class="Filter buttons">
+	    <button type="button" title="Склады" id="btnWareHouses" tasktypes=""><img src="$eng_img/actions/application_view_detail.png" alt="">Склады</button>
+        <button type="button" title="Типы заданий" id="btnTaskTypes" tasktypes=""><img src="$eng_img/actions/application_view_detail.png" alt="">Типы заданий</button>
+        Период поиска:
+        <input type="text" id="dvFilterDateBeg" size="8">
+        <input type="text" id="dvFilterTimeBeg" size="5" value="00:00">
+        -
+        <input type="text" id="dvFilterDateEnd" size="8">
+        <input type="text" id="dvFilterTimeEnd" size="5" value="23:59">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" id="dvFilterBtnLocate"><img src="$eng_img/actions/magnifier.png"></button>
+        <button type=button id=btnExcel><img src="$eng_img/apps/excel.png"></button>
+        <button type=button id=btnPrint title="Печать"><img src="$eng_img/actions/printer.png"/></button>
+        <button type="button" id="btnTimer"><img src="$sp_img/timer.png"></button>
+    </div>
+
+	<div id="dvScreen"></div>
+#end def

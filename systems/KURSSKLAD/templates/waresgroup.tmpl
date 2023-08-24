@@ -1,0 +1,17 @@
+#encoding utf-8
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th id="labelWGID"></th></tr>
+	<tr><td><input readonly type=text name=wgid id="wgid" value=""></td></tr>
+#else
+    <label for="wgid" id="labelWGID" style="width:5%;"></label>
+    <input style="width:5%;" readonly type=text name=wgid id="wgid" class="wid" value="">
+#end if
+
+
+
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.Sp.WaresGroups.js"></script>
+<script>
+  \$(document).ready(function() {
+    \$('#wgid').whWaresGroup();
+  });
+</script>

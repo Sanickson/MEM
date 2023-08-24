@@ -1,0 +1,34 @@
+#encoding utf-8
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+
+    <b><u>$FROMNAME</u></b><br>
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b>
+    #if $WSGCODE
+        = $WSGCODE <br>
+    #end if
+    $WNAME<br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b><br>
+    #end if    
+    <b><u>$PNUM</u></b>($SNAME)<br><br>
+
+    #if $varExists('$TARAWEIGHT') and $TARAWEIGHT and $TARAWEIGHT > 0.0001
+        $_('Вес тары'): <a href="taskWaresLotPalletTara?tid=$tid&pid=$pid&wid=$wid&wlotid=$wlotid" title="$_('Изменить')">$TARAWEIGHT</a><br>
+    #end if
+
+    $_('Производство'): <b>#filter DateFilter2$productdate#end filter#</b> <br>
+    $viewQuantity($wlamount,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)<b>(<u>#filter Quantity$wlamount#end filter#</u>)</b>
+    <br>
+    #if $varExists('$CNTBIS') and $CNTBIS
+        $_('Кол-во ШК'): <b>$CNTBIS</b><br>
+    #end if
+    #if $varExists('$CNTEGAISBOX') and $CNTEGAISBOX
+        $_('Короба ЕГАИС'): <b>$CNTEGAISBOX</b><br>
+    #end if
+#end def

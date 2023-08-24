@@ -1,0 +1,68 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity, TimeStampToDate
+
+#def mainData
+    <b><u>$CLNAME</u></b><br>
+    <b>#filter DateFilter$DDATE#end filter#</b> №<b>$DNUM</b> ($TID_SELECT)<br>
+    <b>$NUMPALLET</b>
+    <hr>
+    <b>($WCODE)</b>$WNAME
+    #if $ARTICUL
+        <b>($ARTICUL)</b>
+    #end if
+    <hr>
+    #set $amount = 0
+    #set $qchk = 0
+    #set $q = 0
+    #set $num = 0
+    #for $item in $datalist
+        #if $num != 0
+            <br>
+        #end if
+        <b>#filter DateFilter2$item.productdate#end filter#</b>:
+        #if $item.WLINCOMEID
+            $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)<br>
+            $_('Проверено'): <a href="#" title="$wlIncomeTitle($item)">
+
+             #set $q = $item.QCHK
+             $viewQuantity($item.QCHK,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)
+            </a>
+        #else
+            #set $q = $item.QCHK
+            <a href="#"> $viewQuantity($q,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)</a>
+        #end if
+        #set $amount += float($item.AMOUNT)
+        #set $qchk += float($q)
+        #set $num += 1
+        <br>
+    #end for
+    #if $len($datalist) > 1
+        <hr>
+        $_('Отобрано'): $viewQuantity($amount,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)<br>
+
+        $_('Проверено'): $viewQuantity($qchk,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)<br>
+    #end if
+
+    #if $scannedbarcode
+        <hr>
+        #set global $scannedMarkerHref = None
+        #include '../systems/KURSSKLAD/KURSTERM/templates/scannedMarker.tmpl'
+        <br>
+    #end if
+
+    <br>
+    <form action="taskWaresMarkers" method=post>
+        <input type="hidden" name="tid" value="$TID_SELCTRL">
+        <input type="hidden" name="wid" value="$WID">
+        $_('Отсканируйте маркировку'): <br>
+        <input type=text size=7 id="barcode:scan:text" name=barcode>
+    	<input type="submit" value="$_('Далее')"/>
+	</form>
+
+    <br>
+    <a href="taskWaresEnd?tid=$TID_SELCTRL&wid=$WID">$_('Завершить позицию')</a><br>
+    <a href="taskWaresClear?tid=$TID_SELCTRL&wid=$WID">$_('Начать заново')</a><br>
+#end def
+

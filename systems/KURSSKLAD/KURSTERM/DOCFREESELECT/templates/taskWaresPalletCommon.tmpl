@@ -1,0 +1,58 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+
+    <b><u>$FROMNAME</u></b><br>
+    #if $TONAME
+        $TONAME<br>
+    #end if
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b> $WNAME <br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b>
+    #end if
+    <br>
+    #if $varExists('$PNUM') and $PNUM
+		<b><u>$PNUM</u></b>($SNAME)
+	#else
+		<b>$SNAME</b>
+	#end if
+    <br>
+    #if $varExists('$qdoc')
+        $_('План'): $viewQuantity($qdoc,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$qdoc#end filter#</u>)</b>
+        <br>
+    #end if
+    #if $varExists('$qfact')
+        $_('Факт'): $viewQuantity($qfact,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$qfact#end filter#</u>)</b>
+        <br>
+    #end if
+
+    <hr>
+    #if $varExists('$datalist')
+        <form action=dfsTaskWaresPalletCommonSave method=post>
+            <input type=hidden name=tid value=$TID>
+            <input type=hidden name=pid value=$PID>
+            <input type=hidden name=wid value=$WID>
+            <input type=hidden name=ctm value="$dbCurrentTimestamp()">
+
+            <select name=wuid id=":focus:">
+                <option value=$MWUID selected>$MWUCODE</option>
+              #if $VWUID:
+                <option value=$VWUID>$VWUCODE = #filter Quantity$VWUFACTOR#end filter#</option>
+              #end if
+            </select><br><br>
+
+        #for $item in $datalist
+            #set $name = 'WL_%s_0' % $item.WLOTID
+            #filter DateFilter2$item.productdate#end filter#: <input type="text" name="$name" id="::float" value="#filter Quantity$item.AMOUNT#end filter#" size="4" title="$item.WLNUMBER">
+            / $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)
+            <br>
+        #end for
+            <hr>
+            $_('ШК Паллета'): <input type='text' name='barcode' id='barcode:scan' size=6>
+            <input type=submit value=Ok />
+        </form>
+    #end if
+#end def

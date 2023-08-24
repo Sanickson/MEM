@@ -1,0 +1,17 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+    <b>$PRINTERNAME</b><br>
+    <b>$REPORTNAME</b><br>    
+    <br>
+    <b><u>($WCODE)</u></b>$WNAME<br>
+    <hr>
+    #for $item in $datalist
+        $item.SUPPLIER<br> 
+        <a href='palWaresPrinter?id=$palid&wid=$WID&printerid=$PRINTERID&wlincomeid=$item.WLINCOMEID'>#filter DateFilter2$item.DOCDATE#end filter# №$item.DOCNUM</a><br>
+        #filter DateFilter2$item.PRODUCTDATE#end filter# = $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)<br>
+        <hr>
+    #end for    
+#end def

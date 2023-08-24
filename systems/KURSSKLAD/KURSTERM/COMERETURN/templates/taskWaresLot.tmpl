@@ -1,0 +1,54 @@
+#encoding utf-8
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    <b><u>$FROMNAME</u></b><br>
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b> $WNAME<br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b><br>
+    #end if    
+    <b><u>$PNUM</u></b>($SNAME)<br><br>
+    
+    <form action=taskWaresLot>
+        <input type=hidden name=tid value=$tid>
+        <input type=hidden name=wid value=$wid>
+        <input type=hidden name=wlotid value=$wlotid>
+        <input type=hidden name=palletid value=$pid>
+        $_('Производство'): <b>#filter DateFilter2$productdate#end filter#</b> <br>
+        $_('Принято'): $viewQuantity($qincome,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)<b>(<u>#filter Quantity$qincome#end filter#</u>)</b>
+        <br>
+        $_('Остаток'): $viewQuantity($qrest,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)<b>(<u>#filter Quantity$qrest#end filter#</u>)</b>
+        <br>
+        #if $varExists('$CNTBIS') and $CNTBIS
+            $_('Кол-во ШК'): <b>$CNTBIS</b><br>
+        #end if
+        #if $varExists('$CNTEGAISMARK') and $CNTEGAISMARK
+            $_('Короба ЕГАИС'): <b>$CNTEGAISMARK</b><br>
+        #end if
+
+        <br>
+        #if $varExists('$IS_ALCO') and $IS_ALCO == '1'
+            <input type=hidden name=wuid value="$MWUID">
+            <input type=hidden name=amount value="0">
+            $MWUCODE: <input type=text readonly disabled value="0" size=6><br><br>
+        #elif $varExists('$CNTEGAISMARK') and $CNTEGAISMARK
+            <input type=hidden name=wuid value="$MWUID">
+            <input type=hidden name=amount value="0">
+            $MWUCODE: <input type=text readonly disabled value="0" size=6><br><br>
+        #else
+            <select name=wuid>
+                    <option value=$MWUID>$MWUCODE</option>
+                #if $WTYPE=='U' and $VWUID
+                    <option value=$VWUID>$VWUCODE</option>
+                #end if
+            </select>:
+                <input type=text name=amount id=":focus:float" value="#filter Quantity$amount#end filter#" size=6><br><br>
+        #end if
+        $_('ШК Поддона'): <input type=text size=7 id="barcode:scan:text" name=barcode>
+        <button type=submit>OK</button>
+	</form>
+#end def

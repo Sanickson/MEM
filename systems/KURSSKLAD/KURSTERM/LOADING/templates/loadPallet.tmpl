@@ -1,0 +1,18 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+    <b>$SNAME</b>
+    </br>
+    <b>Задание: </b><span>$TID</span>
+    </br>
+    <b>Создано: </b><span>$CREATETIME</span>
+
+    <form>
+        ШК: <input type="text" id="barcode:scan:text" name="barcode" title="$_('Паллет')"><br>
+    </form>
+
+#end def

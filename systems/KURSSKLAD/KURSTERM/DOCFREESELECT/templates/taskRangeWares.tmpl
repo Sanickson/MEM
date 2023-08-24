@@ -1,0 +1,30 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+
+    <b><u>$FROMNAME</u></b><br>
+    #if $TONAME
+        $TONAME<br>
+    #end if    
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    $_('ШК'): <b><u>$barcode</u></b><br>
+    
+    <br><br>
+        <u><b>$_('Выберите товар'):</b></u>    
+    <hr>    
+    #if $varExists('$datalist') and $datalist
+        #for $item in $datalist
+            (<u>$item.WCODE</u>)
+            = <b>#filter Quantity$item.AMOUNT#end filter# $item.MUC</b><br>
+            <a href='dfsTaskWares?tid=$TID&wid=$item.WID'>$item.WNAME</a>
+            #if $item.VUC
+                <br>
+                $item.VUC = #filter Quantity$item.VUF#end filter# $item.MUC
+            #end if
+            <br>
+            <hr>
+        #end for
+    #end if
+#end def

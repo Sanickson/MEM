@@ -1,0 +1,107 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import coalesceValue
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData    
+    <b>$SITENAME</b><br>
+    <b><u>($WCODE)</u></b>$WNAME<br>
+    #if $varExists('$TARAWEIGHT') and $TARAWEIGHT
+        $_('Вес тары')=<b>#filter Quantity$TARAWEIGHT#end filter#</b><br>
+    #end if
+    #if $varExists('$pid')
+        #if $pnum
+            <a href="rfsTaskWaresPallet?tid=$TID&wid=$WID">$pnum</a> ($psname)
+        #else
+            <a href="rfsTaskWaresPallet?tid=$TID&wid=$WID">$psname</a>
+        #end if
+        <br>
+        #if $varExists('$PTARAWEIGHT') and $PTARAWEIGHT
+            $_('Вес тары')=<b>#filter Quantity$PTARAWEIGHT#end filter#</b><br>
+        #end if
+    #end if
+    $_('Нужно'): $viewQuantity($QNEED,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$QNEED#end filter#</u></b>)<br>
+    $_('Вместимость'): $viewQuantity($QCONTENT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$QCONTENT#end filter#</u></b>)
+    <hr>
+    #if $ICTCODE and $ICTCODE == 'EGAIS'
+        #if $varExists('$datalist') and len($datalist) > 0
+            <br>
+            #set $canMoveAll = True
+            #for $item in $datalist
+                #filter DateFilter2$item.productdate#end filter# =
+                    $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)<br>
+                #if $item.CNTBOXMARK + $item.CNTMARK != $item.AMOUNT
+                    <font class="yellow"><b>$_('ЕГАИС')</b></font>
+                    #set $canMoveAll = False
+                #else
+                    $_('ЕГАИС')
+                #end if
+                = $item.CNTBOX ($item.CNTBOXMARK)
+                #if $item.CNTMARK
+                    <font class="yellow"><b>+$item.CNTMARK</b></font>
+                #end if
+                <br>$_('Перемещено')
+                = $item.TWCNTBOX ($item.TWCNTBOXMARK)
+                #if $item.TWCNTMARK
+                    <font class="yellow"><b>+$item.TWCNTMARK</b></font>
+                #end if
+                <br><br>
+            #end for
+            <hr>
+            <form action=rfsTaskWaresEgaisScan>
+                <input type=hidden name=tid value=$TID>
+                <input type=hidden name=wid value=$WID>
+                <input type=hidden name=ctm value="$ctm">
+                $_('МО для полного пополнения'): <br>
+                <input type="text" size=6 id=":scan:text" name="barcode" value="">
+                <button type="submit">OK</button>
+                <br>
+                $_('Алкокороб для частичного')
+            </form>
+        #end if
+    #else
+        #if $varExists('$datalist')
+            #if len($datalist)>0
+                <form action=rfsTaskWaresSave>
+            #end if
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Дата</th>
+                                <th>Кол-во</th>
+                                <th><select name=wuid id=":focus:">
+                                      #if $VWUID
+                                        <option value=$VWUID>$VWUCODE</option>
+                                      #end if
+                                        <option value=$MWUID>$MWUCODE</option>
+                                    </select>
+                                </th>
+                            <tr>
+                        </thead>
+                        <tbody>
+                        #for $item in $datalist
+                            <tr>
+                                <td>#filter DateFilter2$item.productdate#end filter#</td>
+                                <td>$viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)</td>
+                                #if $item.WLNUMBER
+                                    <td><input name=wl$item.WLOTID id=":scan:float" type=text size=6 title="$item.WLNUMBER.replace('"',"'")" value=0></td>
+                                #else
+                                    <td><input name=wl$item.WLOTID id=":scan:float" type=text size=6 value=0></td>
+                                #end if
+                            </tr>
+                        #end for
+                        </tbody>
+                    </table>
+                    <br>
+            #if len($datalist)>0
+                    <input type=hidden name=tid value=$TID>
+                    <input type=hidden name=wid value=$WID>
+                    <input type=hidden name=ctm value="$ctm">
+                    ШК: <input type="text" id=":scan:text" name="barcode" value="" title="МО">
+                    <button type=submit value=Ok />
+                </form>
+            #end if
+        #end if
+    #end if
+#end def
+

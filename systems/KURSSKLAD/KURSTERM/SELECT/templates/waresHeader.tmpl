@@ -1,0 +1,14 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#from systems.KURSSKLAD.cheetahutils import Quantity
+
+<b><u>($wcode)</u></b>$wname<br>
+#if $varExists('$QOMIN') and $QOMIN
+    $Quantity($QOMIN) ..
+#end if
+#if $varExists('$VUFACTOR') and $VUFACTOR and $VUFACTOR < $QO
+    $viewQuantity($QO,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>$Quantity($QO)</u></b>)
+#else
+    <b><u>$Quantity($QO)$MUCODE</u></b>
+#end if
+<br>

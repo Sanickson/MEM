@@ -1,0 +1,56 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    <b><u>$PAL_CLIENTNAME</u></b><br>
+    <b>$NUMPALLET</b>
+    <hr>
+    <b>($WCODE)</b>$WNAME
+    #if $ARTICUL
+        <b>($ARTICUL)</b>
+    #end if
+    #set num = 0
+    #for $item in $datalist
+        <hr>
+        #set num += 1
+        <b>#filter DateFilter2$item.productdate#end filter#</b>:
+        #if $item.WLINCOMEID
+            $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)<br>
+            $_('Проверено'):
+            $viewQuantity($item.QCHK,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.QCHK#end filter#</u></b>)<br>
+            $wlIncomeTitle($item)
+        #else
+            $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)
+            $viewQuantity($item.QCHK,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.QCHK#end filter#</u></b>)
+        #end if
+        <br>
+        <form action=taskWaresSave id=frm$num>
+            <input type=hidden name=tid value=$tid>
+            <input type=hidden name=wid value=$WID>
+            <input type=hidden name=docid value=$item.DOCID>
+            <input type=hidden name=productdate value="#filter DateFilter$item.PRODUCTDATE#end filter#">
+            <input type=hidden name=flag value='+'>
+            <br>
+            <select name=wuid>
+                #if $WTYPE=='U' and $VWUID
+                    <option value=$VWUID>$VWUCODE*#filter Quantity$VWUFACTOR#end filter#</option>
+                #end if
+                    <option value=$MWUID>$MWUCODE</option>
+            </select> :
+            <input type=text id=":focus:float" name=q value=0 size="6"><br><br>
+            <input type=submit border="0" value="$_('Добавить')" onclick="save('$num','+');">
+            &nbsp;
+            <input type=button value="$_('Установить')" onclick="save('$num','v');">
+        </form>
+    #end for
+
+    <script>
+        function save(num, flag){
+            document.getElementById('frm'+num).flag.value = flag;
+            document.getElementById('frm'+num).submit();
+        }
+    </script>
+
+#end def

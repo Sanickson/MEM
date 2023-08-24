@@ -1,0 +1,42 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    #if $PID
+        #if $PNUM
+            <b>$PNUM</b>($SITENAME)
+            <br>
+        #else
+            <b>$SITENAME</b>
+            <br>
+        #end if
+    #elif $SITEID
+        <b>$SITENAME</b>
+        <br><br>
+        <form action='taskWaresPallet'>
+            <input type=hidden name=twid value=$TWID>
+            $_('Отсканируйте ШК местоположения'): <br> <input type=text name=barcode id="barcode:scan">
+        </form>
+    #end if
+
+    <br>
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/waresHeader.tmpl'
+    <hr>
+    #if $varExists('$TWID_NEW') and $TWID_NEW
+        <b>$_('Замена позиции на'):</b> <br>
+        <span class=yellow>
+            <b>($WCODE_NEW)</b> $WNAME <br>
+            <a href="taskWares?twid=$TWID_NEW">$_('К новой позиции')</a>
+        </span
+    #else
+        <form action='taskWaresPreScan'>
+            <input type=hidden name=twid value=$TWID>
+            $_('Для проверки товара отсканируйте его ШК'): <br> <input type=text name=barcode id="barcode:scan">
+        </form>
+        <br><br>
+        <a id='::focus' href='taskWaresNoPlace?tid=$TID&twid=$TWID' onClick="return confirm('$_('Нет места на паллете отборки')\n---------------------------------\n$_('Вы уверены?')')">$_('Нет места на паллете отборки')</a>
+    #end if
+
+#end def
+

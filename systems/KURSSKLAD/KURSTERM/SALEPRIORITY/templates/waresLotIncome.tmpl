@@ -1,0 +1,49 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import Quantity
+
+#def mainData
+    <b><u>($WCODE)</u></b>$WNAME<br>
+    #if $varExists('$WLINID') and $WLINID > 0
+      <u>$FROMNAME</u><br>
+      #filter DateFilter2 $DOCDATE #end filter# $_('№') $DOCNUM<br>
+    #else
+      #set $WLINID = 0
+    #end if
+        <a href="waresLotIncomePriority?wlincomeid=$WLINID&wid=$wid" title="$_('Приоритет для всех')">$_('Приоритет')</a><br>
+    <hr>
+    #if $varExists('$datalist') and $datalist
+      <table>
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>$_('Паллет')</th>
+            <th>$_('Ост')</th>
+          </tr>
+        </thead>
+        <tbody>
+      #for $item in $datalist
+        <tr>
+          #if $item.PR == -1
+            #set $classname = 'gray'
+          #elif $item.PR == 0
+            #set $classname = 'green'
+          #elif $item.PR == 1
+            #set $classname = 'yellow'
+          #else
+            #set $classname = 'red'
+          #end if
+          <td class="$classname"><b>$item.PR</b></td>
+          <td>
+                <a href="waresLotPalletPriority?wid=$WID&pid=$item.PID&wlincomeid=$WLINID" title="$item.SNAME.replace('"',"'")">
+                  $item.PNUM
+                </a>
+
+          </td>
+          <td>$Quantity($item.REST)</td>
+        </tr>
+      #end for
+        </tbody>
+      </table>
+    #end if
+#end def

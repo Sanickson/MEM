@@ -1,0 +1,16 @@
+#encoding utf-8
+
+<label for="dtPeriodPreset"><b>$_('Период'):</b></label>
+<select id='dtPeriodPreset' style="width:100px;">
+</select>
+
+<script src="$sps_js.KURSSKLAD/embed/dateTimePeriod.js"></script>
+<script>
+    \$(document).ready(function() {
+        #if $varExists('$dtpDefCode')
+            \$('#dtPeriodPreset').dateTimePeriod({defCode: '$dtpDefCode'});
+        #else
+            \$('#dtPeriodPreset').dateTimePeriod();
+        #end if
+    });
+</script>

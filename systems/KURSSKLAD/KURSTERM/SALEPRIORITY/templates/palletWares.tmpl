@@ -1,0 +1,24 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import waresQuantity
+
+#def mainData
+    #if $PNUM
+        <b>$PNUM</b> ($SNAME)<br>
+    #else
+        <b>$SNAME</b><br>
+    #end if
+    <b>($WCODE)</b> $WNAME <br>
+    <hr>
+    #for $item in $datalist
+        <b><font class="$salePriorityClass($item.WPR)">$salePriorityName($item.WPR)</font></b><br>
+        <!--$item.COUNTRYNAME: <b>$item.PRODUCERNAME</b><br>-->
+        <a href="palletWaresLotIncomePriority?pid=$PID&wid=$WID&wlotid=$item.WLOTID&wlincomeid=$item.WLINCOMEID">#filter DateFilter2$item.PRDATE#end filter#</a>
+        = $waresQuantity($item.REST,$item.SUCNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE,'f')<br>
+        #if $item.DOCID
+            $item.DOCCLIENT<br>
+            #filter DateFilter2$item.DOCRDATE#end filter# $item.DOCNUM<br>
+        #end if
+        <br>
+    #end for
+#end def

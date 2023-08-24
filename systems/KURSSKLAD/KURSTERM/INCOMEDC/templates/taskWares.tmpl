@@ -1,0 +1,86 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+    #if not $varExists('$twMode') or not $twMode
+        #set $twMode = ''
+    #end if
+
+    <b><u>$FROMNAME</u></b><br>
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b>
+    #if $WSGCODE
+        = $WSGCODE <br>
+    #end if
+    $WNAME
+    #if not $twMode
+        #if $varExists('$ALCOALGO') and $ALCOALGO
+            ##$varExists('$IS_ALCO') and $IS_ALCO == '1'
+            #if $ALCOALGO == 'N'
+                <a href = "taskWaresAddEgaisPrDate?tid=$tid&wid=$wid" title="$_('Добавить')"><img src="$sps_img.KURSTERM/add.gif"  border="0"></a></br>
+            #else
+                <a href = "taskWaresAdd?tid=$tid&wid=$wid" title="$_('Добавить')"><img src="$sps_img.KURSTERM/add.gif"  border="0"></a></br>
+                ##<a href = "taskWaresAddAlcoPal?tid=$tid&wid=$wid" title="$_('Добавить')"><img src="$sps_img.KURSTERM/add.gif"  border="0"></a></br>
+            #end if
+        #else
+            <a href = "taskWaresAdd?tid=$tid&wid=$wid" title="$_('Добавить')"><img src="$sps_img.KURSTERM/add.gif"  border="0"></a></br>
+        #end if
+    #end if
+    <br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b>
+        <br>
+    #end if
+    #if $varExists('$ZID') and $ZID
+        <font color="gray">($ZNAME)</font>
+        <br>
+    #end if
+    #if $varExists('$NEEDTARA') and $NEEDTARA == '1'
+        #if $TARAWEIGHT
+            $_('Вес тары') = <a href="taskWaresTaraWeight?tid=$tid&wid=$wid">#filter Quantity$TARAWEIGHT#end filter#</a>
+        #else
+            $_('Вес тары') = <a href="taskWaresTaraWeight?tid=$tid&wid=$wid">$_('Не задан')</a>
+        #end if
+        <br>
+    #end if
+
+    #if $varExists('$datalist') and $datalist
+        <table>
+            <thead>
+                <tr>
+                    <th>$_('Дата')</th>
+                    <th>$_('Поддон')</th>
+                    <th>$_('Кол-во')</th>
+                </tr>
+            </thead>
+            #set $q = 0
+            <tbody>
+            #for $item in $datalist
+                #set $q += $item.AMOUNT
+                <tr>
+                    <td>#filter DateFilter2$item.PRDATE#end filter#</td>
+                    <td><a href="taskWaresLot$twMode?tid=$tid&wid=$wid&wlotid=$item.WLOTID&palletid=$item.PALLETID" title="$item.sname">$item.pnum</a></td>
+                    ##<td><a href="#" title="$item.sname">$item.pnum</a></td>
+                    <td>$viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)</td>
+                </tr>
+            #end for
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan=3>$viewQuantity($q,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b><u>(#filter Quantity$q#end filter#)</u></b></th>
+                </tr>
+            </tfoot>
+        </table>
+    #end if	
+    
+    <form action="taskWaresScan">
+        <input type="hidden" name="tid" value="$tid">
+        <input type="hidden" name="wid" value="$wid">
+    	ШК: <input type="text" id="barcode:scan:text" name="barcode" title="$_('Товар'), $_('Поддон')" class="scanBarcode"><br>
+	</form>
+	#if $titleTaskWaresPrDates
+	    <a href="taskWaresPrDates?tid=$tid&wid=$wid">$titleTaskWaresPrDates</a>
+	#end if
+
+#end def

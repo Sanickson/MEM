@@ -1,0 +1,28 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+    #set $toobjname = ''    
+    #if $varExists('$datalist') and $datalist
+        #for $item in $datalist
+            <u>$item.clientname</u><br>
+            #if $item.SGCODE
+                <b>$item.SGCODE</b> = $item.SGNAME <br>
+            #end if
+            #if $item.DOCPRIORITY
+                $_('Приоритет'): <b>$item.DOCPRIORITY</b><br>
+            #end if
+
+            #if $item.tstat == '0'
+                #set $status = '-'
+            #else
+                #set $status = '&nbsp;'
+            #end if            
+                $status <a href="task?tid=$item.tid">#filter DateFilter2$item.RDOCDATE#end filter# № $item.DOCNUM</a><br><br>
+        #end for
+    #end if
+#end def    
+

@@ -1,0 +1,58 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import TimeStampToDate
+
+#def mainData
+
+    $ZONENAME <b>№$TID</b>($ALGORITHM)
+    <br>
+    <b>$S_NAME</b>
+    #if $S_MODELID
+        <br>
+        <b>($S_WCODE)</b> $S_WNAME
+        <br>
+        <b>$TimeStampToDate($S_WPRODUCTDATE)</b> - $TimeStampToDate($S_WBESTBEFOREDATE)
+    #end if
+	
+	<br>
+	$_('Насчитано паллетов:') <b>$cnt</b>
+	<br>
+	<form action="taskAStackChkFull">
+		<input type="hidden" name="tid" value="$TID">
+		<input type="hidden" name="sid" value="$S_ID">
+		<input type="hidden" name="cnt" value="$cnt">
+		$_('Отсканируйте ШК следующего паллета'):
+		<input type="text" id=":scan:text" name="barcode" title="">
+	</form>
+
+    #if $varExists('$datalist') and len($datalist)>0
+        #set $cnt2 = $datalist[0].NUM
+    #else
+        #set $cnt2 = 0
+    #end if
+
+    #if int($cnt2) != int($cnt)
+        <a href="javascript: if (confirm('$_('Количества не совпадают, вы  уверены?')')) location.href='taskAStackFDo?tid=$TID&sid=$S_ID&cnt=$cnt'">$_('Все отсканировано, штабель проверен')</a>
+    #else
+        <a href='taskAStackFDo?tid=$TID&sid=$S_ID&cnt=$cnt'>$_('Все отсканировано, штабель проверен')</a>
+    #end if
+	#if $varExists('$datalist')
+	    <hr>
+	    <table>
+	        <thead>
+	            <tr>
+	                <th>$_('Паллет')</th>
+	                <th>$_('Номер')</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+            #for $item in $datalist
+                <tr>
+                    <td>$item.PALNUMBER</td>
+                    <td>$item.NUM</td>
+                </tr>
+            #end for
+            </tbody>
+        </table>
+    #end if
+#end def

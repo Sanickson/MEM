@@ -1,0 +1,21 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import waresQuantity
+
+#def mainData
+    <form action='pallet'>
+        <input type='hidden' name='pid' id=':scan' value="$PID">
+        $_('ШК'): <input type='text' name='barcode' id=':scan' title="$_('Паллет'), $_('Товар')">
+    </form>
+    <br>
+    #if $PNUM
+        <b>$PNUM</b> ($SNAME)<br>
+    #else
+        <b>$SNAME</b><br>
+    #end if
+    <hr>
+    #for $item in $datalist
+        <a href="palletWares?pid=$PID&wid=$item.WID">$item.WCODE</a> = $waresQuantity($item.WREST,$item.WSUCNT,$item.VUF,$item.VUC,$item.MUF,$item.MUC,'f')<br>
+        $item.WNAME <br><br>
+    #end for
+#end def

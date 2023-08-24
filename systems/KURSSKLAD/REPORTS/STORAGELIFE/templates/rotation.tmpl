@@ -1,0 +1,24 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REPORTS.STORAGELIFE.templates.main
+#def phData
+##Scripts
+    <link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>
+    ##Scripts
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+
+    <script type="text/javascript" src="$sp_js/rotation.js"></script>
+
+    <form id="frmFilter"  class="buttons">
+      #include '../systems/KURSSKLAD/templates/warehouse.tmpl'
+##      #include '../systems/KURSSKLAD/templates/whmode.tmpl'
+      #include '../systems/KURSSKLAD/templates/selgroup.tmpl'
+##      #include '../systems/KURSSKLAD/templates/selscheme.tmpl'
+      #include '../systems/KURSSKLAD/templates/waresgroup.tmpl'
+
+        <button type="submit"><img src="$eng_img/arrows/arrow_right.png"></button>
+    </form>
+#end def
+
+#def Data
+    <div id="dvData" style="float:left;position:relative;width:100%;"></div>
+#end def

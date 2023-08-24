@@ -1,0 +1,12 @@
+#encoding utf-8
+
+##<script type="text/javascript" src="$eng_js/jquery.autocomplete.min.js"></script>
+##<script type="text/javascript" src="$sps_js.KURSSKLAD/k.objectAutoComplete.js"></script>
+
+<label for="objName" style="width:5%;"><b>$_('Клиент'):</b></label><input type=text id=objName value="" />
+
+<script>
+  \$(document).ready(function() {
+        \$("#objName").kObjAutoComplete({hiddenName: 'objid', nullVal: 'None'});
+  });
+</script>

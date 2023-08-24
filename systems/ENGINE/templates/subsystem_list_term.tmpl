@@ -1,0 +1,24 @@
+#encoding utf-8
+#extends systems.engine_main_term
+#def engineData
+<style>
+    *html body{
+        line-height: 1.1;
+    }
+    \#form{
+        margin-top:3px;
+    }
+</style>
+
+<div id="form" align='center'>
+    #for item in $datalist
+##        <a title="$item.show_name" href="javascript: if (confirm('$_('Вы  уверены?')')) location.href='$item.full_ref_name'">$item.show_name</a>
+        <a title="$item.show_name" href="$item.full_ref_name">$item.show_name</a>
+        <br/>
+    #end for
+    <hr>
+    <img src="$eng_img/terminal/exit.bmp"><a href="exit">$_('Выход')</a>
+##    <img src="$eng_img/terminal/exit.bmp"><a title="$_('Выйти из системы')" href="javascript: if (confirm('$_('Вы  уверены?')')) location.href='exit'">$_('Выход')</a>
+</div>
+##<div id=dvLog></div>
+#end def

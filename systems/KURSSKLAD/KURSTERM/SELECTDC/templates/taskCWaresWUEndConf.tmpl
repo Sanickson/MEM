@@ -1,0 +1,31 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+
+    <b> № $docnum от #filter DateFilter$docdate#end filter# (<u>$TID</u>)</b>
+    <br>
+    <b><u>($wcode)</u></b>$wname
+    <br>
+    <b>$_('Заказ')</b>: $viewQuantity($QO,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$QO#end filter#</u></b>)
+    <br>
+    <b>$_('Отобрано')</b>:
+    #if $QS and float($QS)>0.00001
+        $viewQuantity($QS,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$QS#end filter#</u></b>)</a>
+    #else
+        0
+    #end if
+    
+    <hr>
+    <b><u>$_('Отобранное количество отличается от заказанного!')</u></b>
+    <hr>
+    <a href='taskCWares?twid=$TWID'>$_('Вернуться')</a>
+    <br><br>
+	#if $QS and float($QS)>0.00001	
+		<a href='qtaskCWaresWUEnd?taskid=$TID&twid=$TWID'>$_('Завершить')</a>
+	#else
+		<a href='qtaskCWaresWUEndEmpty?taskid=$TID&twid=$TWID'>$_('Отобрать в 0')</a>
+	#end if
+    
+#end def
+

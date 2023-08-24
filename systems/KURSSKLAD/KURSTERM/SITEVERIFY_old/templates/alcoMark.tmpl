@@ -1,0 +1,56 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    #if $AM
+        $AM.SUPPLIERNAME<br>
+        <b>($AM.WCODE)</b>$AM.WNAME<br>
+        #filter DateFilter2$AM.PRODUCTDATE#end filter#<br>
+        #if $AM.BOXBARCODE
+            $_('Короб'): <b>$AM.BOXITEMCOUNT</b> / #filter Quantity$AM.BOXFACTOR#end filter#<br>
+            ...<a href="alcoBox?barcode=$AM.BOXBARCODE">$AM.BOXBARCODE[-9:]</a><br>
+        #end if
+        <hr>
+        <b>$AM.STATUSNAME</b>
+        <hr>
+        #if $AM.PNUM
+            $AM.PNUM ($AM.SNAME)<br>
+        #elif $AM.SNAME
+            $AM.SNAME<br>
+        #end if
+        #if $AM.TASKID
+            <b>$AM.CLIENTNAME</b><br>
+            #if $AM.TASKDT
+                #filter DateTimeFilter#$AM.TASKDT#end filter#
+            #end if
+            $_('№')$AM.TASKID
+            <br>
+        #end if
+        #if $AM.MANFIO
+            <b>$AM.MANFIO</b><br>
+        #end if
+        #if $AM.TTNAME
+            $AM.TTNAME<br>
+        #end if
+    #end if
+
+
+
+##    <form action="$action">
+##        <input type=hidden name=abbarcode value="$abbarcode">
+##        #if $varExists('$lenmark')
+##            <input type="hidden" name="mark" value="$mark">
+##        #end if
+##        #if $barcodeconf
+##            $_('Для подтверждения окончания выверки отсканируйте паллет еще раз')
+##            <input type=hidden name=barcodeconf value="$barcodeconf">
+##        #elif $varExists('$lenmark')
+##            $_('Отсканируйте алкомарку или паллет для завершения выверки')
+##        #else
+##            $_('Отсканируйте паллет, на котором находится алкокороб')
+##        #end if
+##        <input type="text" name="barcode" id="barcode:scan:text" title="$_('МП'), $_('Поддон'), $_('Товар')">
+##    </form>
+
+#end def

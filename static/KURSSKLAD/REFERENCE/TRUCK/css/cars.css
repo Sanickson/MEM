@@ -1,0 +1,16 @@
+.lbl{
+	display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+.rght{
+	display: inline-block;
+    width: 40%;
+    text-align: left;
+}
+
+
+.rght input, .rght select {
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REFERENCE.TRUCK.templates.main
+
+#def adminData
+<script type="text/javascript" src="$sp_js/truck.js"></script>
+
+<script type="text/javascript">
+  jQuery(function(){
+    $.listTruck();
+  });
+</script>
+
+<div id="dvTrucks">
+</div>
+
+#end def
+

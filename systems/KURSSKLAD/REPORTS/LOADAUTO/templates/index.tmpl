@@ -1,0 +1,51 @@
+#encoding utf-8
+#extends systems.engine_main
+
+#def $system_help = False
+#end def
+
+#def systemNavigation
+<link rel="stylesheet" type="text/css" media="screen" href="$sps_css.KURSSKLAD/k.progressbar.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="$sps_css.KURSSKLAD/jquery.contextMenu.css"/>
+<link href="$sps_css.KURSSKLAD/tabs/jquery.tabs.css" rel="stylesheet" type="text/css" media="screen"/>
+
+<script type="text/javascript" src="$eng_js/ui.dialog.min.js"></script>
+<script type="text/javascript" src="$eng_js/ui.datepicker.min.js"></script>
+<script type="text/javascript" src="$eng_js/i18n/ui.datepicker-ru.js"></script>
+<script type="text/javascript" src="$eng_js/jquery.maskedinput-1.2.1.pack.js"></script>
+<script type="text/javascript" src="$eng_js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="$eng_js/kTblScroll.min.js"></script>
+<script type="text/javascript" src="$eng_js/jquery.rightClick.min.js"></script>
+<script type="text/javascript" src="$eng_js/jquery.contextMenu.min.js"></script>
+<script type="text/javascript" src="$eng_js/jquery.rowFocus.min.js"></script>
+
+<script type="text/javascript" src="$sps_js.KURSSKLAD/jquery.tabs.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.icons.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.blocks.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.formats.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.messages.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/jquery.blockUI.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.form.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.helpers.js"></script>
+<script type="text/javascript" src="$sps_js.TASKMANAGER/TaskManagerView.js"></script>
+<script type="text/javascript" src="$sps_js.KURSSKLAD/k.tdChk.js"></script>
+
+<script type="text/javascript" src="$sp_js/loadauto.js"></script>
+	<form class="filter_form buttons">
+        <button type="button" title="Выбор авто" id="btnAutoDlg" tasktypes=""><img
+                src="$eng_img/actions/application_view_detail.png" alt=""></button>
+		 Период:
+      <input id="dbeg" name="dbeg" type="text" size="8" />
+		  <input id="dend" name="dend" type="text" size="8" />
+      <!--select name="autoid" id="autoid"></select-->
+		  <button type="submit" class=""><img src="$eng_img/arrows/arrow_right.png"></button>
+      <button type=button id=btnPrint><img src="$eng_img/actions/printer.png"></button>
+	</form>
+#end def
+
+#def engineData
+<div id="dvMain" style="width:100%;float:left;position:relative;overflow-x: auto;overflow-y: hidden;">
+
+</div>
+#end def

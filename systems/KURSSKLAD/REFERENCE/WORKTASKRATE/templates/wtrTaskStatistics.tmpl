@@ -1,0 +1,37 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REFERENCE.WORKTASKRATE.templates.wtrmain
+
+#def $system_help = False
+#end def
+
+#def wtrFilter
+
+    <link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.waresLocate.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.tdChk.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+    <script type="text/javascript" src="$sp_js/taskStatictics.js"></script>
+
+	<form id="frm" class="buttons">
+	    <input id="waresid" name="wid" type="hidden" value="null">
+		$_('Период'):
+		<input id="dbeg" type="text" size="7">
+		<input id="tbeg" type="text" size="3" value="00:00" autocomplete=false>
+		-
+		<input id="dend" type="text" size="7">
+		<input id="tend" type="text" size="3" value="23:59" autocomplete=false>
+		&nbsp;&nbsp;&nbsp;
+		$_('Тип задания'):
+		<select id=ttid name=ttid><option value="0">Без фильтра</option></select>
+		&nbsp;&nbsp;&nbsp;
+		$_('Товар'):
+		<input type="text" id="waresname" size="25">
+        &nbsp;&nbsp;&nbsp;
+		<button type="submit"><img src="$eng_img/arrows/arrow_right.png"></button>
+	</form>
+#end def
+
+#def wtrData
+    <div id="dvWH" style="float:left;position:relative;"></div>
+#end def

@@ -1,0 +1,35 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData    
+    #if $PNUM
+        $_('Поддон'): <b><u>$PNUM</u></b>($SNAME)<br>
+    #else
+        <b><u>$SNAME</u></b><br>
+    #end if
+    <b>(<u>$WCODE</u>) </b> $WNAME<br>
+    <hr>
+    
+    <form action="palWaresAdd" name="frm" id=frm method=post>
+        <input type=hidden name=wid value=$WID>
+        <input type=hidden name=id value=$PID>
+        <input type=hidden name=dbeg value="$dbeg">
+        <input type=hidden name=productdate value="$productdate">
+        <input type=hidden name=wlincomeid id=wlincomeid value="0">
+        $_('Дата производства'): <b>$productdate</b><br>
+        <hr>
+        <b>$_('Выберите приход')</b><br><br>
+        #if $varExists('$datalist') and $datalist
+            #for $item in $datalist
+                $item.SUPPLIER<br>
+                <a href="javascript: frmSubmit($item.WLINCOMEID);">#filter DateFilter2$item.DOCDATE#end filter# $_('№') $item.DOCNUM</a><br><br>
+            #end for
+        #end if
+    </form>    
+    
+    <script>
+        function frmSubmit(wlincomeid){
+            document.getElementById('wlincomeid').value = wlincomeid;
+            document.getElementById('frm').submit();
+        }
+    </script>
+#end def

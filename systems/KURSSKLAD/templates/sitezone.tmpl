@@ -1,0 +1,17 @@
+#encoding utf-8
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th id="labelSZ"></th></tr>
+	<tr><td><select id="szid" name="szid"></select></td></tr>
+#else
+    <label id="labelSZ" for="szid" style="width:5%;"></label>
+    <select id="szid" class="wid" name="szid" style="width:5%;"></select>
+#end if
+
+
+<script src="$sps_js.KURSSKLAD/embed/sitezone.js"></script>
+<script>
+  \$(document).ready(function() {
+        \$('#szid').selectSiteZone();
+        \$('#whid').changeSiteZone();
+  });
+</script>

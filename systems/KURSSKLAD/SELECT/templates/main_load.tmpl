@@ -1,0 +1,60 @@
+#encoding utf-8
+#extends systems.engine_main
+
+#def systemNavigation
+     <form id="frmFilterTask" class="buttons">
+        #include '../systems/KURSSKLAD/templates/warehouse.tmpl'
+        <label for="dBeg"><b>$_('Период:') </b></label>
+            <input type="date" class="period" id="dBeg" name="dBeg" value="" size="8" required />
+            <input type="date" class="period" id="dEnd" name="dEnd" value="" size="8" required/>
+        &nbsp;
+        <label for="objName"><b>$_('Клиент:') </b></label><input type="text" id="objName" value="" size="20" />&nbsp;
+        #include '../systems/KURSSKLAD/templates/manyselgroup.tmpl'
+        <button type="submit" title="Поиск"><img src="$eng_img/actions/magnifier.png" border="0"></button>
+    &nbsp;&nbsp;&nbsp;<button type="button" id="btnListWorkers" title="Показать список отборщиков"><img src='$eng_img/actions/user.png' border="0"></button>
+    </form>
+#end def
+
+#def engineData
+
+  ##Styles
+    <link href="$eng_css/contextMenu.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>        
+    <link href="$sps_css.KURSSKLAD/contextMenuStatus.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="$sps_css.KURSSKLAD/tabs/jquery.tabs.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="$sps_css.KURSSKLAD/tabs/jquery.tabs-ie.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="$eng_css/jquery.autocomplete.css" rel="stylesheet" type="text/css" media="screen"/>        
+    <link href="$sp_css/Select.css" rel="stylesheet" type="text/css" media="screen"/>
+
+  ##Scripts
+    
+    <script type="text/javascript" src="$eng_js/ui.dialog.min.js"></script>    
+    <script type="text/javascript" src="$eng_js/ui.droppable.min.js"></script> 
+    
+    <script type="text/javascript" src="$eng_js/ui.datepicker.min.js"></script>
+    <script type="text/javascript" src="$eng_js/i18n/ui.datepicker-ru.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.maskedinput-1.2.1.pack.js"></script>
+
+    <script type="text/javascript" src="$eng_js/jquery.contextMenu.js"></script>    
+    <script type="text/javascript" src="$eng_js/jquery.rightClick.js"></script>    
+    <script type="text/javascript" src="$eng_js/jquery.rowFocus.min.js"></script>    
+    <script type="text/javascript" src="$eng_js/jquery.tablesorter.min.js"></script>    
+    <script type="text/javascript" src="$eng_js/jquery.autocomplete.min.js"></script>    
+    <script type="text/javascript" src="$eng_js/kTblScroll.min.js"></script>
+    
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.messages.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.formats.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.UpDown.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.icons.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.objectAutoComplete.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.form.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/jquery.tabs.pack.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.tdChk.js"></script>
+    <script type="text/javascript" src="$sp_js/Select_Load.js"></script>
+
+
+    #block adminData   
+        <div id=dvWH></div>
+    #end block
+#end def

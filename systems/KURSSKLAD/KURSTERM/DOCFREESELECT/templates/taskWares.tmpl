@@ -1,0 +1,68 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+
+    <b><u>$FROMNAME</u></b><br>
+    #if $TONAME
+        $TONAME<br>
+    #end if    
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b> $WNAME <br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b>
+    #end if
+    <br>
+    #if $varExists('$qdoc')
+        $_('План'): $viewQuantity($qdoc,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$qdoc#end filter#</u>)</b>
+        <br>
+    #end if
+    #if $varExists('$qfact') and $qfact
+        $_('Факт'): $viewQuantity($qfact,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) 
+        (<a title="$_('Изменение')" href="dfsTaskWaresEdit?tid=$TID&wid=$WID">#filter Quantity$qfact#end filter#</a>)
+        <br>
+    #end if
+    
+    <form action="dfsTaskWaresScan">
+        <input type="hidden" name="tid" value="$tid">
+        <input type="hidden" name="wid" value="$wid">
+    	ШК: <input type="text" id="barcode:scan:text" name="barcode" title="$_('Товар'), $_('Поддон')">
+	</form>
+    
+    <hr>
+    #if $varExists('$datalist') and $datalist
+        <table>
+            <thead>
+                <tr>
+                    <th>$_('Поддон')</th>
+                    <th>$_('Кол-во')</th>
+                </tr>
+            </thead>
+            #set $q = 0
+            <tbody>
+            #for $item in $datalist
+                #set $q += $item.AMOUNT
+                <tr>
+                    #if $item.STAT == '1'
+                     #if $item.PNUM
+                        <td><a href="dfsTaskWaresPallet?tid=$tid&wid=$wid&pid=$item.PID" title="$item.sname">$item.pnum</a></td>
+                     #else
+                        <td><a href="dfsTaskWaresPallet?tid=$tid&wid=$wid&pid=$item.PID">$item.sname</a></td>
+                     #end if
+                     <td>$viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$item.amount#end filter#</u>)</b></td>                     
+                    #else
+                     <td><a href="#" title="$item.sname">$item.pnum</a></td>
+                     <td><font class="red">$viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$item.amount#end filter#</u>)</b></font></td>
+                    #end if
+                </tr>
+            #end for
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan=2>$viewQuantity($q,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b><u>(#filter Quantity$q#end filter#)</u></b></th>
+                </tr>
+            </tfoot>
+        </table>
+    #end if	
+#end def

@@ -1,0 +1,48 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+
+    <b> № $docnum от #filter DateFilter$docdate#end filter# (<u>$TID</u>)</b>
+    <br><br>
+    #if $varExists('TWID')
+        <b><u>($wcode)</u></b>$wname<br>
+        $_('Заказ: ') $viewQuantity($QO,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$QO#end filter#</u></b>) <br><br>
+        <!--$_('Отобрано: ') $viewQuantity($SCANQUANT,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$SCANQUANT#end filter#</u></b>) <br><br>-->
+        <b>$SITENAME</b>
+
+        <form action=taskCntrlDblWaresQuant>
+            <input type=hidden name=twid value=$TWID>
+            <input type=hidden name=tid value=$TID>
+            #if $WTYPE == 'W' and $varExists('$TARAWEIGHT') and $TARAWEIGHT
+                <input type=hidden name=taraweight value=$TARAWEIGHT>
+                <input type=hidden name=wuid value=$MUID>
+                $_('Вес тары'): <b>#filter Quantity$TARAWEIGHT#end filter#</b><br>
+                $_('Брутто'):<input type=text name=q id=":focus:float" size=6><br>
+                $_('Единиц тары'): <input type=text name=sucnt id=":int" size=6><br><br>
+            #else
+                <select name=wuid>#if $VUID
+                                    <option value=$VUID>$VUCODE</option>
+                                  #end if
+                                    <option value=$MUID>$MUCODE</option>
+                </select> <input type=text name=q id=":focus:float" size=6><br><br>
+            #end if
+            <button type=submit>$_('Сохранить')</button>
+        </form>
+        <br>
+        <a href="taskWaresDblSkip?tid=$TID&twid=$TWID">Пропустить</a>
+
+    #else if $varExists('$ISEXIT') and  $ISEXIT == '1'
+        <span>Все позиции проконтролированы!</span><br>
+        <br>
+        <a href="taskEnd?id=$TID">Завершить</a>
+    #else
+        <span class="red">Ожидайте, когда $MANFIO перейдёт к следующей позиции!</span>
+        <script>
+            setTimeout(function(){
+                location.reload();
+            }, 3000);
+        </script>
+    #end if
+#end def
+

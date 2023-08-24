@@ -1,0 +1,30 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+   
+    <b> № $docnum от #filter DateFilter$docdate#end filter# (<u>$TID</u>)</b>
+    #if $varExists('$TONAME') and $TONAME
+        <br>$TONAME<br>
+    #end if
+    <br>
+    #if $TWPALLETID
+        #if $TWPALLETNUM
+            <b>$TWPALLETNUM</b>($SITENAME)
+        #else
+            <b>$SITENAME</b>
+        #end if
+        <br><br>
+        <form action='taskFWaresPallet'>
+            <input type=hidden name=twid value=$TWID>
+            $_('ШК поддона'): <br> <input type=text name=barcode id="barcode:scan">
+        </form>   
+    #else
+        <a href='qTaskFWaresNo?twid=$TWID' onClick="return confirm('Подтвердите невозможность отборки позиции')">$_('Нет товара на остатках')</a>
+    #end if
+    <br>
+    <a href='qTaskFWaresNoPlace?twid=$TWID' onClick="return confirm('$_('Нет места на поддоне')\n---------------------------------\n$_('Вы уверены?')')">$_('Нет места на поддоне')</a>   
+   <br><hr>
+   <b><u>($wcode)</u></b>$wname    
+#end def    
+

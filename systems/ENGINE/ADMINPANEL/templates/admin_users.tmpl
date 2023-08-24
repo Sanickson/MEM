@@ -1,0 +1,104 @@
+#encoding utf-8
+#extends systems.ENGINE.ADMINPANEL.templates.admin_main
+
+#def bsFilter
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.form.js"></script>
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.id.js"></script>
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.formats.js"></script>
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.messages.js"></script>
+
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/wh.tdChk.js"></script>
+
+
+	<form class="buttons">
+         <label for="fio"><b>$_('ФИО'):</b></label>
+         <input  type=text id="fio">
+         <label for="email"><b>$_('e-mail'):</b></label>
+         <input  type=text id="email">
+         <label for="status"><b>$_('Статус'):</b></label><select id='status'>
+             <!--<option value='None'>Не выбрано</option>-->
+             <option value='1'>Активный</option>
+             <option value='0'>Заблокированный</option>
+         </select>
+         <label for="ad"><b>$_('Авторизация'):</b></label><select id='ad'>
+             <option value='None'>Не выбрано</option>
+             <option value='1'>AD-авторизация</option>
+             <option value='0'>ВМС пароль</option>
+         </select>
+         #if $varExists('$layers') and $layers
+              <label id='lbl_filter_cmb' for="filter_cmb">$_('Фильтр')</label><select id='filter_cmb'>
+                  <option value='-2'>СУПЕРАДМИНИСТРАТОРЫ</option>
+                  #for $layer in $layers
+                      #if str($layer_id) == str($layer.LAYER_ID)
+                          #set $selected = ' selected = "selected" '
+                      #else
+                          #set $selected = ' '
+                      #end if
+                      <option $selected value='$layer.LAYER_ID'>$layer.ORGANIZATION ($layer.LAYER_ID)</option>
+                  #end for
+              </select>
+         #end if
+ 		 &nbsp;&nbsp;&nbsp;
+ 		 <button type="submit" id="go"><img src="$eng_img/arrows/arrow_right.png"></button>
+         <button type=button id=addUser title="Добавить пользователя"><img src=$eng_img/actions/add.png border=0></button>
+ 	</form>
+#end def
+
+#def adminData
+
+<div id="dvMain" style="width:100%;float:left;position:relative;"></div>
+
+  ##Table of users
+
+
+##Style
+<link rel="stylesheet" href="$sp_css/admin_users.css" type="text/css"/>
+
+##Context menu
+<ul style="display: none; width: 200px" id="menuUser" class="contextMenu">
+    <li class="editUser">
+        <a href="\#editUser"><img src="$eng_img/actions/edit.png" alt=""/>&nbsp;$_('Редактировать')</a>
+    </li>
+    <li class="rightsUser">
+        <a href="\#rightsUser"><img src="$eng_img/actions/rights.gif" alt=""/>&nbsp;$_('Права')</a>
+    </li>
+    <li class="editUserRoles">
+        <a href="\#editUserRoles"><img src="$eng_img/actions/group.png" alt=""/>&nbsp;<span>$_('Роли')</span></a>
+    </li>
+    <li class="changePasswd">
+        <a href="\#changePasswd"><img src="$sps_img.ADMINPANEL/passw.png" alt=""/>&nbsp;<span>$_('Пароль')</span></a>
+    </li>
+    <li class="deleteUser">
+        <a href="\#deleteUser"><img src="$eng_img/actions/delete.png" alt=""/>&nbsp;$_('Удалить')</a>
+    </li>
+    <li class="deactiveUser">
+        <a href="\#deactiveUser"><img src="$eng_img/actions/stop.png" alt=""/>&nbsp;$_('Заблокировать')</a>
+    </li>
+    <li class="activeUser">
+        <a href="\#activeUser"><img src="$eng_img/actions/accept.png" alt=""/>&nbsp;$_('Разблокировать')</a>
+    </li>
+</ul>
+
+##Dialog Add/Edit User
+<div id="dlgedit" class="dialog flora" title="Изменение параметров пользователя" align="center"></div>
+
+##Dialog User Rights
+<div id="dlgrights" class="dialog flora" title="Права пользователя" align="center"></div>
+<div id="dlgurrights" class="dialog flora" title="Назначенные роли" align="center"></div>
+
+##Dialog Изменение пароля
+<div id="dlgchangepasswd" class="dialog flora" title="Изменение пароля" align="center"></div>
+
+##Scripts
+<script type="text/javascript">
+focused_id = '';
+#if $varExists('$focused_id')
+  #if $focused_id!=''
+    focused_id=$focused_id
+  #end if
+#end if
+
+</script>
+<script type="text/javascript" src="$sp_js/admin_roles.js"></script>
+<script type="text/javascript" src="$sp_js/admin_users.js"></script>
+#end def

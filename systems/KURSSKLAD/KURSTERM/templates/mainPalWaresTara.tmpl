@@ -1,0 +1,33 @@
+#encoding utf-8
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    <b>(<u>$WCODE</u>)</b> $WNAME<br>
+    #if $PNUM
+        <b><u>$PNUM</u></b>($SNAME)<br><br>
+    #else
+        <b><u>$SNAME</u></b><br><br>
+    #end if
+
+    <form action="palWaresTara" method="post">
+        <input type=hidden name=wid value=$wid>
+        <input type=hidden name=pid value=$pid>
+        <input type=hidden name=saveurl value=$saveurl>
+        <input type=hidden name=backurl value=$backurl>
+
+        $_('Вес тары'):
+        #if $TARAWEIGHT
+            <input name="weight" type=text id="::float" value="#filter Quantity$TARAWEIGHT#end filter#" size=4>
+        #else
+            <input name="weight" type=text id="::float" value="" size=4>
+        #end if
+        <br>
+        <button type=submit>OK</button>
+	</form>
+
+	#if $TARAMANFIO
+	    <hr>
+	    $TARAMANFIO #filter DateTimeFilter$TARADT#end filter#
+	#end if
+#end def

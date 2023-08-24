@@ -1,0 +1,84 @@
+#encoding utf-8
+#extends systems.engine_main_term
+#import os
+
+#def engineData
+    #if $varExists('$system_name') and $system_name
+        <div id="actioncaption">
+##            #if $varExists("is_terminal") and not $is_terminal and $varExists("helpSystem") and $helpSystem
+##            #if $varExists("system_help") and $varExists("isTSD") and not $isTSD()
+             #if $varExists('$system_full_ref') and $varExists("isTSD") and not $isTSD() and os.path.isfile('../static'+$system_full_ref+'/help/index.htm')
+                                ###Help
+                    <div style="width:25%;float:left;background-color:inherit;">&nbsp;</div>
+                    <div style="width:50%;float:left;background-color:inherit;color:inherit;">$system_name
+                        #if $varExists('$treeName')
+                            - $treeName
+                        #end if
+                    </div>
+                    <div style="width:25%;float:left;color:inherit;background-color:inherit;text-align:right;">
+                        <a href="javascript: void(0);" title="Справка" onclick="var wind  = window.open('help/index.htm','$_('Инструкция по работе с системой')'); wind.focus();">Справка</a>&nbsp;&nbsp;
+                    </div>                            
+            #else 
+                $system_name
+                #if $varExists('$treeName')
+                    - $treeName
+                #end if                    
+            #end if	
+        </div>
+    #end if
+    <div id="navigation">
+        <div id="zoneinfo" class="zoneinfo">
+            #if $varExists('$ZONENAME')
+                $ZONENAME
+            #else
+                &nbsp;
+            #end if
+        </div>
+        <div class="buttonbar">                
+            ###Tasks
+            <a href="tasklist" id="tasklist" title="$_('Список систем')"><img src="$sps_img.KURSTERM/tasklist.gif"  border="0"></a>
+            
+            ###Reload
+            #if $varExists('reloadurl')
+                <a href="$reloadurl" id="reloadurl" title="$_('Обновить')"><img src="$sps_img.KURSTERM/reload.gif"  border="0"></a>
+            #end if
+            
+            ###BackUrl
+            #if $varExists('backurl') and $backurl
+                #if $backurl=='history.go(-1)'
+                    <a onClick="$backurl ; return false" href="#" id="backurl" title="$_('Назад')" ><img src="$sps_img.KURSTERM/back.gif" border="0"></a>
+                #else
+                    <a href="$backurl" id="backurl" title="$_('Обновить')" ><img src="$sps_img.KURSTERM/back.gif" border="0"></a>
+                #end if    
+                &nbsp;&nbsp;&nbsp;
+            #end if
+        </div>
+    </div>
+    
+    #if $varExists('$mes') and $mes
+      #*
+        #from re import match
+        #from operator import truth
+        #set $m = $match('isc_dsql_execute: exception \d{1,4} \W?[A-Z_]{1,31}(.{1,255}) SQL traceback ',$mes)
+        #if $truth($m) and $m.lastindex >= 1
+            #set $mes = $m.group(1)
+        #else
+            #if len($mes.split('\n'))>3
+                #set $mes = $mes.split('\n')[3]
+            #end if
+        #end if 
+      *#
+        ##set $mes = $mes.split('\n')[3]
+        <div id="warning">$mes</div>
+    #end if
+    
+    #if $varExists('ActionCaption') and $ActionCaption is not None
+    <div id="actioncaption">$ActionCaption</div>
+    #end if
+    <div id="data" align="center">
+    #block mainData
+        MainData here
+    #end block mainData
+    <br>
+    </div>
+#end def

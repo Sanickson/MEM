@@ -1,0 +1,24 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+
+    <b><u>$PAL_CLIENTNAME</u></b><br>
+    <b>$NUMPALLET</b>
+    <hr>
+
+
+    #if $varExists('$mailmes') and $mailmes
+        $_('При отправке почты возникла ошибка:') <br>
+        <span class="yellow"> $mailmes </span>
+        <br><br>
+
+        <a href="taskEnd?id=$TID_SELCTRL">$_('Попробовать еще раз')</a><br>
+        <a href="taskEnd?id=$TID_SELCTRL&flag=1">$_('Завершить даже, если не удастся')</a><br>
+    #else
+        ##<a href="taskEnd?id=$TID_SELCTRL?flag=N">$_('Завершить задание')</a><br>
+        <a href="taskEnd?id=$TID_SELCTRL">$_('Завершить задание')</a><br>
+    #end if
+
+
+#end def

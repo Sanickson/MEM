@@ -1,0 +1,31 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import waresQuantity, Quantity
+
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    <hr>
+    #for $it in $datalist
+        <u>$it.WCODE</u> ($_('Хр')=$Quantity($it.WFRAILTY))<br>
+        #if $it.TWSTATUS == '2'
+            $it.WNAME
+        #else
+            <a href="taskWares?twid=$it.TWID">$it.WNAME</a>
+        #end if
+        <br>
+        #if $it.TWSTATUS == '2'
+            <font class="green">
+        #end if
+        #if $it.QFACT
+            <b>$waresQuantity($it.QFACT,None,$it.VUF,$it.VUC,$it.MUF,$it.MUC)</b>
+        #else
+            <b>0</b>
+        #end if
+        #if $it.TWSTATUS == '2'
+            </font>
+        #end if
+        / <u>$waresQuantity($it.QPLAN,None,$it.VUF,$it.VUC,$it.MUF,$it.MUC)</u>
+        <br><br>
+    #end for
+#end def
+

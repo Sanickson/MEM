@@ -1,0 +1,65 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData    
+	<form action="scanPalletWares">
+        <input type=hidden name=palletid value=$PID>
+        #if $varExists('$TASKID') and $TASKID
+            <input type=hidden name=taskid value=$TASKID>
+            $_('ШК'): <input type=text id=":scan:text" name=barcode value="" title="$_('Товар')"><br>
+        #else
+            $_('ШК'): <input type=text id=":scan:text" name=barcode value="" title="$_('МП'), $_('Поддон'), $_('Товар')"><br>
+        #end if
+	</form>    
+    <br>
+	#if $varExists('$PNUM') and $PNUM
+		<b><u>$PNUM</u></b>($SNAME)
+	#else
+	    <b>$SNAME</b>
+	#end if
+    <br><br>
+    #if $varExists('$datalist')
+        <table>
+            <thead>
+                <tr>
+                    <th>$_('Товар')</th>
+                    <th>$_('Кол-во')</th>
+                #if $varExists('$TASKID') and $TASKID
+                    <th>&nbsp;</th>
+                #end if
+                <tr>
+            </thead>
+            <tbody>
+            #for $item in $datalist
+                <tr>
+                #if $TASKID
+                    <td><a href="palletWares?palletid=$PID&waresid=$item.WID&taskid=$TASKID" title="$item.WNAME.replace('"',"'")">$item.WCODE</a></td>
+                #else    
+                    <td><a href="palletWares?palletid=$PID&waresid=$item.WID" title="$item.WNAME.replace('"',"'")">$item.WCODE</a></td>
+                #end if                
+                    <td>$viewQuantity($item.amount,$item.VUFACTOR,$item.VUCODE,$item.MUFACTOR,$item.MUCODE)
+                        (<b><u>#filter Quantity$item.amount#end filter#</u></b>)
+                    </td>
+                #if $varExists('$TASKID') and $TASKID
+                  #if not $item.twstat
+                    <td>&nbsp;</td>
+                  #elif $item.twstat=='0'
+                    <td class="red">-</td>
+                  #elif $item.twstat=='1'
+                    <td class="yellow">?</td>
+                  #elif $item.twstat=='2'
+                    <td class="green">v</td>
+                  #end if
+                #end if               
+                </tr>
+            #end for
+            </tbody>
+        </table>
+        <br>
+    #end if
+    
+    #if $varExists('$TASKID') and $TASKID
+        <a href="javascript: if (confirm('$_('Вы  уверены?')')) location.href='qPalletEndTask?palletid=$PID&taskid=$TASKID'">$_('Завершить')</a>
+    #end if
+#end def

@@ -1,0 +1,38 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    #if $PID
+        #if $PNUM
+            <b>$PNUM</b>($SITENAME)
+            <br><br>
+            <form action='taskWaresPallet'>
+                <input type=hidden name=twid value=$TWID>
+                $_('Отсканируйте ШК паллета'): <br> <input type=text name=barcode id="barcode:scan">
+            </form>
+        #else
+            <b>$SITENAME</b>
+            <br><br>
+            <form action='taskWaresPallet'>
+                <input type=hidden name=twid value=$TWID>
+                $_('Отсканируйте ШК местоположения'): <br> <input type=text name=barcode id="barcode:scan">
+            </form>
+        #end if
+    #elif $SITEID
+        <b>$SITENAME</b>
+        <br><br>
+        <form action='taskWaresPallet'>
+            <input type=hidden name=twid value=$TWID>
+            $_('Отсканируйте ШК местоположения'): <br> <input type=text name=barcode id="barcode:scan">
+        </form>
+    #else
+        <a href='taskWaresPalletNo?tid=$TID&twid=$TWID' onClick="return confirm('Подтвердите невозможность отборки позиции')">$_('Нет товара на остатках')</a>
+    #end if
+    <br>
+    <a href='taskWaresNoPlace?tid=$TID&twid=$TWID' onClick="return confirm('$_('Нет места на паллете отборки')\n---------------------------------\n$_('Вы уверены?')')">$_('Нет места на паллете отборки')</a>
+    <br>
+    <hr>
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/waresHeader.tmpl'
+#end def
+

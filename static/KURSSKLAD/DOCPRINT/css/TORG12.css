@@ -1,0 +1,173 @@
+html{
+    width:270mm;
+    /*	width:1058px;*/
+    /* 	height:200mm; */
+    line-height:9.5pt;
+    font-family: Arial,'Times New Roman', Georgia, Times, serif;
+    font-size:8.5pt;
+
+}
+body{
+    width:270mm;
+    /*	width:1058px;*/
+    /* 	height:200mm; */
+    margin:0;
+    padding:0;
+}
+.up_stamp{
+    position:relative;
+    float:right;
+    clear:both;
+    padding-right:4px;
+    margin-bottom:1.5mm;
+    font-size:6pt;
+}
+.table_1{
+    border-collapse: collapse;
+    width:100%;
+    border:0;
+    clear: both;
+}
+.table_1 td{
+    height:6mm;
+}
+table.table_1 tbody tr td table{
+    width:100%;
+    height:100%;
+    border-collapse: collapse;
+}
+.sub_text{
+    text-align:center;
+    font-size:6pt;
+    vertical-align:top;
+    line-height:6pt;
+    height:2mm;
+}
+.order_title{
+    width:100%;
+    text-align:center;
+    margin-top: -19mm;
+    clear:both;
+}
+.page_number{
+    clear: both;
+    display: block;
+    float: right;
+    font-style: italic;
+    margin-top: 13mm;
+}
+.title_table{
+    width:112mm;
+    margin:0 auto;
+}
+.title_table tbody tr td{
+    vertical-align:middle;
+    border:1px solid #000000;
+    font-size:9pt;
+}
+.order_table{
+    width:100%;
+    margin-top:4mm;
+    border:1px solid #000000;
+    border-right:0;
+    border-bottom:0;
+    border-left:0;
+    clear:both;
+    padding-left:5px;
+}
+.order_table thead{
+}
+.order_table thead tr td{
+    font-size:8pt;
+    text-align:center;
+    vertical-align:middle;
+    border-right:1px solid #000000;
+    border-bottom:1px solid #000000;
+    line-height:10pt;
+}
+.col_number td{
+    font-size:7pt !important;
+    border:1px solid #000000;
+    border-top:0;
+    border-left:0;
+    border-right:1px solid #000000;
+    border-bottom:0;
+}
+.order_table tbody tr td{
+    vertical-align:middle;
+    border:1px solid #000000;
+    border-top:0;
+    border-right:1px solid #000000;
+    border-bottom:1px solid #000000;
+    border-left:0px;
+    font-size:8pt;
+    text-align:center;
+}
+.order_table td.textright{
+    text-align:right;
+    padding-right:2px;
+}
+.col_lb{
+    border-left:1px solid #000000 !important;
+}
+.col_rb{
+    border-right:2px solid #000000 !important;
+}
+.order_table tfoot tr td{
+    font-size:8pt;
+    border-right:1px solid #000000;
+    border-bottom:1px solid #000000;
+    text-align:center;
+}
+.form_otherside{
+    position:relative;
+    float:right;
+    clear:both;
+    padding-right:4px;
+    margin-bottom:4mm;
+    margin-top:4mm;
+}
+.total_table1{
+    width:210mm;
+    margin-left:9mm;
+    margin-top:1mm;
+    clear:both;
+}
+.total_table1 tr td{
+    border:0;
+}
+.total_table2 tr td{
+    border:0;
+    vertical-align: bottom;
+}
+.total_table2{
+    width:243mm;
+    clear:both;
+    float:right;
+    margin-top:1mm;
+    margin-bottom:1mm;
+}
+.lb_stamp{
+    width:50%;
+    border-right:1px solid #000000;
+    float:left;
+    padding-right:2mm;
+}
+.lb_stamp tr td{
+    border:0;
+    vertical-align: bottom; 
+}
+.rb_stamp{
+    width:50%;
+    float:right;
+    padding-left:2mm;
+}
+.rb_stamp tr td{
+    border:0;
+    vertical-align: bottom; 
+}
+.barcode {
+    font-family: "Free 3 of 9 Extended", "Free 3 of 9";
+    font-size: 30pt;
+    height: 30px;
+}

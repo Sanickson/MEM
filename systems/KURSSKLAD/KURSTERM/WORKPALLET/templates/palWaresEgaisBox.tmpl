@@ -1,0 +1,60 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData    
+    #if $varExists('$PAL_NUM') and $PAL_NUM
+		<b><u>$PAL_NUM</u></b>($PAL_SNAME)
+	#else 
+		<b>$PAL_SNAME</b>
+	#end if
+	#if $varExists('$PALSELECT_TASKID') and $PALSELECT_TASKID
+    <hr>
+        #if $varExists('$PALSELECT_CLIENTNAME') and $PALSELECT_CLIENTNAME
+            <b><u>$PALSELECT_CLIENTNAME</u></b><br>
+        #end if
+        #if $varExists('$PALSELECT_DOCID') and $PALSELECT_DOCID
+            #filter DateFilter2$PALSELECT_DOCDATE#end filter# $_('№') $PALSELECT_DOCNUM <br>
+        #end if
+        $PALSELECT_TASKID
+        #if $varExists('$PALSELECT_MANFIO') and $PALSELECT_MANFIO
+            - <b>$PALSELECT_MANFIO</b>
+        #end if
+    <hr>
+    #else
+        <br><br>
+    #end if
+    <b><u>($WCODE)</u></b>$WNAME<br>
+    #if $varExists('$WSITENAME') and $WSITENAME
+        <font color="gray">$WSITENAME</font><br>
+    #end if
+
+    #if $varExists('$datalist') and len($datalist) > 0
+        <br>
+        #set $canMoveAll = True
+        #for $item in $datalist
+            #filter DateFilter2$item.productdate#end filter# =
+                $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)<br>
+            #if $item.CNTBOXMARK + $item.CNTMARK != $item.AMOUNT
+                <font class="yellow"><b>$_('ЕГАИС')</b></font>
+                #set $canMoveAll = False
+            #else
+                $_('ЕГАИС')
+            #end if
+            = $item.CNTBOX ($item.CNTBOXMARK)
+            #if $item.CNTMARK
+                <font class="yellow"><b>+$item.CNTMARK</b></font>
+            #end if
+            <br><br>
+        #end for
+        <hr>
+        <form action=palWaresEgaisBox>
+            <input type=hidden name=pid value=$PAL_ID>
+            <input type=hidden name=wid value=$WID>
+            <input type=hidden name=ctm value="$CURRENTDATETIME">
+            $_('Отсканируйте ШК паллета, на который будете перемещать товар'):
+            <input type="text" id=":scan:text" name="barcode" value="" title="$_('Паллет')">
+            <input type=submit value=Ok />
+        </form>
+    #end if
+#end def

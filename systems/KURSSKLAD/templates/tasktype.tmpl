@@ -1,0 +1,15 @@
+#encoding utf-8
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th>Тип задания</th></tr>
+    <tr><td><select id="ttid" name="ttid"></select></td></tr>
+#else
+    <label for="ttid" style="width:3%;"><b>$_('Тип задания'):</b></label>
+    <select id="ttid" class="wid" name="ttid" style="width:5%;"></select>
+#end if
+
+<script src="$sps_js.KURSSKLAD/embed/tasktype.js"></script>
+<script>
+  \$(document).ready(function() {
+        \$('#ttid').selectTasktype();
+  });
+</script>

@@ -1,0 +1,9 @@
+.hiderer{
+	width: 16px;
+	height: 16px;
+	background: url(/KURSSKLAD/REFERENCE/WARESOPTIONS/images/dialog-titlebar-hide.png) no-repeat;
+	position:absolute;
+	top: 6px;
+	right: 0.7em;
+	cursor: default;
+}

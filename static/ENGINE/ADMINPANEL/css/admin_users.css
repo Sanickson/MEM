@@ -1,0 +1,44 @@
+/* dlgchangepasswd */
+
+#dlgchangepasswd_form table tr.rowHover td, tr:hover td {
+    background-color: transparent !important;
+}
+
+#dlgchangepasswd_generate_btn{
+    margin-left: 0px;
+}
+
+#dlgchangepasswd_generate_bc_btn{
+    margin-left: 5px;
+}
+
+#fio_txt, #id_txt, #login_txt{
+    font-weight: bold;
+    font-size: 120%;
+}
+
+/* users */
+#lbl_filter_cmb{
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#dlgurrights_rights_div {
+    width: calc(100% - 325px);
+}
+
+.dlgedit_div_left  {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+}
+
+.dlgedit_div_right  {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+
+.dlgedit_div_right input  {
+    width: 100%;
+}

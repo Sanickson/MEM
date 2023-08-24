@@ -1,0 +1,91 @@
+#encoding utf-8
+#extends systems.engine_main
+
+#def $system_help = True
+#end def
+
+
+#def systemNavigation      
+	##<link href="$sps_css.KURSSKLAD/tabs/jquery.tabs.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="$sps_css.KURSSKLAD/jquery.contextMenu.css"/>
+	<link href="$eng_css/jquery.autocomplete.css" rel="stylesheet" type="text/css" media="screen"/>
+	
+	<script type="text/javascript" src="$eng_js/ui.datepicker.min.js"></script>
+    <script type="text/javascript" src="$eng_js/i18n/ui.datepicker-ru.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.maskedinput-1.2.1.pack.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.rowFocus.min.js"></script>
+	<script type="text/javascript" src="$eng_js/jquery.contextMenu.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.tablesorter.min.js"></script>    
+    <script type="text/javascript" src="$eng_js/kTblScroll.min.js"></script>
+	<script type="text/javascript" src="$eng_js/jquery.autocomplete.min.js"></script>
+
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/FileSaver.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/Export2Excel.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/xlsx.core.min.js"></script>
+
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.formats.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.messages.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.objectAutoComplete.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.rightClick.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="$eng_js/ui.dialog.min.js"></script>    
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.id.js"></script>
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.objectLocate.js"></script>
+	##<script type="text/javascript" src="$sps_js.KURSSKLAD/taskView.js"></script>
+	##<script type="text/javascript" src="$sps_js.KURSSKLAD/jquery.tabs.js"></script>
+    <script type="text/javascript" src="$sp_js/skladservice.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.tdChk.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.icons.js"></script>
+    <script type="text/javascript" src="$eng_js/table-jq.js"></script>
+    <script type="text/javascript" src="$eng_js/table-type.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.form.js"></script>
+
+<form class="buttons" id="services">
+		 Период: <input id="bdate" name="dbeg" type="text" size="8" />&nbsp;
+		 <input id="edate" name="dend" type="text" size="8" />&nbsp;
+
+         Склад <button type="button" id="zone" name="objid" data-val=null><img src="$eng_img/actions/application_view_detail.png"></button>
+		 Объект <input type="text" id="toobjid" name="toobj" data-val=null readonly>
+		 Режим <select id="tp">
+				<option selected value="dt">По дням</option>
+				<option value="ca">По объектам</option>
+               </select>
+		 <button style="button" type="submit" id="go"><img src="$eng_img/arrows/arrow_right.png"></button>
+		 <button type="button" title="Печать" id="btPrint"><img src="$eng_img/actions/printer.png" border="0"></button>
+		  <button type=button id=btnExcel><img src="$eng_img/apps/excel.png"></button>
+		 <button type="button" title="Показать неучтенные документы" id="btShow"><img src="$eng_img/actions/application_view_detail.png" border="0"></button>
+	</form>
+#end def
+#def engineData
+    <div id="dvMain" style="width:100%;position:relative;float:left;">
+        <div id="dvSkladService" style="width:100%;height:50%;position:relative;float:left;"></div>
+        <div id="dvSkladServiceDetail" style="width:100%;height:50%;position:relative;float:left;"></div>
+        <div id="dvMultiObject" class="flora" style="display: none; justify-content: space-around;">
+            <div style="width: 45vh; display: inline-block;">
+                <form>
+                    <input type="text" id="obj" placeholder="Объект" style="padding: 0px 5px; margin-bottom: 5px; width: 38vh;">
+                    <button id="searchBtn" type="submit" style="vertical-align: middle; height: 20px;"><img src="$eng_img/actions/find.png"></button>
+                </form>
+                <div id="searchTbl">
+                    <!--<table id="searchTbl" style="margin: 0 5px;">
+                        <thead>
+                            <tr><th style="padding: 5px 10px; width: 50vh;">Найденные объекты</th><tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <table id="selectTbl" style="margin: 0 5px;">
+                    <thead>
+                        <tr><th style="padding: 5px 10px; width: 50vh;">Выбранные объекты</th><tr>
+                    </thead>
+                </table>-->
+                </div>
+            </div>
+            <div style="width: 45vh; display: inline-block;">
+            <b style="text-align: center; display: block; height: 16px; color: #fff; background-color: #3b3b3b; margin-bottom: 5px; padding-top: 4px;">Выбранные объекты</b>
+            <div id="selectTbl" >
+            </div>
+            </div>
+        </div>
+    </div>
+#end def

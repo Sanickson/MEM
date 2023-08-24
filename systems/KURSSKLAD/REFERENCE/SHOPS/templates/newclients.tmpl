@@ -1,0 +1,20 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REFERENCE.SHOPS.templates.main
+#def phData
+
+
+     <form class="buttons" id="frm">
+        #include '../systems/KURSSKLAD/templates/warehouse.tmpl'
+        &nbsp;&nbsp;&nbsp;
+        <button style="button" type=submit id=btnDo><img src="$eng_img/actions/refresh.png"></button>
+     </form>
+
+#end def
+
+#def adminData
+##Scripts
+     <link href="$sp_css/shops.css" rel="stylesheet" type="text/css" media="screen"/>
+    <script type="text/javascript" src="$sp_js/newclients.js"></script>
+    <script type="text/javascript" src="$sp_js/shopschng.js"></script>
+    <div id="dvScreen" style="float:left;position:relative;width:100%;"></div>
+#end def

@@ -1,0 +1,32 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+   
+   #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+   <br>
+  
+   $_('Отсканируйте ШК принтера')
+   <form action='taskEndPrint'>
+      <input type="hidden" name="tid" value="$TID">
+      <input type='text' name='barcode' id='barcode:scan'>
+   </form>
+
+  #if $pickInHands
+    <a href="javascript: if (confirm('$_('Вы  уверены?')')) location.href='taskEndToClient?tid=$TID'">$pickInHands</a>
+  #end if
+
+
+    #if $varExists('$datalist') and $datalist
+        <hr>
+        #for $item in $datalist
+            #if $item.autoname
+                $item.sitename <br>
+                <b>$item.autoname<b><br>
+            #elif $item.sitename
+                <b>$item.sitename</b><br>
+            #end if
+            <br>
+        #end for
+    #end if
+#end def    

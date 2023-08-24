@@ -1,0 +1,21 @@
+#encoding utf-8
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th id="labelSG"></th></tr>
+	<tr><td><input readonly type=text name=sgid id="sgid" data-val="None"></td></tr>
+#else
+    <label id="labelSG" for="sgid" style="width:5%;"></label>
+    <input style="width:5%;" readonly type=text name=sgid id="sgid" data-val="None">
+#end if
+
+
+
+<script type="text/javascript" src="$sps_js.KURSSKLAD/embed/manyselgroup.js"></script>
+<script>
+  \$(document).ready(function() {
+    \$('#sgid').dvSelgroup();
+    if (\$('#whmodeid').length){
+        \$('#whmodeid').changeDVSelgroup(false);
+    }
+    \$('#whid').changeDVSelgroup(true);
+  });
+</script>

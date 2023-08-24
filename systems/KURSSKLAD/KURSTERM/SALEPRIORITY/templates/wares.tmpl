@@ -1,0 +1,74 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    <b><u>($WCODE)</u></b>$WNAME<br>
+    <hr>
+    #if $varExists('$datalist') and $datalist
+      <table>
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>$_('Товар')</th>
+            #for $item in $salePriorityCodes
+                <td class="$salePriorityClass($item)">$item</td>
+            #end for
+          </tr>
+        </thead>
+        <tbody>
+      #for $item in $datalist
+        <tr>
+          #if $item.PR == -1
+            #set $classname = 'gray'
+          #elif $item.PR == 0
+            #set $classname = 'green'
+          #elif $item.PR == 1
+            #set $classname = 'yellow'
+          #else
+            #set $classname = 'red'
+          #end if
+          <td class="$salePriorityClass($item.PR)"><b>$item.PR</b></td>
+          <td>
+            #if $item.FROMNAME
+              #set $fromname = $item.FROMNAME.replace('"',"'")
+            #else
+              #set $fromname = ''
+            #end if
+            #if $item.DOCNUM
+              #set $docnum = '№' + $item.DOCNUM.replace('"',"'")
+            #else
+              #set $docnum = ''
+            #end if
+            #if $item.COUNTRYNAME
+              #set $country = $item.COUNTRYNAME.replace('"',"'")
+            #else
+              #set $country = ''
+            #end if
+            #if $item.PRODUCERNAME
+              #set $producer = $item.PRODUCERNAME.replace('"',"'")
+            #else
+              #set $producer = ''
+            #end if
+
+
+            #if $item.WLINCOMEID and $item.WLINCOMEID > 0
+                    <a href="waresLotIncome?wid=$WID&wlincomeid=$item.WLINCOMEID" title="<b>$producer</b> $docnum">
+                        #filter DateFilter2$item.DOCDATE#end filter#
+                    </a>
+            #else
+                    <a href="waresLotIncome?wid=$WID&wlincomeid=$item.WLINCOMEID">
+                        #filter DateFilter2$item.DOCDATE#end filter#
+                    </a>
+            #end if
+          </td>
+          <td><font class="$salePriorityClass(0)"><b>$item.PR0</b></font></td>
+          <td><font class="$salePriorityClass(1)"><b>$item.PR1</b></font></td>
+          <td><font class="$salePriorityClass(2)"><b>$item.PR2</b></font></td>
+          <td><font class="$salePriorityClass(-1)"><b>$item.PRMINUS</b></font></td>
+        </tr>
+      #end for
+        </tbody>
+      </table>
+    #end if
+#end def

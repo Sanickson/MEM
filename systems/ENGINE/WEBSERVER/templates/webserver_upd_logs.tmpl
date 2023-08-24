@@ -1,0 +1,16 @@
+#encoding utf-8
+<div class="full_height">
+    <div><span id="dlgupdlogs_caption">$dir_loc</span></div>
+    <br>
+    <select size="22" id="ls">
+        #for $file in $files
+          <option value="$file[1]">#if $file[0]=='d' then 'd' else '&nbsp;'#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$file[1]</option>
+        #end for
+    </select>
+</div>
+<div class="buttons save footer_btns">
+  <input id="only_today" type='checkbox' checked="checked"><label for="only_today">$_('Только за сегодня')</label>
+
+  <button type="button" id="dlgupdlogs_sort_btn" sort="desc"><img src="$eng_img//circular/arrow_up.png" alt=""/><span> $_('Сортировать по возрастанию')</span></button>
+  <button type="button" id="dlgupdlogs_close_btn"><img src="$eng_img/actions/accept.png" alt=""/> $_('Закрыть')</button>&nbsp;
+</div>

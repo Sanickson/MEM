@@ -1,0 +1,20 @@
+#encoding utf-8
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+
+    $_('ШК'): <b><u>$barcode</u></b><br>
+    
+    <br>
+        <u><b>$_('Выберите товар'):</b></u>
+    <hr>    
+    #if $varExists('$datalist') and $datalist
+        #for $item in $datalist
+            <br>
+            (<u>$item.WCODE</u>)<br>
+            <a href='taskWares?tid=$TID&wid=$item.WID'>$item.WNAME</a>
+            <br>
+        #end for
+    #end if	
+    
+#end def

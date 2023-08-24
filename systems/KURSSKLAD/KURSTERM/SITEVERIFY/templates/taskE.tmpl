@@ -1,0 +1,52 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    $_('Задание') $TID<br>
+
+    #if $PNUM
+        <b>$PNUM</b>($PSITE)
+    #else
+        <b>$PSITE</b>
+    #end if
+    <br>
+    <b>($WCODE)</b>$WNAME
+    <hr>
+
+    #if $varExists('$datalist') and len($datalist) > 0
+        <br>
+        #for $item in $datalist
+            #filter DateFilter2$item.productdate#end filter# =
+                $viewQuantity($item.AMOUNT,$VUF,$VUC,$MUF,$MUC)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)<br>
+            #if $item.CNTBOXMARK + $item.CNTMARK != $item.AMOUNT
+                <font class="yellow"><b>$_('ЕГАИС')</b></font>
+                #set $canMoveAll = False
+            #else
+                $_('ЕГАИС')
+            #end if
+            = $item.CNTBOX ($item.CNTBOXMARK)
+            #if $item.CNTMARK
+                <font class="yellow"><b>+$item.CNTMARK</b></font>
+            #end if
+            <br>$_('Отсканировано')
+            = $item.TWCNTBOX ($item.TWCNTBOXMARK)
+            #if $item.TWCNTMARK
+                <font class="yellow"><b>+$item.TWCNTMARK</b></font>
+            #end if
+            <br><br>
+        #end for
+        <hr>
+    #end if
+
+    <form action=verifyTask>
+        <input type=hidden name=tid value=$TID>
+        $_('ШК короба или алкомарки'):<br>
+        <input type="text" id=":scan:text" name="barcode" value="">
+        <input type=submit value=Ok />
+    </form>
+
+    <br>
+    <a href="verifyTaskEnd?tid=$TID">$_('Завершить')</a>
+#end def    

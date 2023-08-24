@@ -1,0 +1,32 @@
+[Subject]
+text = proc3
+#text = proc4
+
+
+[ProcParams]
+proc1 = taskid
+
+[ProcNames]
+proc1 = select * from TS_GET_QUEUEPARAMS_MES(?)
+proc3 = Изменение едениц измерений в справочнике товаров
+#proc4 = select 'пример заголовка письма' subject from config
+
+[html]
+html = <div class="label ui-resizable ui-droppable"
+            style="position: relative; background-color: white;
+                   font-family: 'Times New Roman';">
+
+            <div style="font-size: 20px; width: 800px;" id="mes">$$d1.PARAMS</div>
+        </div>
+
+        
+
+[ProcDataList]
+proc1 = d1
+
+[ProcFetches]
+proc1 = one
+proc3 = text
+#proc4 = one
+
+

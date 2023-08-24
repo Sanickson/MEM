@@ -1,0 +1,51 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+   
+    <b> № $docnum от #filter DateFilter$docdate#end filter# (<u>$TID</u>)</b>
+    <br>
+    <b><u>($wcode)</u></b>$wname<br>
+    <b>$_('Заказ')</b>: $viewQuantity($QO,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$QO#end filter#</u></b>)
+    #if $QS and float($QS)>0.00001
+        <br><b>$_('Отобрано')</b>: $viewQuantity($QS,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$QS#end filter#</u></b>)
+    #end if
+    #if $WLINQPALLET and float($WLINQPALLET)>0.00001
+        #if $WLINSMALLREST == '1'
+            <br><b>$SITENAME</b>:<font class="red">$viewQuantity($WLINQPALLET,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$WLINQPALLET#end filter#</u></b>)</font>
+        #else
+            <br><b>$SITENAME</b>: $viewQuantity($WLINQPALLET,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$WLINQPALLET#end filter#</u></b>)
+        #end if
+    #end if        
+    <hr>    
+    #if $TWSTAT == '5'
+        <a href='taskC?id=$TID'>$_('Обновить')</a><br>
+    #else            
+        #if $WLINID
+            <form action='taskCWaresLotIncome'>
+                <input type=hidden name=twid value=$TWID>
+                <input type=hidden name=amount value=$WLINQORDER>
+                $_('Для отборки')<br>
+                <b>$WLINSUPPLIER</b><br>
+                <b>#filter DateFilter2$WLINDOCDATE#end filter# №$WLINDOCNUM</b><br>
+                $viewQuantity($WLINQORDER,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$WLINQORDER#end filter#</u></b>)<br>
+                $_('Отсканируйте партию поставки или ШК короба')<br>
+                <input type=text name=barcode id="barcode:scan"><br>
+                ##$_('Сканирование МО = Завершение отборки позиции')
+            </form>                
+        #else
+            <form action='taskCWaresLotIncome'>
+                <input type=hidden name=twid value=$TWID>
+                $_('Для завершения отборки отсканируйте')<br>
+                <b>$SITENAME</b><br>
+                <input type=text name=barcode id="barcode:scan">
+            </form>
+        #end if        
+        #if not $QS or float($QS)<0.00001
+            <br>  
+            <a href='qTaskCWaresNoAmount?twid=$TWID'>$_('Не хватает на МО')</a><br>
+            <a href='qTaskCWaresNoPlace?tid=$TID&twid=$TWID' onClick="return confirm('$_('Нет места на поддоне')\n---------------------------------\n$_('Вы уверены?')')">$_('Нет места на поддоне')</a>            
+        #end if        
+    #end if
+#end def    
+

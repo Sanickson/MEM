@@ -1,0 +1,15 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    <b><u>($wcode)</u></b>$wname<br>
+    $viewQuantity($QO,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$QO#end filter#</u></b>)<br>
+    <b>$SITENAME</b>
+
+    #if $varExists('$reloadurl')
+        <hr>
+        <a href="$reloadurl">$_('Обновить')</a>
+    #end if
+#end def
+

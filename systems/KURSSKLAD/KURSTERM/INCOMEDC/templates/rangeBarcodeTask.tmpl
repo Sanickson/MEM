@@ -1,0 +1,18 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+    ШК: <b><u>$barcode</u></b><br>
+    <br><br>
+        <u><b>$_('Выберите приход для использования отсканированного ШК'):</b></u>
+    <hr>    
+    #if $varExists('$datalist') and $datalist
+        #for $item in $datalist
+            $item.FROMNAME<br>
+            <a href="taskWaresScan?tid=$item.TASKID&barcode=$barcode">$_('№')$item.DOCNUM</a><br>
+            <hr>
+        #end for
+    #end if	
+    
+#end def

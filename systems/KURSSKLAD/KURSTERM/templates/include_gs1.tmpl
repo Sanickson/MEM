@@ -1,0 +1,56 @@
+#encoding utf-8
+#import systems.KURSSKLAD.cheetahutils as cu
+
+#if $varExists('$THEBC') and $THEBC
+    #if $varExists('$waresurl') and $waresurl
+        <a href="$waresurl$THEBC.WID">($THEBC.WCODE)</a>$THEBC.WNAME<br>
+    #else
+        <b>($THEBC.WCODE)</b>$THEBC.WNAME<br>
+    #end if
+    #if $THEBC.PALNUM
+        <b>$THEBC.PALNUM</b>
+        #if $THEBC.SITENAME
+            ($THEBC.SITENAME)
+        #end if
+        <br>
+    #elif $THEBC.SITENAME
+        <b>$THEBC.SITENAME</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'WBARCODE') and $THEBC.WBARCODE
+        $_('GTIN:') <b>$THEBC.WBARCODE</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'BCCALCAMOUNT') and $THEBC.BCCALCAMOUNT
+        $_('Расчет:') <b>$cu.Quantity($THEBC.BCCALCAMOUNT)</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'PRODUCTDATE') and $THEBC.PRODUCTDATE
+        $_('Дата производства:') <b>$cu.TimeStampToDate($THEBC.PRODUCTDATE)</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'BESTBEFOREDATE') and $THEBC.BESTBEFOREDATE
+        $_('Употребить до:') <b>$cu.TimeStampToDate($THEBC.BESTBEFOREDATE)</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'PACKINGDATE') and $THEBC.PACKINGDATE
+        $_('Дата упаковки:') <b>$cu.TimeStampToDate($THEBC.PACKINGDATE)</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'DUEDATE') and $THEBC.DUEDATE
+        $_('Срок годности:') <b>$cu.Quantity($THEBC.DUEDATE)</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'EXPIRATIONDATE') and $THEBC.EXPIRATIONDATE
+        $_('Истекает:') <b>$cu.TimeStampToDate($THEBC.EXPIRATIONDATE)</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'WWEIGHT') and $THEBC.WWEIGHT
+        $_('Вес:') <b>$cu.Quantity($THEBC.WWEIGHT)</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'WLNUM') and $THEBC.WLNUM
+        $_('Партия:') <b>$THEBC.WLNUM</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'SERIALNUM') and $THEBC.SERIALNUM
+        $_('Серия:') <b>$THEBC.SERIALNUM</b><br>
+    #end if
+    #if $cu.FieldExists($THEBC, 'FACTOR') and $THEBC.FACTOR
+        $_('Кол-во:') <b>$cu.Quantity($THEBC.FACTOR)</b><br>
+    #end if
+    #if $THEBC.CNTCHILD
+        $_('Внутри:') <b>$cu.Quantity($THEBC.CNTCHILD)</b><br>
+    #end if
+
+#end if

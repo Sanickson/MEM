@@ -1,0 +1,99 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/waresHeader.tmpl'
+    #if $PNUM
+        <b>$PNUM</b>($SITENAME)
+    #else
+        <b>$SITENAME</b>
+    #end if
+    <hr>
+    #set $QSite = 0
+    #if $varExists('$datalist')
+        #for $item in $datalist
+            #if $item.COUNTRYNAME
+                #if $item.PRODUCERNAME
+                    $item.COUNTRYNAME: <u>$item.PRODUCERNAME</u>
+                #else
+                    $item.COUNTRYNAME
+                #end if
+                <br>
+            #elif $item.PRODUCERNAME
+                <u>$item.PRODUCERNAME</u><br>
+            #end if
+
+            <u>#filter DateFilter2$item.PDATE#end filter#</u>:
+            <b>#filter Quantity$item.QCALC#end filter#</b>
+            /$viewQuantity($item.PAMOUNT,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$item.PAMOUNT#end filter#</u></b>)
+            #set $QSite += float($item.QCALC)
+            <br>
+        #end for
+    #end if
+
+    #if $varExists('$QS') and $QS and float($QS)>0.00001
+        #set $canNoSpace = False
+    #else
+        #set $canNoSpace = True
+    #end if
+
+    #if $TWSTAT == '5'
+        <a href='task?tid=$TID'>$_('Обновить')</a><br>
+    #else        
+        #if $varExists('$QS') and $QS and float($QS)>0.00001
+			$_('Отобрано'):
+			<a href="taskWaresClear?twid=$TWID" title="$_('Очистить')" onClick="return confirm('Вы действительно хотите начать заново?')">#filter Quantity$QS#end filter#$MUCODE</a>
+			<br>
+		#end if
+    
+        #if $QO > $QSite
+            #set $onsubmit = ' onsubmit="return frmSubmit();"'
+            <script>
+                function frmSubmit(){
+                    var r = confirm('На МО меньше товара, чем нужно отобрать:\nВы уверены, что хотите отобрать только #filter Quantity$QSite#end filter# единиц товара?');
+                    if (!r)
+                        document.getElementById('barcode:scan').value = '';
+                    return r;
+                }
+            </script>
+        #else
+            #set $onsubmit = ''
+        #end if
+        <br>
+        #if $QSite > 0
+            <form$onsubmit action='taskWares'>
+                <input type=hidden name=twid value=$TWID>
+                #for $item in $datalist
+                    #if $item.QCALC
+                        #set $name = 'WL_%s_%s' % ($item.WLOTID, 0)
+                        <input type="hidden" name="$name" value="#filter Quantity$item.QCALC#end filter#">
+                    #end if
+                #end for
+
+                $_('Чтобы отобрать количество') <b></u>#filter Quantity$QSite#end filter#</u></b> $_(' и завершить отборку позиции')
+                #if $WSELTYPE and $WSELTYPE == 'W'
+                    $_('отсканируйте ШК товара'): <br> <input type=text name=barcode id="barcode:scan">
+                #elif $PNUM
+                    $_('отсканируйте паллет'): <br> <input type=text name=barcode id="barcode:scan">
+                #else
+                    $_('отсканируйте МО'): <br> <input type=text name=barcode id="barcode:scan">
+                #end if
+            </form>
+            <a href='taskWares?twid=$TWID&flend=H'>$_('Завершить товар')</a>
+            <hr>
+            <a href='taskWaresAmount?twid=$TWID'>$_('Ввести количество вручную')</a><br>
+        #else
+            <a href='taskWares?twid=$TWID&flend=H'>$_('Завершить товар')</a>
+            <hr>
+        #end if
+
+        #if $canNoSpace
+            #if not $PID
+                <a href='taskWaresNoAmount?tid=$TID&twid=$TWID' onClick="return confirm('$_('Не хватает на ') $SITENAME\n---------------------------------\n$_('Вы уверены?')')">$_('Не хватает на ') $SITENAME</a><br>
+            #end if
+			<a href='taskWaresNoPlace?tid=$TID&twid=$TWID' onClick="return confirm('$_('Нет места на паллете отборки')\n---------------------------------\n$_('Вы уверены?')')">$_('Нет места на паллете отборки')</a>
+		#end if                
+    #end if
+#end def    
+

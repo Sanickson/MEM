@@ -1,0 +1,51 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    <b><u>$PAL_CLIENTNAME</u></b><br>
+    <b>$NUMPALLET</b>
+    <hr>
+    <b>($WCODE)</b>$WNAME
+    #if $ARTICUL
+        <b>($ARTICUL)</b>
+    #end if
+    <hr>
+    #if $varExists('$datalist') and len($datalist) > 0
+        <br>
+        #for $item in $datalist
+            #filter DateFilter2$item.productdate#end filter# =
+                $viewQuantity($item.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$item.AMOUNT#end filter#</u></b>)<br>
+            #if $item.CNTBOXMARK + $item.CNTMARK != $item.AMOUNT
+                <font class="yellow"><b>$_('ЕГАИС')</b></font>
+                #set $canMoveAll = False
+            #else
+                $_('ЕГАИС')
+            #end if
+            = $item.CNTBOX ($item.CNTBOXMARK)
+            #if $item.CNTMARK
+                <font class="yellow"><b>+$item.CNTMARK</b></font>
+            #end if
+            <br>$_('Отсканировано')
+            = $item.TWCNTBOX ($item.TWCNTBOXMARK)
+            #if $item.TWCNTMARK
+                <font class="yellow"><b>+$item.TWCNTMARK</b></font>
+            #end if
+            <br><br>
+        #end for
+        <hr>
+    #end if
+
+    <form action=taskWaresEgais>
+        <input type=hidden name=tid value=$tid>
+        <input type=hidden name=wid value=$wid>
+        $_('ШК короба или алкомарки'):<br>
+        <input type="text" id=":scan:text" name="barcode" value="">
+        <input type=submit value=Ok />
+    </form>
+    <br>
+    <a href="taskWaresNull?tid=$tid&wid=$wid">$_('Обнулить позицию')</a><br>
+    <a href="taskWaresEnd?tid=$tid&wid=$wid">$_('Завершить позицию')</a><br>
+#end def
+

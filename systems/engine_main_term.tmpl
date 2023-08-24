@@ -1,0 +1,158 @@
+#encoding utf-8
+
+#from cp_utils import isMobile
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    #if $isMobile()
+##        <link href="$eng_css/tsd/bw_android.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="$eng_css/tsd/bw.css" rel="stylesheet" type="text/css" media="screen" />
+    #else
+        <link href="$eng_css/tsd/bw.css" rel="stylesheet" type="text/css" media="screen" />
+    #end if
+    #if $varExists('jsmain')
+    <script>
+        $jsmain
+    </script>
+    #end if
+
+    <script>
+     loaded=0;
+	   function onBodyLoad(){
+      loaded++;
+	    if (loaded==1){
+   	    //in IE error positioning in element - gasim
+        try {
+            parsePage();
+        }
+        catch(e) {
+          //alert (e.message);
+        }
+   	    #if $varExists('jsbodyload')
+          $jsbodyload
+   	    #end if
+	    }
+	  }
+    </script>
+
+
+    #if not $varExists('no_java_common')
+      #if not $varExists('no_java_point')
+        <script language="javascript" src="$eng_js/tsd/point.js"> </script>
+      #end if
+      #if not $varExists('no_java_types')
+        <script language="javascript" src="$eng_js/tsd/types.js"> </script>
+      #end if
+      #if not $varExists('no_java_scan')
+        <script language="javascript" src="$eng_js/tsd/scan.js"> </script>
+      #end if
+      #if not $varExists('no_java_marker')
+        <script language="javascript" src="$eng_js/tsd/marker.js"> </script>
+      #end if
+      <script language="javascript" src="$eng_js/tsd/core.js"> </script>
+      <!--script language="javascript">ScrollStep=1;</script-->
+    #else
+      <script language="javascript"> 
+        var is_ie = ( /msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent) );
+        var is_opera = (navigator.appName == 'Opera');
+        var is_Terminal;
+        if (navigator.appVersion.toUpperCase().indexOf('COMPATIBLE')!=-1) is_Terminal = true;
+        else
+            if (navigator.platform.toUpperCase().indexOf('CE.NET')!=-1) is_Terminal = true;
+            else is_Terminal = false;
+        //onBodyLoad();        
+      </script> 
+    #end if
+
+</head>
+<body onLoad="javascript:onBodyLoad()" style="overflow:hidden;">
+<!--iframe scrolling="no" src="/message" id="message" name="message" width="0" height="0"></iframe-->
+<div id="hint" name="hint" class="hint">
+#if $varExists('methodname') 
+  $methodname 
+#end if
+</div>
+<div id="content-wrapper">
+    #block engineData
+        engineData here
+    #end block engineData
+</div>
+
+<!--<script language="JavaScript" src="$eng_js/tsd/request.js"></script>-->
+
+###if $isMobile()
+##<script>
+##
+##  /*var menu_items = {
+##    "urls": [{
+##            "url": "/exit",
+##            "name": "Выход",
+##            "type": "load"
+##        }],
+##    "user": {"fio": "$userfio"},
+##    "current_iface": {"name": "$system_name"}
+##  };
+##
+##  ## #if $varExists("$systems") and $systems is not None and $len($systems)
+##  ##  #for $item in $systems
+##  ##      menu_items["urls"].push({"url": "$item.url", "name": "$item.name", "type": "load"});
+##  ##  #end for
+##  ## #end if
+##
+##  try {
+##    Android.executeMethod('setMenuItems', '', JSON.stringify(menu_items), '');
+##  } catch (e) {
+##    console.log('Android not found')
+##  }*/
+##
+##  var inputs = document.getElementsByTagName('input');
+##  for (var i=0; i<inputs.length; i++) {
+##    var id = inputs[i].id;
+##    if (id.indexOf(':scan') > -1) {
+##      // touch
+##      var moved = false;
+##      inputs[i].addEventListener('touchstart',function(event) {
+##        event.preventDefault();
+##        this.blur();
+##        moved = false;
+##      });
+##
+##      inputs[i].addEventListener('touchmove',function() {
+##        moved = true;
+##      });
+##
+##      inputs[i].addEventListener('touchend',function() {
+##        if (moved) {
+##          moved = false;
+##          document.getElementById('actioncaption').innerHTML = 'click';
+##          try {
+##            Android.executeMethod('scanBarcode', 'submitBarcode', '', id);
+##          }
+##          catch (e) {
+##            var barcode = prompt('Отсканируйте QR-код', '');
+##            submitBarcode(barcode, id);
+##          }
+##        }
+##      });
+##    }
+##  }
+##
+##
+##   function submitBarcode(result, id) {
+##    var inp = document.getElementById(id);
+##    inp.value = result;
+##    inp.form.submit();
+##  }
+##
+##
+##
+##
+##</script>
+###end if
+
+</body>
+</html>     
+        

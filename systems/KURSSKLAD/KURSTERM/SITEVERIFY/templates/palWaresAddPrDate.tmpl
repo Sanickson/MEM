@@ -1,0 +1,42 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData    
+    #if $PNUM
+        $_('Поддон'): <b><u>$PNUM</u></b>($SNAME)<br>
+    #else
+        <b><u>$SNAME</u></b><br>
+    #end if
+    <b>(<u>$WCODE</u>) </b> $WNAME<br>
+    <hr>
+    <form action="palWaresAdd" name="frm" id=frm method=post>
+        <input type=hidden name=wid value=$WID>
+        <input type=hidden name=id value=$PID>
+        <input type=hidden name=dbeg value="$dbeg">
+        <input type=hidden name=wlincomeid id=wlincomeid value="0">
+        $_('Дата производства'): <input type="text" name="productdate" id="::date" value="$dateMask" size="6">
+        <input type=button onClick="frmSubmit();" value="$_('>')">
+    </form>
+    <hr>
+        #if $varExists('$datalist') and $datalist
+            #for $item in $datalist
+                <a href="javascript: frmSubmitByPr($item.WLINCOMEID, '#filter DateFilter2$item.PRODUCTDATE#end filter#');">#filter DateFilter2$item.PRODUCTDATE#end filter#</a><br>
+                $item.SUPPLIER<br>
+                #filter DateFilter2$item.DOCDATE#end filter# $_('№') $item.DOCNUM<br><br>
+            #end for
+        #end if
+
+
+    <script>
+        function frmSubmit(){
+            document.getElementById('wlincomeid').value = 0;
+            document.getElementById('frm').submit();
+        }
+
+        function frmSubmitByPr(wlincomeid, productdate){
+            document.getElementById('wlincomeid').value = wlincomeid;
+            document.getElementById('::date').value = productdate;
+            document.getElementById('frm').submit();
+        }
+    </script>
+#end def
+

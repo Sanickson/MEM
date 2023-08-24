@@ -1,0 +1,19 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData    
+    #if $PNUM
+        $_('Поддон'): <b><u>$PNUM</u></b>($SNAME)<br>
+    #else
+        <b><u>$SNAME</u></b><br>
+    #end if
+    <b>(<u>$WCODE</u>) </b> $WNAME<br>
+    <hr>
+    <form action="palWaresAdd" name="frm" method=post>
+        <input type=hidden name=wid value=$WID>
+        <input type=hidden name=id value=$PID>
+        <input type=hidden name=dbeg value="$dbeg">
+        $_('Дата производства'): <input type="text" name="productdate" id="::date" value="$dateMask" size="6"><br>
+        <hr>
+        <input type=submit value="$_('Далее')">
+    </form>    
+#end def

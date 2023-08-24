@@ -1,0 +1,55 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    #if $AB
+        #if $AB.BOXBARCODE
+            $_('Короб'): <b>$AB.BOXITEMCOUNT</b> / #filter Quantity$AB.BOXFACTOR#end filter#<br>
+            $AB.SUPPLIERNAME<br>
+            ...<b>$AB.BOXBARCODE[-9:]</b><br>
+            <hr>
+        #end if
+        <b>$AB.STATUSNAME</b><hr>
+        <b>($AB.WCODE)</b>$AB.WNAME<br>
+        #filter DateFilter2$AB.PRODUCTDATE#end filter#<br>
+        #if $AB.PNUM
+            $AB.PNUM ($AB.SNAME)<br>
+        #elif $AB.SNAME
+            $AB.SNAME<br>
+        #end if
+        #if $AB.TASKID
+            <b>$AB.CLIENTNAME</b><br>
+            #if $AB.TASKDT
+                #filter DateTimeFilter#$AB.TASKDT#end filter#
+            #end if
+            $_('№')$AB.TASKID
+            <br>
+        #end if
+        #if $AB.MANFIO
+            <b>$AB.MANFIO</b><br>
+        #end if
+        #if $AB.TTNAME
+            $AB.TTNAME<br>
+        #end if
+    #end if
+
+
+
+##    <form action="$action">
+##        <input type=hidden name=abbarcode value="$abbarcode">
+##        #if $varExists('$lenmark')
+##            <input type="hidden" name="mark" value="$mark">
+##        #end if
+##        #if $barcodeconf
+##            $_('Для подтверждения окончания выверки отсканируйте паллет еще раз')
+##            <input type=hidden name=barcodeconf value="$barcodeconf">
+##        #elif $varExists('$lenmark')
+##            $_('Отсканируйте алкомарку или паллет для завершения выверки')
+##        #else
+##            $_('Отсканируйте паллет, на котором находится алкокороб')
+##        #end if
+##        <input type="text" name="barcode" id="barcode:scan:text" title="$_('МП'), $_('Поддон'), $_('Товар')">
+##    </form>
+
+#end def

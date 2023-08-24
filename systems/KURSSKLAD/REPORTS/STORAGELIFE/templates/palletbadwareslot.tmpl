@@ -1,0 +1,50 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REPORTS.STORAGELIFE.templates.main
+#def phData
+##Scripts
+    <script type="text/javascript" src="$eng_js/ui.dialog.min.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.rightClick.min.js"></script>
+	<script type="text/javascript" src="$eng_js/jquery.contextMenu.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.rowFocus.min.js"></script>
+    <script type="text/javascript" src="$eng_js/jquery.tablesorter.min.js"></script>
+	<script type="text/javascript" src="$eng_js/kTblScroll.js"></script>
+
+
+
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.form.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.id.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.icons.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.formats.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.messages.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/wh.table.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/wh.tableConfig.js"></script>
+
+
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="$eng_js/ui.dialog.min.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.id.js"></script>
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.tdChk.js"></script>
+
+    <link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>
+    ##Scripts
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+    <script type="text/javascript" src="$sp_js/palletbadwareslot.js"></script>
+
+    <form id="frmFilter"  class="buttons">
+        #set global $pallet="1"
+
+        #include '../systems/KURSSKLAD/templates/warehouse.tmpl'
+        #include '../systems/KURSSKLAD/templates/listclient.tmpl'
+        #include '../systems/KURSSKLAD/templates/sitezone.tmpl'
+        #include '../systems/KURSSKLAD/templates/whmode.tmpl'
+        #include '../systems/KURSSKLAD/templates/selgroup.tmpl'
+
+
+
+        <button type="submit"><img src="$eng_img/arrows/arrow_right.png"></button>
+    </form>
+#end def
+
+#def Data
+    <div id="dvData" style="float:left;position:relative;width:100%;"></div>
+#end def

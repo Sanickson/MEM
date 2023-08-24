@@ -1,0 +1,25 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import TimeStampToDate
+
+#def mainData
+
+    $ZONENAME <b>№$TID</b>($ALGORITHM)
+    <br>
+    <b>$S_NAME</b>
+    #if $S_MODELID
+        <br>
+        <b>($S_WCODE)</b> $S_WNAME
+        <br>
+        <b>$TimeStampToDate($S_WPRODUCTDATE)</b> - $TimeStampToDate($S_WBESTBEFOREDATE)
+    #end if
+	
+	<br><br>
+	<b>
+	<font class="yellow">$confmes</font>
+	<br><br>
+	$PNUMBER ($PSNAME)
+    </b>
+	<br><br>
+	<a href="taskAStackChkFull?tid=$TID&sid=$S_ID&barcode=$barcode&conf=1&cnt=$cnt">$_('Подтвердите выполнение')</a>
+#end def

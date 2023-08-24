@@ -1,0 +1,39 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+    #if not $varExists('$url')
+        #set $url = 'wares?waresid='
+    #end if
+
+    #if $varExists('$PAL_ID') and $PAL_ID
+        #if $varExists('$PAL_NUM') and $PAL_NUM
+            <b><u>$PAL_NUM</u></b>($PAL_SNAME)
+        #else
+            <b>$PAL_SNAME</b>
+        #end if
+    #end if
+	<br>
+
+    <br><br>
+        <u><b>$_('Выберите товар'):</b></u>
+    <hr>
+    #if $varExists('$datalist') and $datalist
+        #for $item in $datalist
+            #if $item.SUPPLIERNAME
+                $item.SUPPLIERNAME
+            #end if
+            (<u>$item.WCODE</u>)
+            = <b>#filter Quantity$item.AMOUNT#end filter# $item.MUC</b><br>
+            $item.WNAME.replace('"',"'")<br>
+            <a href='$url$item.WID'>$item.UCODE</a>
+            #if $item.VUC
+                <br>
+                $item.VUC = #filter Quantity$item.VUF#end filter# $item.MUC
+            #end if
+            <br>
+            <hr>
+        #end for
+    #end if
+#end def

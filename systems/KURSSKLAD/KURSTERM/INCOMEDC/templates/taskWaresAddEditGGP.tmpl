@@ -1,0 +1,69 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+        #if $varExists('$mes') and $mes
+            <div id="warning">$_('Неверно заполнено одно из полей!')</div><br>
+        #end if
+        <b>(<u>$WCODE</u>)</b>
+        #if $WSGCODE
+            = $WSGCODE <br>
+        #end if
+        $WNAME
+        <br>
+        #set $ulength = 0
+        #set $uwidth = 0
+        #set $uheight = 0
+        #set $uweight = 0
+        #set $unetweight = 0
+        #set $unetcapacity = 0
+        #set $ufactor = 1
+        #set $uid= $MUID
+
+        #if ($ewuid == str($MWUID))
+        <b>$MWUCODE </b><br><br>
+            #set $ulength = $mwulength
+            #set $uwidth = $mwuwidth
+            #set $uheight = $mwuheight
+            #set $uweight = $mwuweight
+            #set $unetweight = $mwunetweight
+            #set $unetcapacity = $mwunetcapacity
+        #elif ($ewuid == str($VWUID))
+        #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b><br><br>
+        #end if
+            #set $ulength = $vwulength
+            #set $uwidth = $vwuwidth
+            #set $uheight = $vwuheight
+            #set $uweight = $vwuweight
+            #set $unetweight = $vwunetweight
+            #set $ufactor = $VWUFACTOR
+            #set $unetcapacity = $vwunetcapacity
+            #set $uid= $VUID
+        #end if
+        <form action=setWU >
+          <input type=hidden name=tid value=$tid>
+          <input type=hidden name=wid value=$wid>
+          <input type=hidden name=uid value=$uid>
+          <input type=hidden name=ewuid value=$ewuid>
+          <input type=hidden name=factor value=$ufactor>
+          $_('Длина (м)') : <input  name="l" value="$ulength" size="6" onchange="calcCapacity();"><br><br>
+          $_('Ширина (м)') : <input  name="w" value="$uwidth" size="6" onchange="calcCapacity();"><br><br>
+          $_('Высота (м)') : <input  name="h" value="$uheight" size="6" onchange="calcCapacity();"><br><br>
+          $_('Объем (л)') : <input  name="c" value="$unetcapacity" size="6"><br><br>
+          $_('Нетто') : <input   name="n" value="$unetweight" size="6"><br><br>
+          $_('Брутто') : <input  name="b" value="$uweight" size="6">
+          <button type="submit">OK</button>
+        </form>
+        <script language="javascript">
+
+            function calcCapacity(){
+                var l = document.getElementsByName("l")[0].value;
+                var w = document.getElementsByName("w")[0].value;
+                var h = document.getElementsByName("h")[0].value;
+                document.getElementsByName("c")[0].setAttribute("value", l*w*h*1000);
+            }
+
+        </script>
+#end def

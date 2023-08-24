@@ -1,0 +1,29 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+   
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    <br>
+
+    $_('Введите использованную тару')
+    <hr>
+    <form action=taskEndTara>
+        <input type=hidden name=tid value=$TID>
+        #if $varExists('$datalist') and $datalist
+            #for $item in $datalist
+                $item.WNAME<br>
+                <b>$item.WCODE</b> =
+                #if $item.AMOUNT and $item.AMOUNT > 0.0001
+                    <input title="$item.WNAME.replace('"',"'")" type=text id="::int" name="tara_$item.WID" value="#filter Quantity$item.AMOUNT#end filter#" size="3">
+                #else
+                    <input title="$item.WNAME.replace('"',"'")" type=text id="::int" name="tara_$item.WID" value="" size="3">
+                #end if
+                <br>
+            #end for
+        #end if
+        <br>
+        <input type=submit value="$_('Сохранить')">
+    </form>
+  
+#end def

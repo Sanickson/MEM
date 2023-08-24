@@ -1,0 +1,30 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData    
+    <b><u>($WCODE)</u></b>$WNAME<br>
+    <a href="wares?wid=$WID">$_('Приходы')</a>
+    <hr>
+    #if $varExists('$datalist') and $datalist
+        <form action="waresPalletsKoeffSave">
+            <input type=hidden value=$WID name=wid>
+            #for $item in $datalist
+              ##<u>$item.FROMNAME</u><br>
+              ##filter DateFilter2$item.DOCDATE#end filter# № $item.DOCNUM<br>
+              #if $item.PALNUM
+                $item.PALNUM ($item.SNAME)
+              #else
+                $item.SNAME
+              #end if
+              <br>
+              <b>#filter DateFilter2$item.PRODUCTDATE#end filter#</b>:
+              <input type="text" size="2" name="wli$item.WLIID" id='::int' value="$item.PRIORITY" title="<u>$item.FROMNAME</u>=#filter DateFilter2$item.DOCDATE#end filter# № $item.DOCNUM"><br>
+              <br>
+            #end for
+            <input type=submit value="$_('Сохранить')">
+        </form>
+    #end if
+
+    
+#end def

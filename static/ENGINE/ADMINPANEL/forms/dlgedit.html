@@ -1,0 +1,38 @@
+<form id="dlgedit_form" style="width: 100%">
+   <input id="dlgedit_old_id_edt" name="dlgedit_old_id_edt" type="hidden" value="">
+   <input id="dlgedit_old_fio_edt" name="dlgedit_old_fio_edt" type="hidden" value="">
+ <!--<table>
+   &lt;!&ndash;tr><th colspan="2">Параметры</th></tr&ndash;&gt;
+   &lt;!&ndash;<tr><th>ID</th><td><input id="dlgedit_id_edt" name="dlgedit_id_edt" type="text" value=""></td><td></td></tr>&ndash;&gt;
+   <tr><th>ФИО</th><td><input id="dlgedit_fio_edt" name="dlgedit_fio_edt" type="text" value="">
+       <button type="button" id="dlgedit_fio_btn"><img src="/ENGINE/images/actions/accept.png" alt="Проверить"/></button></td><td></td></tr>
+
+   <tr><th>Логин</th><td><input id="dlgedit_login_edt" name="dlgedit_login_edt" type="text" value=""></td><td></td></tr>
+   <tr><th>E-mail</th><td><input id="dlgedit_email_edt" name="dlgedit_email_edt" type="text" value=""></td><td></td></tr>
+   <tr><th>Телефон</th><td><input id="dlgedit_phonenumber_edt" name="dlgedit_phonenumber_edt" type="text" value=""></td><td></td></tr>
+   <tr style="display: none" id="tr_guid_1c"><th>GUID_1C</th><td><input id="dlgedit_guid_1c_edt" name="dlgedit_guid_1c_edt" type="text" value="" maxlength="40"></td><td></td></tr>
+ </table>
+   <div style="display: none" id="tr_id_edt"> ID:  <input id="dlgedit_id_edt" name="dlgedit_id_edt" type="text" value="" type="hidden" > </div>
+   <label for="dlgedit_id_edt"><b>ID:  </b></label> <input id="dlgedit_id_edt" title="Оставьте пустым или введите значение" name="dlgedit_id_edt" type="text" value=""><br><br>
+ -->
+
+   <div style="display: none;" id="tr_id_edt"><div class="dlgedit_div_left"><b> ID:   </b></div>
+      <div class="dlgedit_div_right"><input id="dlgedit_id_edt" name="dlgedit_id_edt" type="text" value="" type="hidden" ></div></div><br>
+   <div class="dlgedit_div_left"><b>ФИО: </b></div> <div class="dlgedit_div_right"><input id="dlgedit_fio_edt" name="dlgedit_fio_edt" type="text"  required></div><br>
+
+   <div class="buttons"><button type="button" id="dlgedit_fio_btn" title="Проверить в AD"><img src="/ENGINE/images/actions/addfind.png" alt="Проверить в AD"/></button>
+       <button type="button" id="dlgedit_man_btn" title="Ввести данные вручную"><img src="/ENGINE/images/actions/edit.png" alt="Ввести данные вручную"/></button> </div><br>
+   <div id = "dlgedit_info" >
+   <div class="dlgedit_div_left"><b>Логин: </b></div>  <div class="dlgedit_div_right"><input id="dlgedit_login_edt" name="dlgedit_login_edt" type="text"  required disabled></div><br><br>
+   <div class="dlgedit_div_left"><b>Доменная авторизация: </b></div><div class="dlgedit_div_right"><input id="dlgedit_passw_edt" name="dlgedit_passw_edt" type="checkbox"  disabled></div><br><br>
+   <div class="dlgedit_div_left"><b>E-mail: </b></div>  <div class="dlgedit_div_right"><input id="dlgedit_email_edt" name="dlgedit_email_edt" type="text" value="" disabled></div><br><br>
+   <div class="dlgedit_div_left"><b>Телефон: </b></div>  <div class="dlgedit_div_right"><input id="dlgedit_phonenumber_edt" name="dlgedit_phonenumber_edt" type="text" value="" disabled>
+   <input id="dlgedit_phonenumber_edt_mask" name="dlgedit_phonenumber_edt" type="text" value=""></div><br>
+   <div style="display: none" id="tr_guid_1c">GUID_1C<input id="dlgedit_guid_1c_edt" name="dlgedit_guid_1c_edt" type="text" value="" maxlength="40"></div><br><br>
+   </div>
+
+ <div class="buttons save">
+    <button type="button" id="dlgedit_save_btn"><img src="/ENGINE/images/actions/accept.png" alt=""/>&nbsp;Сохранить</button>&nbsp;
+    <button type="button" id="dlgedit_cancel_btn"><img src="/ENGINE/images/actions/cancel.png" alt=""/>&nbsp;Отмена</button>
+ </div>
+</form>

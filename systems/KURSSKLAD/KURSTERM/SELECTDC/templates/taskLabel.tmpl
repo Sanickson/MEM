@@ -1,0 +1,17 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+   
+   <b> № $docnum от #filter DateFilter $docdate #end filter # </b>
+   <br> № $TID
+   <br>
+
+   1. $_('Наклейте этикетку на поддон') <br><br>
+   2. $_('Отсканируйте ШК этикетки')<br><br>
+   <form action='taskLabel'>
+      <input type=hidden name=id value=$TID>
+      <input type=text name=barcode id='barcode:scan'>
+   </form>
+  
+#end def    

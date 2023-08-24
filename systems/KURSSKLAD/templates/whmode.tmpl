@@ -1,0 +1,19 @@
+#encoding utf-8
+
+#if $varExists('$FilterDisplayType') and $FilterDisplayType == 'vtable'
+    <tr><th id="labelSM"></th></tr>
+	<tr><td><select id="whmodeid" name=whmodeid ></select></td></tr>
+#else
+    <label id="labelSM" for="whmodeid" style="width:5%;"></label>
+    <select id="whmodeid" class="wid" name=whmodeid style="width:8%;"></select>
+#end if
+
+
+<script src="$sps_js.KURSSKLAD/embed/whmode.js"></script>
+<script>
+  \$(document).ready(function() {
+
+        \$('#whmodeid').selectStorageMode();
+        \$('#whid').changeStorageMode();
+  });
+</script>

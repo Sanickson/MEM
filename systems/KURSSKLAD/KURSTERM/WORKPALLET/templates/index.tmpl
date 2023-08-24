@@ -1,0 +1,11 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+	<form action="wpMain">
+        $_('ШК'): <input type="text" id=":scan:text" name="barcode" title="$_('Поддон')"><br>
+	</form>    
+#end def

@@ -1,0 +1,27 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.LOADING.templates.header
+
+#def data
+    <hr>
+    <b>$PNUMBER</b>
+    <span>($SITENAME)</span>
+    </br>
+    <span>$TOOBJNAME</span>
+    </br>
+    <span>#filter DateFilter $DOCDATE #end filter# № $DOCNUMBER</span>
+    </br>
+    <span>$SELTID - <b>$OBJNAME</b></span>
+    </br>
+    <hr>
+    #if not $MESSAGE
+        <a href='taskPalletCreate?tid=$TASKID&pid=$PALLETID'>Погрузить</a></br>
+    #else
+        <div style="color: red;">
+            <b>$MESSAGE</b>
+            </br>
+            <span>#filter DateFilter $GDATE #end filter#</span>
+            </br>
+            <span>$GTID - <b>$GOBJ</b></span>
+        </div>
+    #end if
+#end def

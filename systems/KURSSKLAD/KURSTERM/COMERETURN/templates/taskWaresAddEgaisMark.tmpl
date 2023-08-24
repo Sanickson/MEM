@@ -1,0 +1,27 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+    <b><u>$FROMNAME</u></b><br>
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b> $WNAME
+    <br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b>
+    #end if
+    <br>
+    <b>$PRDATE</b>
+    <hr>
+    $_('Марки'): <b>$CNTMARKLOCK</b>
+    <hr>
+    <form action="taskWaresAddEgaisMark" method=post>
+        <input type="hidden" name="tid" value="$tid">
+        <input type="hidden" name="wid" value="$wid">
+        <input type="hidden" name="prdate" value="$PRDATE">
+
+        $_('Отсканируйте ШК Алкогольной марки или паллета(для приемки)' ): <br>
+    	<input type="text" id="barcode:scan:text" name="barcode" class="scanBarcode"><br>
+	</form>
+	<a href="taskWaresAddEgaisBack?tid=$tid&wid=$wid">$_('Прервать приемку')</a>
+#end def

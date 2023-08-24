@@ -1,0 +1,25 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    <br>
+
+    #if not $varExists('$url')
+        #set $url = 'taskEndMail'
+    #end if
+
+    #if $varExists('$mailmes') and $mailmes
+        $_('При отправке почты возникла ошибка:') <br>
+        <span class="yellow"> $mailmes </span>
+        <br><br>
+
+        <a href="$url?tid=$TID">$_('Попробовать еще раз')</a><br>
+        <a href="$url?tid=$TID&flag=1">$_('Завершить даже, если не удастся')</a><br>
+    #else
+        <a href="$url?tid=$TID?flag=N">$_('Завершить задание')</a><br>
+    #end if
+
+
+#end def

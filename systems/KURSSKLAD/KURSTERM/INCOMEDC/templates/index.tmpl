@@ -1,0 +1,45 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+	<form action="main">
+        $_('ШК'): <input type="text" id=":scan:text" name="barcode" title="$_('Документ'), $_('Принтер')">
+	</form>  
+    <br>
+  #if $varExists('$datalist')
+    #for $item in $datalist
+        #set $objName = $item.objname if $item.objname else '???????'
+        #if $item.TSTAT == '0'
+            <a href="javascript: if (confirm('$_('Вы действительно хотите начать выполнение задания?')')) location.href='task?tid=$item.taskid'" title="#filter DateFilter$item.DOCDATE#end filter# №$item.NUMBER">
+                <p>#filter DateFilter$item.DOCDATE#end filter#</p>
+                <p>№$item.NUMBER<p>
+                <p>$objName<p>
+            </a>
+        #elif $item.TSTAT == '1'
+            <a class=green href="task?tid=$item.taskid" title="#filter DateFilter$item.DOCDATE#end filter# №$item.NUMBER">
+                <p>#filter DateFilter$item.DOCDATE#end filter#</p>
+                <p>№$item.NUMBER<p>
+                <p>$objName<p>
+            </a>
+        #else
+            <a class=red href="task?tid=$item.taskid" title="#filter DateFilter$item.DOCDATE#end filter# №$item.NUMBER">
+                <p>#filter DateFilter$item.DOCDATE#end filter#</p>
+                <p>№$item.NUMBER<p>
+                <p>$objName<p>
+            </a>
+        #end if
+        #if $item.WSGNAME
+            $item.WSGNAME<br>
+        #end if
+        <hr>
+    #end for
+  #end if
+  #if $varExists('$zd')
+    #for $item in $zd
+        <a href="chgZone?id=$item.ZONEID">$item.ZONENAME</a> - $item.CNTDOCS<br>
+    #end for
+  #end if  
+#end def

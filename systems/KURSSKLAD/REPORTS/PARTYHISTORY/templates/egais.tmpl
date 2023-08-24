@@ -1,0 +1,25 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REPORTS.PARTYHISTORY.templates.main
+#def bsFilter
+    <link href="$sps_css.KURSSKLAD/tabs/jquery.tabs.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    ##Scripts
+    <script type="text/javascript" src="$eng_js/table-jq.js"></script>
+    <script type="text/javascript" src="$eng_js/table-type.js"></script>
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/jquery.tabs.pack.js"></script>
+    <script type="text/javascript" src="$sp_js/egais.js"></script>
+
+    <form class="buttons">
+        <label for="barcode"><b>ШК марки или короба</b></label>&nbsp;
+        <input type=text id="barcode" name="barcode" style="width: 40%;" required>&nbsp;
+        <button type=submit>
+        <img src="$eng_img/arrows/arrow_right.png" /></button>
+    </form>
+#end def
+
+#def phData
+
+    <div id="dvInfo" style="float: left; position: relative; width: 25%; word-break: break-all;"></div>
+    <div id="dvNull" style="float: left; position: relative; width: 5%;"></div>
+    <div id="dvDetails" style="float: left; position: relative; width: 70%;"></div>
+#end def

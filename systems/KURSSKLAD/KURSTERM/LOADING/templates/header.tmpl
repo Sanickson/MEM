@@ -1,0 +1,17 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+    <b>$TASKID</b>
+    </br>
+    <b>$SNAME</b>
+    </br>
+    <span>#filter DateTimeFilter $CREATETIME #end filter#</span>
+
+    #block data
+
+    #end block data
+#end def

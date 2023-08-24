@@ -1,0 +1,7 @@
+#tbl_equipment {
+    clear: both;
+}
+
+.contextMenu LI.deactivate A {
+    background-image: url("/ENGINE/images/actions/cancel.png");
+}

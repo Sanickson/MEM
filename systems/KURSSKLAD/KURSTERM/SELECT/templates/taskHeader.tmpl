@@ -1,0 +1,12 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import TimeStampToDate
+##<b>$docnum</b>|$TimeStampToDate($docdate)|<u>$TID</u><br>
+<b>$docnum</b> $TimeStampToDate($docdate)<br>
+<u>$TID</u>
+#if $varExists('$DOCPRIORITY') and $DOCPRIORITY
+    ($DOCPRIORITY)
+#end if
+<br>
+#if $varExists('$TONAME') and $TONAME
+    $TONAME<br>
+#end if

@@ -1,0 +1,12 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.LOADING.templates.header
+
+#def data
+    <hr>
+    <form action="taskEnd">
+        Кол-во погруженных паллет:
+        <br>
+        <input type="text" id="palcount::int" name="palcount" title="$_('Кол-во погруженных паллет')" style="width: 50px;" required>
+        <input type="hidden" name="tid" value="$TASKID" readonly>
+    </form>
+#end def

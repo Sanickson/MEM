@@ -1,0 +1,29 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    #if $varExists('$PAL_NUM') and $PAL_NUM
+        <b><u>$PAL_NUM</u></b>($PAL_SNAME)
+    #else
+        <b>$PAL_SNAME</b>
+    #end if
+	#if $varExists('$PAL_CLIENTNAME') and $PAL_CLIENTNAME
+	    <br>$PAL_CLIENTNAME
+	    #if $varExists('$PAL_CLIENTDATE') and $PAL_CLIENTDATE
+	        <b>#filter DateFilter2$PAL_CLIENTDATE#end filter#</b>
+	    #end if
+	#end if
+    <hr>
+    <b>($WCODE)</b>$WNAME
+    #if $ARTICUL
+        <b>($ARTICUL)</b>
+    #end if
+    <br>
+    <form action="taskWaresAdd" name="frm" method=post>
+        <input type=hidden name=tid value=$TID>
+        <input type=hidden name=wid value=$WID>
+        $_('Дата производства'): <input type="text" name="productdate" id=":focus:date" value="$dateMask" size="6"><br>
+        <hr>
+        <input type=submit value="$_('Далее')">
+    </form>
+#end def

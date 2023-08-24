@@ -1,0 +1,35 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import coalesceValue
+#from systems.KURSSKLAD.cheetahutils import getNumFromName
+
+#def $system_help = True
+#end def
+
+#def mainData
+    #if $varExists('$datalist') and $datalist
+        #for $item in $datalist
+            <b>$item.CLIENTNAME</b><br>
+            #filter DateFilter2 $item.DDATE #end filter# $_('№') $item.DNUM<br>
+            <a href="task?id=$item.TID"><b><u>$item.TNUMBER</u></b></a>($item.TSNAME)<br>
+            <font class="yellow">$item.WHNAME</font><br>
+            #if $item.TUID
+                <b><u>$item.TUNAME</u></b>
+            #end if
+            
+        #end for
+    #end if
+    <hr>    
+    #if $varExists('$dl_gates') and $dl_gates
+
+		<table>
+		#for $item in $dl_gates
+			<tr>
+				<td><a href="joinGateAuto?id=$item.TID">$getNumFromName($item.GNAME)</a></td>
+				<td>$coalesceValue($item.ANAME,'----------')</td>
+			</tr>
+		#end for
+		</table>    
+    #end if
+#end def

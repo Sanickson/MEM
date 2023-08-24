@@ -1,0 +1,52 @@
+[ProcParams]
+proc1 = ManID,PalletID,WHID
+
+[ProcNames]
+proc1 = select * from WH_PRINT_COMERETURNPALBARCODE(?,?,?)
+
+[html]
+hash = #
+html = <div style="position: relative; background-color: white; height: 9.5cm; width: 6.8cm; font-size: 0.3cm; font-family: 'impact'; text-align: center; left:-0.2cm; top: 0.4cm;">
+            <div style="height:1cm; width:100%; font-size:150%; text-align:center; position:absolute; overflow:hidden;font-family: 'Times New Roman';">
+                $$d1.ZONENAME
+            </div>
+            <div style="height: 4.1cm;width: 100%;top: 0.3cm;font-size: 1250%;text-align: center;position: absolute;overflow: hidden;">
+                $$d1.NUM1
+            </div>
+            <div style="height: 1.8cm; width: 100%; top: 4.2cm; text-align: center; position: absolute; overflow: hidden;">
+                <div id="barcodeTarget" style="width: 100%; height:100%;"></div>
+            </div>
+            <div style="height: 4.1cm; width: 100%; top: 5.3cm; font-size: 1250%; text-align: center; position: absolute; overflow: hidden;">
+                $$d1.NUM2
+            </div>
+            <div style="height: 0.35cm; width: 3cm; top: 9.2cm; left: 3.7cm; font-size: 85%; text-align: right; position: absolute; overflow: hidden; font-family: 'Times New Roman';">
+                $$d1.EMPLNAME
+            </div>
+            <div style="height: 0.35cm; width: 1.2cm; top: 9.2cm; left: 2.5cm; font-size: 80%; text-align: center; position: absolute; overflow: hidden;">
+                ${hash}if $$d1.DETAIL >= 1
+                    копия
+                ${hash}end if
+            </div>
+            <div style="height: 0.35cm; width: 2.5cm; top: 9.2cm; font-size: 80%; text-align: center; position: absolute; overflow: hidden; font-family: 'Times New Roman';">
+                ${hash}from time import localtime, strftime
+                $$strftime("%d.%m.%Y %H:%M:%S", $$localtime())
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="http://127.0.0.1/ENGINE/js/prototype.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1/ENGINE/js/prototype-barcode.js"></script>
+
+        <script type="text/javascript">
+            \$$('barcodeTarget').barcode("$$d1.BARCODE", 'code128', {showHRI:false, barWidth: '2', barHeight: '68'}).setStyle({ 'padding-left': (barcodeTarget.up().getDimensions().width - barcodeTarget.getDimensions().width) / 2 });
+        </script>
+        
+
+[ProcDataList]
+proc1 = d1
+
+[ProcFetches]
+proc1 = one
+
+#[Dimension]
+#width = 70
+#height = 100

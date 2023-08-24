@@ -1,0 +1,84 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    <b><u>($wcode)</u></b>$wname<br>
+    #if $varExists('$QOMIN') and $QOMIN
+        #filter Quantity$QOMIN#end filter# ..
+    #end if
+    #if $varExists('$VUFACTOR') and $VUFACTOR and $VUFACTOR < $QO
+        $viewQuantity($QO,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$QO#end filter#</u></b>)
+    #else
+        <b><u>#filter Quantity$QO#end filter#$MUCODE</u></b>
+    #end if
+    <br>
+    #if $PNUM
+        <b>$PNUM</b>($SITENAME)
+    #else
+        <b>$SITENAME</b>
+    #end if
+    <hr>
+    <b>$_('Выберите партию производства:')</b><br><br>
+    #set $QSite = 0
+    #if $varExists('$datalist')
+        #for $item in $datalist
+            #if $item.COUNTRYNAME
+                #if $item.PRODUCERNAME
+                    $item.COUNTRYNAME: <u>$item.PRODUCERNAME</u>
+                #else
+                    $item.COUNTRYNAME
+                #end if
+                <br>
+            #elif $item.PRODUCERNAME
+                <u>$item.PRODUCERNAME</u><br>
+            #end if
+
+            <a href="$url.replace('{WLOTID}', str($item.WLOTID))">#filter DateFilter2$item.PDATE#end filter#</a>:
+            $viewQuantity($item.PAMOUNT,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)(<b><u>#filter Quantity$item.PAMOUNT#end filter#</u></b>)
+            #set $QSite += float($item.QCALC)
+            <br>
+        #end for
+        #if len($datalist) == 0
+            <a href='taskWares?twid=$TWID&flend=H'>$_('Завершить товар')</a><br>
+        #end if
+    #end if
+    <hr>
+    #if $varExists('$QS') and $QS and float($QS)>0.00001
+        #set $canNoSpace = False
+    #else
+        #set $canNoSpace = True
+    #end if
+
+    #if $TWSTAT == '5'
+        <a href='taskC?id=$TID'>$_('Обновить')</a><br>
+    #else        
+        #if $varExists('$QS') and $QS and float($QS)>0.00001
+			$_('Отобрано'):
+			<a href="taskWaresClear?twid=$TWID" title="$_('Очистить')" onClick="return confirm('Вы действительно хотите начать заново?')">#filter Quantity$QS#end filter#$MUCODE</a>
+			<br>
+		#end if
+    
+        #if $QO > $QSite
+            #set $onsubmit = ' onsubmit="return frmSubmit();"'
+            <script>
+                function frmSubmit(){
+                    var r = confirm('На МО меньше товара, чем нужно отобрать:\nВы уверены, что хотите отобрать только #filter Quantity$QSite#end filter# единиц товара?');
+                    if (!r)
+                        document.getElementById('barcode:scan').value = '';
+                    return r;
+                }
+            </script>
+        #else
+            #set $onsubmit = ''
+        #end if
+        <br>
+        #if $canNoSpace
+            #if not $PID
+                <a href='taskWaresNoAmount?tid=$TID&twid=$TWID' onClick="return confirm('$_('Не хватает на ') $SITENAME\n---------------------------------\n$_('Вы уверены?')')">$_('Не хватает на ') $SITENAME</a><br>
+            #end if
+			<a href='taskWaresNoPlace?tid=$TID&twid=$TWID' onClick="return confirm('$_('Нет места на паллете отборки')\n---------------------------------\n$_('Вы уверены?')')">$_('Нет места на паллете отборки')</a>
+		#end if                
+    #end if
+#end def    
+

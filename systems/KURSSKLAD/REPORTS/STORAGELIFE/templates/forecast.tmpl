@@ -1,0 +1,37 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REPORTS.STORAGELIFE.templates.main
+
+#def phData
+  <link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>
+
+  ##Scripts
+  <script type="text/javascript" src="$eng_js/ui.datepicker.min.js"></script>
+  <script type="text/javascript" src="$eng_js/i18n/ui.datepicker-ru.js"></script>
+  <script type="text/javascript" src="$eng_js/jquery.maskedinput-1.2.1.pack.js"></script>
+  <script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+
+  <script src="$sp_js/forecast.js"></script>
+
+  <form id="frmFilter" class="buttons">
+    #include '../systems/KURSSKLAD/templates/warehouse.tmpl'
+    #include '../systems/KURSSKLAD/templates/sitezone.tmpl'
+##    #include '../systems/KURSSKLAD/templates/whmode.tmpl'
+    #include '../systems/KURSSKLAD/templates/selgroup.tmpl'
+##    #include '../systems/KURSSKLAD/templates/selscheme.tmpl'
+    #include '../systems/KURSSKLAD/templates/waresgroup.tmpl'
+
+    <label for="bdate" style="width:5%;"><b>$_('Продажи с: ')</b></label>
+    <input type=text id="bdate" size=8 >
+    <label for="edate" style="width:5%;"><b>$_(' по: ')</b></label>
+    <input type=text id="edate" size=8 >
+
+##    <label for="chkinternalrest" style="width:5%;"><b>$_('Внутренние остатки')</b></label>
+##    <input type=checkbox name="chkinternalrest" id="chkinternalrest" checked>
+
+    <button type="submit"><img src="$eng_img/arrows/arrow_right.png"></button>
+  </form>
+#end def
+
+#def Data
+  <div id="dvData" style="float:left; position:relative; width:100%;"></div>
+#end def

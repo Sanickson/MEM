@@ -1,0 +1,40 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+
+    <b><u>$FROMNAME</u></b><br>
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    ШК: <b><u>$barcode</u></b><br>
+    
+    <br><br>
+        <u><b>$_('Выберите товар'):</b></u>
+    <hr>
+    #if $varExists('$datalist') and $datalist
+        #for $item in $datalist
+            (<u>$item.WCODE</u>)
+            = <b>#filter Quantity$item.AMOUNT#end filter# $item.MUC</b><br>
+            #if $item.USERCODE == 'WARESUNIT'
+                <a href='taskWaresAdd?tid=$TID&wid=$item.WID&wuid=$item.WUID'>$item.WNAME</a>
+            #elif $item.USERCODE == 'WARESWEIGHT' or $item.USERCODE == 'SUPWEIGHT'
+                #if $varExists('$wuid') and $varExists('$amount') and int($wuid) == int($item.WUID)
+                    #set $q = float($item.AMOUNT) + float($amount)
+                #else
+                    #set $q = $item.AMOUNT
+                #end if
+                <a href='taskWaresAdd?tid=$TID&wid=$item.WID&wuid=$item.WUID&amount=$q'>$item.WNAME</a>
+            #else
+                <a href='taskWares?tid=$TID&wid=$item.WID'>$item.WNAME</a>
+            #end if
+
+            #if $item.VUC
+                <br>
+                $item.VUC = #filter Quantity$item.VUF#end filter# $item.MUC
+            #end if
+            <br>
+            <hr>
+        #end for
+    #end if	
+    
+#end def

@@ -1,0 +1,47 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/taskHeader.tmpl'
+    #include '../systems/KURSSKLAD/KURSTERM/SELECT/templates/waresHeader.tmpl'
+    #if $varExists('$QS') and $QS and float($QS)>0.00001
+        $_('Отобрано'): <a href="taskWaresClear?twid=$TWID" title="$_('Очистить')" onClick="return confirm('Вы действительно хотите начать заново?')">$viewQuantity($QS,$VUFACTOR,$VUCODE,$MUFACTOR,$MUCODE)</a>(<b><u>#filter Quantity$QS#end filter#</u></b>)
+    #else
+        $_('Отобрано'): 0
+    #end if
+    <br>
+    #if $PNUM
+        <b>$PNUM</b>($SITENAME)
+    #else
+        <b>$SITENAME</b>
+    #end if
+    <hr>
+    <form action='taskWares'>
+        <input type=hidden name=twid value=$TWID>
+        #if $varExists('flend') and $flend
+            <input type=hidden name=flend value=$flend>
+        #end if
+        #if $WSELTYPE and $WSELTYPE == 'W'
+            #if $varExists('$QS') and $QS and float($QS)>0.00001
+                $_('Для завершения отборки отсканируйте ШК товара'):
+                <br>
+                <input type=text name=barcode id="barcode:scan">
+            #else
+                <input type="hidden" name="flzero" value="1">
+                ##<button id=":focus:" type=submit>$_('Подтверждаю отборку в 0')</button>
+                ##<input type=submit value="$_('Подтверждаю отборку в 0')" onclick="confirm('Вы уверены?')">
+                <input type=submit value="$_('Подтверждаю отборку в 0')">
+            #end if
+        #else
+            $_('Для завершения отборки отсканируйте ШК ')
+            #if $PNUM
+                $PNUM
+            #else
+                $SITENAME
+            #end if
+            <br>
+            <input type=text name=barcode id="barcode:scan">
+        #end if
+    </form>
+#end def
+

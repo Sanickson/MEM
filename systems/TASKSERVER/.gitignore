@@ -1,0 +1,19 @@
+syntax: glob
+*.pyc
+*.bak
+*.pyo
+*.~*
+*.log
+*.7z
+*.zip
+cleanup*.*
+
+runserver.*
+config.*
+
+tmp/*
+log/*
+report/*.py
+examples/bank/*
+.idea/*
+.settings/*

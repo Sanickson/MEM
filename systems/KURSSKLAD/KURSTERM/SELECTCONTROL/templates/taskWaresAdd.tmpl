@@ -1,0 +1,44 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import TimeStampToDate
+#def mainData
+    #if $varExists('$PAL_NUM') and $PAL_NUM
+        <b><u>$PAL_NUM</u></b>($PAL_SNAME)
+    #else
+        <b>$PAL_SNAME</b>
+    #end if
+	#if $varExists('$PAL_CLIENTNAME') and $PAL_CLIENTNAME
+	    <br>$PAL_CLIENTNAME
+	    #if $varExists('$PAL_CLIENTDATE') and $PAL_CLIENTDATE
+	        <b>$TimeStampToDate($PAL_CLIENTDATE)</b>
+	    #end if
+	#end if
+    <hr>
+    <b>($WCODE)</b>$WNAME
+    #if $ARTICUL
+        <b>($ARTICUL)</b>
+    #end if
+    <hr>
+    $_('Дата'): <b>$productdate</b><br><br>
+    <form action="taskWaresAdd" name="frm" method=post>
+        <input type=hidden name=tid value=$TID>
+        <input type=hidden name=wid value=$WID>
+        <input type=hidden name=productdate value="$productdate">
+        <select name=wuid>
+          #if $wuid==$MWUID
+            <option value=$MWUID selected>$MWUCODE</option>
+          #end if
+          #if $VWUID
+            <option value=$VWUID>$VWUCODE</option>
+          #end if
+          #if $wuid != $MWUID
+            <option value=$MWUID>$MWUCODE</option>
+          #end if
+        </select>:
+        <input type="text" name="amount" id=":focus:float" value="$amount" size="6">
+        <hr>
+        <input type=submit value="$_('Сохранить')">
+    </form>
+
+#end def

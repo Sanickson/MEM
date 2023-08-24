@@ -1,0 +1,18 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData    
+    <b><u>($WCODE)</u></b>$WNAME
+    <br><br>
+    <b>$_('Вес тары')</b>
+    <hr>
+
+    #if $varExists('$datalist') and $datalist and len($datalist)>0
+      #for $item in $datalist
+        $item.CLNAME<br>
+        $item.DOCNUM | #filter DateFilter2$item.DOCDATE#end filter#<br>
+        $_('Вес тары') = <a href="waresTaraWeightChg?wid=$WID&docid=$item.DOCID">#filter Quantity$item.TARAWEIGHT#end filter#</a>
+        <br><br>
+      #end for
+    #end if
+#end def

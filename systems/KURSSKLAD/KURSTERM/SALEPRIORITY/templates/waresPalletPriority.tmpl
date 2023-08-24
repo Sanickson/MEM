@@ -1,0 +1,40 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import Quantity
+
+#def mainData
+    #if $PNUM
+        <b>$PNUM</b> ($SNAME)<br>
+    #else
+        <b>$SNAME</b><br>
+    #end if
+
+    (<b><u>$WCODE</u></b>) $WNAME<br>
+
+    #if $varExists('$WLINID') and $WLINID > 0
+      <u>$FROMNAME</u><br>
+      #filter DateFilter2 $DOCDATE #end filter# $_('№') $DOCNUM<br>
+    #else
+      #set $WLINID = 0
+    #end if
+
+    $_('Остаток'): <font class=$salePriorityClass($PRIORITY)><b>$Quantity($REST)</b></font>
+
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>$_('Приоритет')</th>
+      </tr>
+    </thead>
+    <tbody>
+      #for $item in $salePriorityCodes
+      <tr>
+        <td class="$salePriorityClass($item)"><b>$item</b></td>
+        <td><a href="$url.replace('{PRIORITY}', str($item))">$salePriorityName($item)</a></td>
+      </tr>
+      #end for
+    </tbody>
+  </table>
+#end def

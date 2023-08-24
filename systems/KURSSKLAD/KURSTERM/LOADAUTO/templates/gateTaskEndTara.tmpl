@@ -1,0 +1,51 @@
+#encoding utf-8
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+    <b><u> $GNAME </u></b><br>
+    <b><u> $ANAME </u></b><br>
+    <hr>
+    #if $varExists('$datalist') and $datalist and len($datalist) > 0
+        <form action="gateTaskEndTara" method="post" onsubmit="return checkMaxCount();">
+            <input type="hidden" name="tid" value="$TID">
+            #set $CLID = 0
+            #for $item in $datalist
+                #if $CLID != $item.CLID
+                    <u>$item.CLNAME</u><br>
+                    #set $CLID = $item.CLID
+                #end if
+                ##$item.WNAME<br>
+                <b>$item.WCODE</b> =
+                #set $name = '_'.join(["tara", str($item.CLID), str($item.WID)])
+                #if $item.AMOUNT and $item.AMOUNT > 0.0001
+                    <input title="$item.WNAME.replace('"',"'")" type="text" max="$item.MAX_COUNT" id="::int" name="$name" value="#filter Quantity$item.AMOUNT#end filter#" size="3">
+                #else
+                    <input title="$item.WNAME.replace('"',"'")" type="text" max="$item.MAX_COUNT" id="::int" name="$name" value="" size="3">
+                #end if
+                <br>
+            #end for
+            <input id="saveBtn" type=submit value="$_('Сохранить')">
+        </form>
+    #end if
+
+	<script language="javascript">
+         function checkMaxCount(){
+             var inputs = document.getElementsByTagName("input");
+             for(var i=0; i<inputs.length; i++){
+                if (inputs[i].id === "::int"){
+                    var max = Number(inputs[i].getAttribute("max"));
+                    var cur = Number(inputs[i].value);
+                    if (cur > max) {
+                        var check = confirm(cur + " > " + max + ". Вы действительно хотите завершить задание?");
+                        if (check !== true) {
+                            return false;
+                        }
+                    }
+                }
+             }
+         }
+
+    </script>
+#end def
+
+

@@ -1,0 +1,16 @@
+#login-change-passwd-form {
+  width: 550px;
+}
+
+#change-btn {
+  width: 160px !important;
+  margin-top: 10px;
+}
+
+#error-wrap-login-change-passwd {
+  color: #F73D67;
+}
+
+#error-exclamation-login-change-passwd {
+  font-weight: bold;
+}

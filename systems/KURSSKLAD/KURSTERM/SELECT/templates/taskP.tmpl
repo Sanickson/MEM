@@ -1,0 +1,17 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+
+    <b> № $docnum от #filter DateFilter$docdate#end filter# (<u>$TID</u>)</b>
+    <br>
+    #if $SITENAME
+        <b>$SITENAME</b><br><br>
+    #end if
+    <b><u>($wcode)</u></b>$wname
+    <hr>
+
+    <a href="task?tid=$TID">$_('Обновить')</a><br>
+    <a href="taskPEmpty?tid=$TID">$_('Завершить без отборки')</a>
+#end def
+

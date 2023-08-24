@@ -1,0 +1,66 @@
+#encoding utf-8
+#import conf.engine_conf as cfg
+#import conf.client_conf as cln
+#extends systems.engine_main_mob
+#def engineData_mob
+
+
+#if $varExists('$termname')
+    #if $termname != '' and $termname is not None
+        <div class='container'>
+            <div class=''>
+                <h3 class='brand btn-block' style='text-align: center;'>$termname</h3>
+            </div>
+        </div>
+    #end if
+#end if
+<div>
+    <b>$cln.trade_secret</b><br>
+
+    <form action="login_term" method='POST' id="login_form">
+        #if $mes != 'termnum_is_lost'
+            <h3>Зарегистрируйтесь в системе</h3>
+            <input type='hidden' id='code' name="code" class="scanBarcode">
+            <br/>
+        #end if
+
+        <br/>
+        <p class='text-error'>
+            #if $varExists('$mes')
+                #if $mes != '' and $mes is not None
+                    #if $mes == 'termnum_is_lost'
+                        Сервер был перезагружен. Сессия утеряна. Перевойдите в приложение.
+                    #else
+                        $mes
+                    #end if
+                #end if
+            #end if
+        </p>
+    </form>
+    <button  id="scanbtn" class="login_scan_button btn btn-primary btn-large btn-block">Сканировать персональный QR-код</button><br>
+    <b>$cln.agree_trsecret</b>
+
+</div>
+
+<script type="text/javascript">
+
+    \$('#scanbtn').unbind('click').click(function(){
+        try{
+            Android.scan();
+        }
+        catch(e){
+            bc = prompt('Отсканируйте QR-код','');
+            scanCallback(bc);
+        }
+    });
+
+    //scanCallback('00R2LGV142MTCF6F');
+
+    function scanCallback(barcode) {
+        var form = \$("form#login_form");
+        \$("input#code",form).val(barcode);
+        form.submit();
+    }
+
+</script>
+#end def

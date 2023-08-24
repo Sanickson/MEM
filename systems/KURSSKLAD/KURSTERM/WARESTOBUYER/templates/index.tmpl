@@ -1,0 +1,25 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+	<form action="scan">
+        $_('Паллет отборки'): <input type="text" id=":scan:text" name="barcode"><br>
+	</form>    
+    <hr>
+    #for $item in $listauto
+        $item.GATENAME (#filter DateTimeFilter$item.PLANDT#end filter#) = $item.CNTTASK<br>
+        <a href="auto?tid=$item.TASKID">$item.AUTONAME</a><br>
+        <br>
+    #end for
+    #if len($datalist) > 0
+        <hr>
+    #end if
+    #for $item in $datalist
+        $item.CLIENTNAME = $item.CNTTASK<br>
+        <a href="doc?docid=$kId($item.DOCID)">$item.DOCNUM</a> #filter DateFilter2$item.DOCDATE#end filter# <br>
+        <br>        
+    #end for
+#end def

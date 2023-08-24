@@ -1,0 +1,21 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    <b><u>$GNAME</u></b><br>
+    <font class="yellow">$ANAME</font><hr>
+    $CLIENTNAME<br>
+    #filter DateFilter2 $DDATE #end filter# $_('№') <b>$DNUM</b><br>
+    <b><u>$TNUMBER</u></b>($TSNAME)<br>
+    #if $TUID
+        <b><u>$TUNAME</u></b><br>
+    #end if
+    #if $TSTAT_LOADPALLET == '2'
+        <font class="green">$_('Выполнено')</font>
+        <hr>
+        <a href = 'palletCancel?id=$TID_SELECT'>$_('Отменить')</a>
+    #else
+        <font class="red">$_('Не выполнено')</font>
+    #end if
+#end def    
+

@@ -1,0 +1,37 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    #include '../systems/KURSSKLAD/KURSTERM/templates/include_gs1.tmpl'
+    #if $THEBC.BCSUBTYPE == 'ALCO:BOX'
+        #if $varExists('$lenmark')
+            $_('Выверять марки:') <a href="javascript: if (confirm('$_('Вы  уверены, что хотите начать сканирование марок заново?')')) location.href='gs1alcomark?gs1barcode=$gs1barcode'">$lenmark</a> / $THEBC.CNTCHILD<br>
+        #else
+            $_('Выверять марки:') <a href="gs1alcomark?gs1barcode=$gs1barcode">$THEBC.CNTCHILD</a><br>
+        #end if
+    #end if
+
+    <hr>
+    #if $varExists('$lenmark')
+        #set $action = "gs1alcomark"
+    #else
+        #set $action = "gs1"
+    #end if
+    <form action="$action">
+        <input type=hidden name=gs1barcode value="$gs1barcode">
+        #if $varExists('$lenmark')
+            <input type="hidden" name="mark" value="$mark">
+        #end if
+        #if $barcodeconf
+            $_('Для подтверждения окончания выверки отсканируйте паллет еще раз')
+            <input type=hidden name=barcodeconf value="$barcodeconf">
+        #elif $varExists('$lenmark')
+            $_('Отсканируйте алкомарку или паллет для завершения выверки')
+        #else
+            $_('Отсканируйте паллет, на котором находится товар с ШК GS1_128')
+        #end if
+        <input type="text" name="barcode" id="barcode:scan:text" title="$_('МП'), $_('Поддон'), $_('Товар')">
+    </form>
+
+#end def

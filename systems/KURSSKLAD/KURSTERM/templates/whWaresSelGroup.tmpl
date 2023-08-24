@@ -1,0 +1,16 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    #if $OBJID
+        <u>$OBJNAME</u><br>
+    #end if
+    <b>(<u>$WCODE</u>)</b> $WNAME<br><br>
+
+    $_('Выберите ГО'):<br>
+    <hr>
+    #for $item in $datalist
+        <a href="$href$item.ID&whid=$OBJID">$item.CODE</a><br>
+        $item.NAME<br><br>
+    #end for
+#end def

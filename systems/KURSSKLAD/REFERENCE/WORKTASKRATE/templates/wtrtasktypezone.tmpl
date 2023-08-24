@@ -1,0 +1,28 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REFERENCE.WORKTASKRATE.templates.wtrmain
+
+#def $system_help = False
+#end def
+
+#def wtrFilter
+    <script type="text/javascript" src="$sp_js/workobjtaskrate.js"></script>
+
+	<form id="frm" class="buttons">
+		$_('Период'):
+		<input id="dbeg" name="dbeg" type="text" size="8">
+		&nbsp;
+		<input id="dend" name="dend" type="text" size="8">
+		&nbsp;&nbsp;&nbsp;
+		$_('Склад'):
+		<select id=whid name=whid><option value="0">Без фильтра</option></select>
+		&nbsp;&nbsp;&nbsp;
+		$_('Тип задания'):
+		<select id=ttid name=ttid><option value="0">Без фильтра</option></select>
+		&nbsp;&nbsp;&nbsp;
+		<button type="submit"><img src="$eng_img/arrows/arrow_right.png"></button>
+	</form>
+#end def
+
+#def wtrData
+    <div id="dvWH" style="float:left;position:relative;"></div>
+#end def

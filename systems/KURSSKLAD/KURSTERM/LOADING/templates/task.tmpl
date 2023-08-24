@@ -1,0 +1,40 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.LOADING.templates.header
+
+#def data
+
+    <form action="taskPallet">
+        ШК: <input type="text" id="barcode:scan:text" name="barcode" title="$_('Паллет')">
+        <input type="hidden" name="tid" value="$TASKID" readonly>
+    </form>
+
+    #if $varExists('$datalist') and $datalist
+        <div style="margin-top: 10px;">
+		    <a href='taskSetPallet?tid=$TASKID'>Завершить</a>
+		</div>
+		<hr>
+		#set $toobj = 0
+		#for $item in $datalist
+		    #if $toobj != $item.TOOBJ
+		        #if $toobj != 0
+                    <br>
+                    <br>
+                #end if
+                #set $toobj = $item.TOOBJ
+                <span title="Клиент">$toobj
+                    #set $count = 0
+                    #for $item in $datalist
+                        #if $toobj == $item.TOOBJ
+                            #set $count = $count + 1
+                        #end if
+                    #end for
+                 = $count
+                </span>
+                <br>
+		    #end if
+            <a href='taskPallet?barcode=$item.PBARCODE&tid=$TASKID'>$item.PNUMBER</a>&ensp;
+		#end for
+	#end if
+
+#end def
+

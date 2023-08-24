@@ -1,0 +1,49 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+    <b><u>$FROMNAME</u></b><br>
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b>
+    #if $WSGCODE
+        = $WSGCODE <br>
+    #end if
+    $WNAME
+    <br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b>
+    #end if
+    <br>
+    <b>#filter DateFilter2 $THEBC.PRODUCTDATE #end filter#</b><br>
+    #if $CNTLOCK > 0
+        $_('Короба'): <b>$CNTLOCK</b><br>
+    #end if
+    ...$BOXBARCODE[-6:]<br>
+    <hr>
+    $_('Марки'): <b>$CNTMARKLOCK</b> / <u>#filter Quantity$THEBC.BOXFACTOR#end filter#</u>
+    <hr>
+    <form action="taskWaresAddEgaisMark" method=post>
+        <input type="hidden" name="tid" value="$tid">
+        <input type="hidden" name="wid" value="$wid">
+        <input type="hidden" name="boxbarcode" value="$BOXBARCODE">
+        #if $varExists('$BARCODECONF') and $BARCODECONF
+            <input type="hidden" name="barcodeconf" value="$BARCODECONF">
+        #end if
+        #if $varExists('$PBC') and $PBC
+            <input type="hidden" name="palbarcode" value="$PBC">
+        #end if
+
+        #if float($CNTMARKLOCK) < float($THEBC.BOXFACTOR)
+            $_('Отсканируйте ШК Алкогольной марки'): <br>
+        #else
+            $_('Отсканируйте ШК паллетной этикетки'): <br>
+        #end if
+
+    	<input type="text" id="barcode:scan:text" name="barcode" class="scanBarcode"><br>
+        #if $varExists('$BARCODECONFMES') and $BARCODECONFMES
+            <font class="yellow">$BARCODECONFMES</font>
+        #end if
+	</form>
+	<a href="taskWaresAddEgaisBack?tid=$tid&wid=$wid">$_('Прервать приемку')</a>
+#end def

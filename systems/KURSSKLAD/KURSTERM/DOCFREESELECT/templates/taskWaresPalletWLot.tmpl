@@ -1,0 +1,68 @@
+#encoding utf-8
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+#def mainData
+
+    <b><u>$FROMNAME</u></b><br>
+    #if $TONAME
+        $TONAME<br>
+    #end if    
+    <b>#filter DateFilter$DOCDATE#end filter#</b> №<b>$DOCNUM</b><br>
+    <b>(<u>$WCODE</u>)</b> $WNAME <br>
+    #if $VWUID
+        <b>$VWUCODE = #filter Quantity$VWUFACTOR#end filter# $MWUCODE </b>
+    #end if
+    <br>
+    #if $varExists('$PNUM') and $PNUM
+		<b><u>$PNUM</u></b>($SNAME)
+	#else 
+		<b>$SNAME</b>
+	#end if
+    <br>
+    #if $varExists('$qdoc')
+        $_('План'): $viewQuantity($qdoc,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$qdoc#end filter#</u>)</b>
+        <br>
+    #end if
+    #if $varExists('$qfact')
+        $_('Факт'): $viewQuantity($qfact,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE) <b>(<u>#filter Quantity$qfact#end filter#</u>)</b>
+        <br>
+    #end if
+    
+    <hr>
+    #if $varExists('$wp') and $wp
+        #if $wp.SUPPLIER
+            #filter DateFilter2$wp.DOCDATE#end filter# $wp.DOCNUM
+            <br>
+            <u>$wp.SUPPLIER</u>
+            <br>
+        #end if
+        <b><u>#filter DateFilter2$wp.productdate#end filter#</b></u>
+         = $viewQuantity($wp.AMOUNT,$VWUFACTOR,$VWUCODE,$MWUFACTOR,$MWUCODE)(<b><u>#filter Quantity$wp.AMOUNT#end filter#</u></b>)
+        <br>
+        #if $wp.WLNUMBER
+            $wp.WLNUMBER <br>
+        #end if
+        <form action=dfsTaskWaresPalletWLotSave method=post>
+            <input type=hidden name=tid value=$TID>
+            <input type=hidden name=pid value=$PID>
+            <input type=hidden name=wid value=$WID>
+            <input type=hidden name=wlotid value=$wp.WLOTID>
+            #if $wp.WLINCOMEID
+                <input type=hidden name=wlincomeid value=$wp.WLINCOMEID>
+            #end if
+            <input type=hidden name=ctm value="$dbCurrentTimestamp()">
+            <br>$_('Отобрать'):<br>
+            <select name=wuid id=":focus:">
+                <option value=$MWUID selected>$MWUCODE</option>
+              #if $VWUID:
+                <option value=$VWUID>$VWUCODE</option>
+              #end if
+            </select>
+            :
+            <input type="text" name="amount" id="::float" value="#filter Quantity$wp.AMOUNT#end filter#" size="4"><br>
+            $_('ШК'): <input type='text' name='barcode' id='barcode:scan' size=6 title="$_('GS1_128'), $_('Алкомарка'), $_('Паллет')">
+            <input type=submit value=Ok />
+        </form>
+    #end if
+#end def

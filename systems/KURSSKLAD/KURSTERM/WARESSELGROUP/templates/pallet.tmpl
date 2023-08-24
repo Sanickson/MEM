@@ -1,0 +1,29 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    #if $PAL_NUM
+        <b>$PAL_NUM</b>
+        #if $PAL_SNAME
+            ($PAL_SNAME)
+        #end if
+        <br>
+    #else
+        <b>$PAL_SNAME</b><br>
+    #end if
+    <hr>
+    #for $item in $datalist
+        <b>(<u>$item.WCODE</u>)</b>
+        #if $item.WSGCODE
+            = <a href="palWaresSelGroup?pid=$PAL_ID&wid=$item.WID&whid=$item.OBJID" title="$item.WSGNAME.replace('"',"'")">$item.WSGCODE</a><br>
+        #else
+            = <a href="palWaresSelGroup?pid=$PAL_ID&wid=$item.WID&whid=$item.OBJID" title="_('Без ГО')">---</a><br>
+        #end if
+        $item.WNAME
+        <br><br>
+    #end for
+    <hr>
+    <form action='main'>
+        $_('ШК'): <input type='text' name='barcode' id=':scan' title="$_('Товар'), $_('Паллет'), $_('МП')">
+    </form>
+#end def

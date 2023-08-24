@@ -1,0 +1,14 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.mainPalFP
+
+#def palFooter
+    <br>
+    <br>
+    <a href="javascript: if (confirm('$_('Вы  уверены?')')) location.href='taskAEndPallet?tid=$tid&pid=$pid'">$_('Завершить')</a>
+    <hr>
+    <form action="taskAScanPalletWares">
+        <input type=hidden name=pid value=$PID>
+        <input type=hidden name=tid value=$TID>
+        $_('ШК'): <input type=text id=":scan:text" name=barcode value="" title="$_('МП'), $_('Поддон'), $_('Товар')"><br>
+	</form>
+#end def

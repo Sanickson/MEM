@@ -1,0 +1,23 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+   <b>$USERFIO</b>
+   <hr>
+   #for $item in $datalist
+    $item.TTNAME<br>
+    #if $item.CANNULL == '1'
+        $item.TID<br>
+        <a href="clearUserTask?tid=$item.TID&uid=$uid">Отвязать</a><br>
+    #else
+        <a href="verifyUserTask?tid=$item.TID">$item.TID</a><br>
+    #end if
+    #if $item.DOCCLIENT
+        $item.DOCCLIENT<br>
+    #end if
+    #if $item.DOCDATE
+        $item.DOCNUM|#filter DateFilter2$item.DOCDATE#end filter<br>
+    #end if
+    <br>
+   #end for
+#end def    

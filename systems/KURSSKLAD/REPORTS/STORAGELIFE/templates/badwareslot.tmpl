@@ -1,0 +1,36 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REPORTS.STORAGELIFE.templates.main
+
+#def phData
+##Scripts
+
+    <link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>
+    ##Scripts
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+	<script type="text/javascript" src="$sps_js.KURSSKLAD/k.tdChk.js"></script>
+
+    <script type="text/javascript" src="$sp_js/badwareslot.js"></script>
+
+    <form id="frmFilter"  class="buttons">
+        #set global $pallettype = 'R'
+        #include '../systems/KURSSKLAD/templates/warehouse.tmpl'
+        #include '../systems/KURSSKLAD/templates/sitezone.tmpl'
+##        #include '../systems/KURSSKLAD/templates/whmode.tmpl'
+        #include '../systems/KURSSKLAD/templates/selgroup.tmpl'
+##        #include '../systems/KURSSKLAD/templates/selscheme.tmpl'
+        #include '../systems/KURSSKLAD/templates/waresgroup.tmpl'
+        #include '../systems/KURSSKLAD/templates/pallettype.tmpl'
+
+
+        <label for="daysbeg" style="width:5%;"><b>$_('Период дней от '):</b></label>
+        <input type="text" style="width:2%;"  name="daysbeg" id="daysbeg"  value="0"/>
+        <label for="daysend" style="width:5%;"><b>$_(' до  ')</b></label>
+        <input type="text" style="width:2%;"  name="daysend" id="daysend"  value="7"/>
+
+        <button type="submit"><img src="$eng_img/arrows/arrow_right.png"></button>
+    </form>
+
+#end def
+#def Data
+<div id="dvData" style="float:left;position:relative;width:100%;"></div>
+#end def

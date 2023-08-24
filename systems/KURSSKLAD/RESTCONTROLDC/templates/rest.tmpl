@@ -1,0 +1,27 @@
+#encoding utf-8
+
+#extends systems.KURSSKLAD.RESTCONTROLDC.templates.rcmain
+
+#def $system_help = False
+#end def
+
+#def rcFilter
+ 	<form class="buttons">
+        #include '../systems/KURSSKLAD/templates/warehouse.tmpl'
+        #include '../systems/KURSSKLAD/templates/sitezone.tmpl'
+        #include '../systems/KURSSKLAD/templates/selgroup.tmpl'
+        &nbsp;&nbsp;&nbsp;
+        <button type=submit id=btnRefresh><img src="$eng_img/actions/refresh.png"></button>
+	</form> 
+#end def
+
+#def rcData
+
+    <link href="$sps_css.KURSSKLAD/k.progressbar.css" rel="stylesheet" type="text/css" media="screen"/>
+    
+    ##Scripts
+    <script type="text/javascript" src="$sps_js.KURSSKLAD/k.progressbar.js"></script>
+    <script type="text/javascript" src="$eng_js/table-jq.js"></script>
+    <script type="text/javascript" src="$eng_js/table-type.js"></script>
+    <script type="text/javascript" src="$sp_js/rest.js"></script>
+#end def

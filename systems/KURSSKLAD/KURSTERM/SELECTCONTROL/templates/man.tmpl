@@ -1,0 +1,37 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    <u>$MFIO</u><br><br>
+    #if $ACT == 'S'
+        <a href="man?mid=$MID&action=S">$_('Начать контроль')</a>
+    #elif $ACT == 'F'
+        <a href="man?mid=$MID&action=F">$_('Завершить контроль')</a>
+    #end if
+    <br><br>
+
+    #if $TASKID
+        <b>$TASKID</b> = $CNT2 / $CNTA <br>
+        $FROMNAME --> $TONAME <br>
+        $DOCNUM #filter DateFilter2$RDOCDATE#end filter# <br>
+
+        #if $CNT2 <= 1
+            <br>
+           <a href="man?mid=$MID&action=$TASKID">$_('Начать параллельный контроль')</a><br>
+        #end if
+    #end if
+
+    <br>
+    <a href="javascript: location.reload()" id=":focus:">$_('Обновить')</a>
+
+    #if not $TASKID or $CNT2 > 1
+        <script>
+            setTimeout(function(){
+                location.reload();
+            }, 5000);
+        </script>
+    #end if
+
+#end def
+
+

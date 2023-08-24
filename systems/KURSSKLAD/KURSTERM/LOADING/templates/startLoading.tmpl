@@ -1,0 +1,13 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def $system_help = True
+#end def
+
+#def mainData
+    #if $varExists('$datalist') and $datalist
+		#for $item in $datalist
+		    <a href='task?sid=$item.SID'>$item.SNAME</a></br>
+		#end for
+	#end if
+#end def

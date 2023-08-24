@@ -1,0 +1,129 @@
+/*@media only screen and (max-device-width: 480px) and (max-device-width: 1024px)*/@media only screen and (max-width: 481px){
+body {
+  background: url("/ENGINE/images/terminal/background.png") repeat scroll 0 0 #D9D9D9;
+  font-family: Verdana,Arial,Helvetica,Sans-serif;
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  overflow: visible !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-focus-ring-color: rgba(0,0,0,0);
+  outline: none;
+  height: calc(100%+2px);
+  height:-webkit-calc(100%+2px);
+  height: 100%;
+}
+#container-head {
+    background-color: #1C1E21;
+    border: 0 none;
+    color: #FFFFFF;
+    font-size: 13px;
+    height: 35px;
+    margin: 0;
+    padding-top: 20px;
+    text-align: left;
+    width: 100%;
+}
+#container-head #userfio {
+    color: #E5E5E5;
+    font-size: 14px;
+    padding-left: 20px;
+}
+#container-head #icons {
+  /*  float: right;
+    position: relative;
+    right: 20px;
+    top: -25px;*/
+
+    float: right;
+    position: absolute;
+    right: 20px;
+    top: 9px;
+
+}
+#container-page #container-head.container #icons ul.user-menu li a img{
+  visibility:hidden;
+}#container-page #container-head.container #icons ul.user-menu li a{
+  border: 1px solid grey;
+  display: block;
+  float: left;
+  height: 30px;
+  width: 30px
+}
+#container-content-wrapper {
+    border: 0 none;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+}
+#container-page #container-head.container #icons ul.user-menu li a {
+    background: url("/ENGINE/images/terminal/exit_btn_bg.png") repeat scroll 0 0 transparent !important;
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+#sys-name {
+    clear: both;
+    color: #3A3A3A;
+    float: left;
+    font-size: 24px;
+    margin-top: 21px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+#container-content{
+  width:90%;
+  margin:0 auto;
+  padding:0;
+  border:0;
+}
+#container-content-wrapper #container-content #form a {
+  background-color: #303030;
+  border: 1px solid #303030;
+  border-radius: 3px 3px 3px 3px;
+  color: #F2F2F2;
+  display: block;
+  font-size: 17px;
+  font-weight: normal;
+  margin: 0 auto;
+  padding: 12px 7px;
+  text-decoration: none;
+  width: 90%;
+}
+#container-footer{
+  border:0;
+  clear:both;
+  float:left;
+  margin:0;
+  padding:0;
+}
+
+
+form {
+  color: #434343;
+  font-size: 23px;
+  margin: 0 0 20px;
+}
+input {
+  background: none repeat scroll 0 0 #FFFFFF !important;
+  border: 1px solid #BDBEBD;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
+  color: #383838 !important;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 10px;
+  width: 70%;
+}
+input:focus {
+  border: 1px solid #1DACE8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset, 0 0 5px #55C2F0;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset, 0 0 5px #55C2F0;
+}

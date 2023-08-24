@@ -1,0 +1,29 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.REPORTS.PALLETPRINT.templates.ppmain
+
+#def ppFilter
+    ##Scripts
+    <script type="text/javascript" src="$sp_js/freelabel.js"></script>
+    <form id="frmFilter" class="buttons">
+    </form>
+#end def
+
+#def ppData
+	<div id="dvScreen">
+         <form id="frmFreePrint">
+             <div><b>Введите текст этикетки:</b></div>
+            <textarea id="dvLabelText"></textarea>
+            <br><div><b>Введите штрихкод:</b></div>
+            <input type="text" id="dvBarcode" size="14"></input>
+            <br><div><b>Выберите размер:</b></div>
+            <select id="labelSize" style="text-align: right">
+            </select>
+            <br><div><b>Количество этикеток:</b></div>
+            <input type="text" id="labelAmount" maxlength="2" value="1" style="text-align: right"></input>
+            <br><div><b>Выберите принтер:</b></div>
+            <select id="printers" style="text-align: right">
+            </select>
+            <br><br><button type="submit"><img src="$eng_img/actions/printer.png" border="0"></button>
+	    </form>
+    </div>
+#end def

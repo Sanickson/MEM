@@ -1,0 +1,59 @@
+#encoding utf-8
+#import conf.engine_conf as cfg
+#import conf.client_conf as cln
+#extends systems.engine_main_term
+
+#def engineData
+
+<div align = "center">
+#if $varExists('$termname')
+    #if $termname != '' and $termname is not None
+        $termname
+    #end if
+#end if
+
+#if $varExists('$termusername')
+    <br/>Пользователь:
+    #if $termusername != '' and $termusername is not None
+        $termusername<br/><br/>
+    #else
+        не привязан<br/><br/>
+    #end if
+#end if
+
+
+
+<form id="frmTsdAndroidExit" action="tsdAndroidExit" method='POST'>
+    #if $mes != 'termnum_is_lost'
+        Отсканируйте ШК отвязки ТСД<br/>
+        <input type="password" id=':scan:' name="code" class="scanBarcode">
+    #end if
+
+    <br/>
+    <p id="error">
+        #if $varExists('$mes')
+            #if $mes != '' and $mes is not None
+                #if $mes == 'termnum_is_lost'
+                    <font class="red"><b>Была потеряна связь с сервером. Реинициализация оборудования...</b></font>                    
+                #else
+                    <font class="red"><b>$mes</b></font>
+                #end if
+            #end if
+        #end if
+    </p>
+</form><br>
+<hr>
+    <a href="$cfg.TERMINAL_link">$_('Меню систем')</a>
+</div>
+<script type="text/javascript">
+    #if $mes == 'termnum_is_lost'
+        document.body.onload = function() {
+            try{
+                setTimeout('location.href = "$cfg.TERMINAL_START_PAGE"', 3000);
+            }catch(e){
+                setTimeout(location.href = "$cfg.init_url", 3000);
+            }
+        };
+    #end if
+</script>
+#end def

@@ -1,0 +1,40 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    $GATENAME (#filter DateTimeFilter$PLANDT#end filter#) = $CNTTASK<br>
+    <a href="auto?tid=$TASKID">$AUTONAME</a><br>
+    <br>
+
+	<form action="scan">
+	    <input type="hidden" name="taskid" value="$kId($TASKID)">
+        $_('Паллет отборки'): <input type="text" id=":scan:text" name="barcode"><br>
+	</form>    
+    <hr>
+    #set $docclient = ''
+    #set $docid = 0
+    #for $item in $datalist
+        #if $docclient != $item.DOCCLIENT
+            #set $docclient = $item.DOCCLIENT
+            <b>$item.DOCCLIENT</b><br>
+        #end if
+        #if $docid != $kId($item.DOCID)
+            #set $docid = $kId($item.DOCID)
+            <u>$item.DOCNUM</u><br>
+        #end if
+        #if $item.TASKMAN
+            <u>$item.TASKMAN</u><br>
+        #end if
+        <b>$item.PNUM</b>($item.SNAME)<br>
+        #if $item.TSTAT == '2'
+            <font class="green">
+        #elif $item.TSTAT == '1'
+            <font class="yellow">
+        #else
+            <font class="red">
+        #end if
+        $item.TASKID #filter DateTimeFilter$item.TEND#end filter#<br>
+        ##$item.PICKMAN<br>
+        </font><br>
+    #end for
+#end def

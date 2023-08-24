@@ -1,0 +1,29 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+#def mainData
+    <b>$PRINTERNAME</b><br>
+    <b>$REPORTNAME</b><br>    
+    <br>
+    <b>(<u>$WCODE</u>)</b>
+    #if $WSGCODE
+        = $WSGCODE <br>
+    #end if
+    $WNAME<br><br>
+    
+    $SUPPLIER<br>
+    <b>#filter DateFilter2$DOCDATE#end filter# $_('№') $DOCNUM</b><br><br>
+    $_('Дата'): <b>#filter DateFilter2$WLDATE#end filter#</b><br><br>    
+    
+    <form action="taskWaresPrinter" name="frm" method=post>
+        <input type=hidden name=wid value=$WID>
+        <input type=hidden name=tid value=$tid>
+        <input type=hidden name=printerid value=$PRINTERID>
+        <input type=hidden name=wlincomeid value=$WLINCOMEID>
+        
+        $_('Кол-во этикеток'): <input type="text" name="cnt" id=":int:focus" value="0" size="6"><br>
+        <hr>
+        <input type=submit value="$_('Печатать')">
+    </form>    
+#end def

@@ -1,0 +1,65 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#from systems.KURSSKLAD.cheetahutils import viewQuantity
+
+#def mainData
+    <b><u>$PAL_CLIENTNAME</u></b><br>
+    <b>$NUMPALLET</b>
+    <hr>
+
+    <form action="scanTask">
+        <input type=hidden name=id value=$tid>
+        $_('ШК:') <input type=text name=barcode id="barcode:scan" title="$_('Товар')">
+    </form>
+    <hr>
+
+    #if $varExists('$datalist') and $datalist
+        <table>
+            <thead>
+                <tr>
+                    <th>$_('Товар')</th>
+                    <th>$_('Отобрано')</th>
+                    <th>$_('Проверено')</th>
+                </tr>
+            </thead>
+            <tbody>
+            #for $item in $datalist
+                #if $item.QFACT
+                  #set $qFact = float($item.QFACT)
+                #else
+                  #set $qFact = 0.0000
+                #end if
+                #if $item.QFIX
+                  #set $qFix = float($item.QFIX)
+                #else
+                  #set $qFix = 0.0000
+                #end if
+
+                #if ($filter == '1' and abs($qFix - $qFact) > 0.0001) or $filter == '0'
+                    <tr>
+                        <td><a href="taskWares?tid=$tid&wid=$item.WID&ar=1" title="$item.WNAME.replace('"',"'")">$item.WCODE</a></td>
+                        <td>$viewQuantity($item.QFACT,$item.VWUFACTOR,$item.VUCODE,$item.MWUFACTOR,$item.MUCODE)</td>
+                      #if $qFix - $qFact > 0.0001
+                        <td class=red>$viewQuantity($item.QFIX,$item.VWUFACTOR,$item.VUCODE,$item.MWUFACTOR,$item.MUCODE)</td>
+                      #elif $qFact - $qFix > 0.0001
+                        <td class=red>$viewQuantity($item.QFIX,$item.VWUFACTOR,$item.VUCODE,$item.MWUFACTOR,$item.MUCODE)</td>
+                      #else
+                        <td class=green>$viewQuantity($item.QFIX,$item.VWUFACTOR,$item.VUCODE,$item.MWUFACTOR,$item.MUCODE)</td>
+                      #end if
+                    </tr>
+                #end if
+            #end for
+            </tbody>
+
+        </table>
+    #end if
+
+    #if $filter == '0'
+        <a href='task?id=$tid&filter=1'>$_('Различия')</a>
+    #else
+        <a href='task?id=$tid&filter=0'>$_('Все позиции')</a>
+    #end if
+    <a href='taskEnd?id=$tid' onClick="return confirm('$_('Вы уверены, что хотите завершить задание?')')">$_('Завершить')</a>
+#end def
+

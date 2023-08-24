@@ -1,0 +1,13 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.mainPalS
+
+#def palBefore
+    #if $varExists('$docid')
+        <a href="palToHands?pid=$PAL_ID&docid=$docid">$_('Выдать')</a>
+    #elif $varExists('$taskid')
+        <a href="palToHands?pid=$PAL_ID&taskid=$taskid">$_('Выдать')</a>
+    #else
+        <a href="palToHands?pid=$PAL_ID">$_('Выдать')</a>
+    #end if
+    <hr>
+#end def

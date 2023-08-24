@@ -1,0 +1,13 @@
+#encoding utf-8
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    $ZONENAME</br>
+    <b>№$TID</b>($ALGORITHM)
+    <br>
+    <br>
+	<form action="taskA">
+        <input type="hidden" value="$TID" name="tid">
+        $_('ШК'): <input type="text" id=":scan:text" name="barcode" title="$_('МП')" />
+	</form>
+#end def

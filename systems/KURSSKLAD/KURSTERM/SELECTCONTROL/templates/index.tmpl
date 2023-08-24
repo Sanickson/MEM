@@ -1,0 +1,9 @@
+#encoding utf-8
+
+#extends systems.KURSSKLAD.KURSTERM.templates.main
+
+#def mainData
+    <form action="scanMain">
+        $_('ШК'): <input type="text" name="barcode" id="barcode:scan:text" title="$_('Поддон отборки, ШК отборщика')">
+    </form>
+#end def
